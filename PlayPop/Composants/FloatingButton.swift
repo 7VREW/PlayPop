@@ -14,7 +14,7 @@ struct FloatingButton: View {
     struct CustomButtonAnimation: ButtonStyle {
         func makeBody(configuration: Configuration) -> some View {
             configuration.label
-                .scaleEffect(configuration.isPressed ? 1.2 : 1)
+                .scaleEffect(configuration.isPressed ? 1.1 : 1)
                 .animation(.bouncy(duration: 0.2, extraBounce: 0.2), value: configuration.isPressed)
         }
     }
