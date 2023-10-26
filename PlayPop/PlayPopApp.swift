@@ -11,7 +11,7 @@ import SwiftUI
 struct PlayPopApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            FloatingButton()
         }
     }
 }
