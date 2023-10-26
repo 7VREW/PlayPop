@@ -9,6 +9,8 @@ import SwiftUI
 
 struct FloatingButton: View {
     
+    var label: String
+    
     struct CustomButtonAnimation: ButtonStyle {
         func makeBody(configuration: Configuration) -> some View {
             configuration.label
@@ -29,7 +31,7 @@ struct FloatingButton: View {
                         RoundedRectangle(cornerRadius: 30)
                             .stroke(LinearGradient(colors: [Color(.systemOrange), Color(.systemYellow)], startPoint: .leading, endPoint: .trailing), lineWidth: 3)
                 )
-                Text("Valider")
+                Text(label)
             }
         })
         .buttonStyle(CustomButtonAnimation())
@@ -37,5 +39,5 @@ struct FloatingButton: View {
 }
 
 #Preview {
-    FloatingButton()
+    FloatingButton(label: "Valider")
 }

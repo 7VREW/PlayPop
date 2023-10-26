@@ -12,6 +12,7 @@
 		BCC0D7702AEA92AF009DA110 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCC0D76F2AEA92AF009DA110 /* Assets.xcassets */; };
 		BCC0D7732AEA92AF009DA110 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCC0D7722AEA92AF009DA110 /* Preview Assets.xcassets */; };
 		BCC0D77C2AEA936C009DA110 /* Structures.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC0D77B2AEA936C009DA110 /* Structures.swift */; };
+		BCC0D77E2AEAAF1D009DA110 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC0D77D2AEAAF1D009DA110 /* TagView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		BCC0D76F2AEA92AF009DA110 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BCC0D7722AEA92AF009DA110 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BCC0D77B2AEA936C009DA110 /* Structures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Structures.swift; sourceTree = "<group>"; };
+		BCC0D77D2AEAAF1D009DA110 /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				BCC0D76D2AEA92A8009DA110 /* FloatingButton.swift */,
+				BCC0D77D2AEAAF1D009DA110 /* TagView.swift */,
 			);
 			path = Composants;
 			sourceTree = "<group>";
@@ -159,6 +162,7 @@
 				BCC0D76E2AEA92A8009DA110 /* FloatingButton.swift in Sources */,
 				BCC0D77C2AEA936C009DA110 /* Structures.swift in Sources */,
 				BCC0D76C2AEA92A8009DA110 /* PlayPopApp.swift in Sources */,
+				BCC0D77E2AEAAF1D009DA110 /* TagView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
