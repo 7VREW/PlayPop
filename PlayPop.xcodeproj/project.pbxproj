@@ -16,9 +16,9 @@
 		BCC0D7802AEAB1F4009DA110 /* CardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC0D77F2AEAB1F4009DA110 /* CardComponent.swift */; };
 		BCC0D7842AEAB548009DA110 /* ListRowElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC0D7832AEAB548009DA110 /* ListRowElement.swift */; };
 		BCC0D7862AEAB643009DA110 /* ParticipantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC0D7852AEAB643009DA110 /* ParticipantView.swift */; };
-		BCC0D78A2AEAC97C009DA110 /* EventCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC0D7892AEAC97C009DA110 /* EventCard.swift */; };
 		BCC0D78C2AEAC987009DA110 /* EventCardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC0D78B2AEAC987009DA110 /* EventCardComponent.swift */; };
-		BCC0D7902AEBBB25009DA110 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC0D78F2AEBBB25009DA110 /* Data.swift */; };
+		BCC0D79A2AEBD84F009DA110 /* EventCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC0D7992AEBD84E009DA110 /* EventCard.swift */; };
+		BCC0D79C2AEBD8A9009DA110 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC0D79B2AEBD8A9009DA110 /* Data.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,9 +32,9 @@
 		BCC0D77F2AEAB1F4009DA110 /* CardComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardComponent.swift; sourceTree = "<group>"; };
 		BCC0D7832AEAB548009DA110 /* ListRowElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListRowElement.swift; sourceTree = "<group>"; };
 		BCC0D7852AEAB643009DA110 /* ParticipantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantView.swift; sourceTree = "<group>"; };
-		BCC0D7892AEAC97C009DA110 /* EventCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventCard.swift; path = ../../../../Downloads/EventCard.swift; sourceTree = "<group>"; };
 		BCC0D78B2AEAC987009DA110 /* EventCardComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCardComponent.swift; sourceTree = "<group>"; };
-		BCC0D78F2AEBBB25009DA110 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Data.swift; path = ../../../../Downloads/Data.swift; sourceTree = "<group>"; };
+		BCC0D7992AEBD84E009DA110 /* EventCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCard.swift; sourceTree = "<group>"; };
+		BCC0D79B2AEBD8A9009DA110 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,8 +90,8 @@
 				BCC0D7832AEAB548009DA110 /* ListRowElement.swift */,
 				BCC0D7852AEAB643009DA110 /* ParticipantView.swift */,
 				BCC0D77F2AEAB1F4009DA110 /* CardComponent.swift */,
-				BCC0D7892AEAC97C009DA110 /* EventCard.swift */,
 				BCC0D76D2AEA92A8009DA110 /* FloatingButton.swift */,
+				BCC0D7992AEBD84E009DA110 /* EventCard.swift */,
 				BCC0D78B2AEAC987009DA110 /* EventCardComponent.swift */,
 				BCC0D77D2AEAAF1D009DA110 /* TagView.swift */,
 			);
@@ -101,7 +101,7 @@
 		BCC0D77A2AEA933F009DA110 /* Definition */ = {
 			isa = PBXGroup;
 			children = (
-				BCC0D78F2AEBBB25009DA110 /* Data.swift */,
+				BCC0D79B2AEBD8A9009DA110 /* Data.swift */,
 				BCC0D77B2AEA936C009DA110 /* Structures.swift */,
 			);
 			path = Definition;
@@ -178,14 +178,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCC0D76E2AEA92A8009DA110 /* FloatingButton.swift in Sources */,
-				BCC0D7902AEBBB25009DA110 /* Data.swift in Sources */,
+				BCC0D79C2AEBD8A9009DA110 /* Data.swift in Sources */,
 				BCC0D77C2AEA936C009DA110 /* Structures.swift in Sources */,
 				BCC0D78C2AEAC987009DA110 /* EventCardComponent.swift in Sources */,
+				BCC0D79A2AEBD84F009DA110 /* EventCard.swift in Sources */,
 				BCC0D7862AEAB643009DA110 /* ParticipantView.swift in Sources */,
 				BCC0D76C2AEA92A8009DA110 /* PlayPopApp.swift in Sources */,
 				BCC0D7802AEAB1F4009DA110 /* CardComponent.swift in Sources */,
 				BCC0D7842AEAB548009DA110 /* ListRowElement.swift in Sources */,
-				BCC0D78A2AEAC97C009DA110 /* EventCard.swift in Sources */,
 				BCC0D77E2AEAAF1D009DA110 /* TagView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
