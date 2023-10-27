@@ -12,26 +12,34 @@ struct EventCardComponent: View {
         var event: Event
         
         var body: some View {
-            ZStack (alignment: .bottom) {
-                Image(event.eImage[0])
-                    .resizable()
-                    .scaledToFit()
-                ZStack (alignment: .leading) {
-                    LinearGradient(colors: [.black, .black.opacity(0.8), .black.opacity(0.5), .clear], startPoint: .bottom, endPoint: .top)
-                        .opacity(0.9)
-                        .frame(width: 175, height: 45)
-                    HStack {
-                        Text(event.eLabel)
-                        Spacer()
-                        Text("\(event.eDate)")
-                    }
-                    .font(.body)
-                    .padding(.horizontal, 20)
-                    .padding(.bottom, 3)
-                    .foregroundStyle(.white)
+            ZStack (alignment: .bottomLeading) {
+                
+                ZStack {
+                    Image(event.eImage[2])
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 175, height: 250, alignment: .center)
+                    LinearGradient(colors: [.black.opacity(0.75), .clear], startPoint: .bottom, endPoint: .center)
                 }
-            } .clipShape(RoundedRectangle(cornerRadius: 25))
+
+                
+                VStack(alignment: .leading) {
+                    Text(event.eLabel)
+                        .fontWeight(.bold)
+                    Text("\(event.eDate.formatted(.dateTime.day().month().year()))")
+                }
+                .lineLimit(1)
+                .foregroundStyle(.white)
+                .padding()
+            }
+            .clipShape(RoundedRectangle(cornerRadius: 30))
                 .frame(width: 175, height: 130)
                 .shadow(radius: 5)
         }
     }
+
+#Preview {
+    EventCardComponent(event: karting1)
+}
+
+//guitarEvent1

@@ -17,8 +17,11 @@
 		BCC0D7842AEAB548009DA110 /* ListRowElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC0D7832AEAB548009DA110 /* ListRowElement.swift */; };
 		BCC0D7862AEAB643009DA110 /* ParticipantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC0D7852AEAB643009DA110 /* ParticipantView.swift */; };
 		BCC0D78C2AEAC987009DA110 /* EventCardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC0D78B2AEAC987009DA110 /* EventCardComponent.swift */; };
-		BCC0D79A2AEBD84F009DA110 /* EventCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC0D7992AEBD84E009DA110 /* EventCard.swift */; };
 		BCC0D79C2AEBD8A9009DA110 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC0D79B2AEBD8A9009DA110 /* Data.swift */; };
+		BCC0D79E2AEBDA53009DA110 /* DefaultEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC0D79D2AEBDA53009DA110 /* DefaultEvents.swift */; };
+		BCC0D7A02AEBDD6A009DA110 /* TextBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC0D79F2AEBDD6A009DA110 /* TextBox.swift */; };
+		BCC0D7A62AEBE075009DA110 /* EventRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC0D7A52AEBE075009DA110 /* EventRow.swift */; };
+		BCC0D7A82AEBE9D4009DA110 /* ProfileButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC0D7A72AEBE9D4009DA110 /* ProfileButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,8 +36,11 @@
 		BCC0D7832AEAB548009DA110 /* ListRowElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListRowElement.swift; sourceTree = "<group>"; };
 		BCC0D7852AEAB643009DA110 /* ParticipantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantView.swift; sourceTree = "<group>"; };
 		BCC0D78B2AEAC987009DA110 /* EventCardComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCardComponent.swift; sourceTree = "<group>"; };
-		BCC0D7992AEBD84E009DA110 /* EventCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCard.swift; sourceTree = "<group>"; };
 		BCC0D79B2AEBD8A9009DA110 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		BCC0D79D2AEBDA53009DA110 /* DefaultEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultEvents.swift; sourceTree = "<group>"; };
+		BCC0D79F2AEBDD6A009DA110 /* TextBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextBox.swift; sourceTree = "<group>"; };
+		BCC0D7A52AEBE075009DA110 /* EventRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventRow.swift; sourceTree = "<group>"; };
+		BCC0D7A72AEBE9D4009DA110 /* ProfileButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,9 +97,11 @@
 				BCC0D7852AEAB643009DA110 /* ParticipantView.swift */,
 				BCC0D77F2AEAB1F4009DA110 /* CardComponent.swift */,
 				BCC0D76D2AEA92A8009DA110 /* FloatingButton.swift */,
-				BCC0D7992AEBD84E009DA110 /* EventCard.swift */,
 				BCC0D78B2AEAC987009DA110 /* EventCardComponent.swift */,
+				BCC0D79F2AEBDD6A009DA110 /* TextBox.swift */,
 				BCC0D77D2AEAAF1D009DA110 /* TagView.swift */,
+				BCC0D7A52AEBE075009DA110 /* EventRow.swift */,
+				BCC0D7A72AEBE9D4009DA110 /* ProfileButton.swift */,
 			);
 			path = Composants;
 			sourceTree = "<group>";
@@ -103,6 +111,7 @@
 			children = (
 				BCC0D79B2AEBD8A9009DA110 /* Data.swift */,
 				BCC0D77B2AEA936C009DA110 /* Structures.swift */,
+				BCC0D79D2AEBDA53009DA110 /* DefaultEvents.swift */,
 			);
 			path = Definition;
 			sourceTree = "<group>";
@@ -177,12 +186,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCC0D7A02AEBDD6A009DA110 /* TextBox.swift in Sources */,
+				BCC0D7A82AEBE9D4009DA110 /* ProfileButton.swift in Sources */,
 				BCC0D76E2AEA92A8009DA110 /* FloatingButton.swift in Sources */,
+				BCC0D79E2AEBDA53009DA110 /* DefaultEvents.swift in Sources */,
 				BCC0D79C2AEBD8A9009DA110 /* Data.swift in Sources */,
 				BCC0D77C2AEA936C009DA110 /* Structures.swift in Sources */,
 				BCC0D78C2AEAC987009DA110 /* EventCardComponent.swift in Sources */,
-				BCC0D79A2AEBD84F009DA110 /* EventCard.swift in Sources */,
 				BCC0D7862AEAB643009DA110 /* ParticipantView.swift in Sources */,
+				BCC0D7A62AEBE075009DA110 /* EventRow.swift in Sources */,
 				BCC0D76C2AEA92A8009DA110 /* PlayPopApp.swift in Sources */,
 				BCC0D7802AEAB1F4009DA110 /* CardComponent.swift in Sources */,
 				BCC0D7842AEAB548009DA110 /* ListRowElement.swift in Sources */,

@@ -50,7 +50,8 @@ struct Event: Identifiable{
     var eMaxU: Int
     var eUsersList: [String]
     var eLocation: String
-    var eTags: [Tag]
     var eDate: Date
     var ePast: Bool
+    var eActualNumberParticipant: Int
+
 }

@@ -30,5 +30,5 @@ struct ParticipantView: View {
 }
 
 #Preview {
-    ParticipantView(event: Event(eLabel: "GN Médiéval", eDesc: "3 jours de découverte dans un espace clos et sécurisé avec un text assez long pour voir comment", eLeasure: "", eImage: [""], eMinU: 0, eMaxU: 10, eUsersList: ["", "", "", ""], eLocation: "", eTags: [], eDate: Date().addingTimeInterval(500000), ePast: false))
+    ParticipantView(event: karting1)
 }
