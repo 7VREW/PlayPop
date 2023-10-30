@@ -65,7 +65,7 @@ struct EcranSuggestions: View {
                         }
                     } else {
                     LazyVGrid(
-                        columns: [GridItem(.adaptive(minimum: 130, maximum: 360))],
+                        columns: [GridItem(.adaptive(minimum: 130, maximum: .infinity))],
                         content:
                             {
                                 ForEach(leasureList.filter {
@@ -76,7 +76,7 @@ struct EcranSuggestions: View {
                                     CardComponent(leasure: leasure)
                                         .padding(5)
                                 }
-                            }).frame(width: 360)}
+                            }).frame(maxWidth: .infinity)}
                     
                 }
             }

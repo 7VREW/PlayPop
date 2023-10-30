@@ -36,7 +36,8 @@ struct EcranProfile: View {
                             .fontWeight(.bold)
                             Text("Psst... gagne + de points en notant !")
                                 .font(.callout)
-                                .foregroundStyle(.tertiary)
+                                .fontWeight(.light)
+                                .foregroundStyle(.secondary)
                         }
                         ScrollView (.horizontal, showsIndicators: false) {
                             HStack  {
@@ -51,6 +52,7 @@ struct EcranProfile: View {
                     Spacer()
                 }
                 .padding()
+                .padding(.horizontal, 5)
             }
     }
 }

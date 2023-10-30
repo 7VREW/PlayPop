@@ -34,7 +34,6 @@ struct CardComponent: View {
         }
         .clipShape(RoundedRectangle(cornerRadius: 30))
             .frame(width: 175, height: 250)
-            .shadow(radius: 5)
     }
 }
 

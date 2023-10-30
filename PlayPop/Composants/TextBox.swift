@@ -16,11 +16,10 @@ struct TextBox: View {
             Text(text)
                 .font(.callout)
                 .lineSpacing(4)
-                .padding(.bottom)
-                .padding()
+                .padding(25)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .background(.ultraThinMaterial)
-            .clipShape(RoundedRectangle(cornerRadius: 20))
+            .clipShape(RoundedRectangle(cornerRadius: 25))
         }
         
     }

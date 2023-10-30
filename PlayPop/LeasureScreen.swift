@@ -18,7 +18,7 @@ struct LeasureScreen: View {
             VStack (spacing: 20){
                 HeadImage(imageList: leasure.lImage)
                 ScrollView{
-                    VStack {
+                    VStack(spacing: 20) {
                         HStack {
                             Text(leasure.lLabel)
                                 .font(.title2)
@@ -39,13 +39,13 @@ struct LeasureScreen: View {
                             Image(systemName: "line.horizontal.3.decrease")
                         }
                         .font(.headline)
-                        .padding()
+                    }
+                    .padding(.horizontal, 20)
                         ForEach(eventList.filter {event in
                             event.eLeasure == leasure.lLabel
                         }){event in
                             EventRow(event: event)
                         }
-                    }
                    
                 }
                 

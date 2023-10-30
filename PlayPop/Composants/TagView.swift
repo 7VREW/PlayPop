@@ -18,7 +18,7 @@ struct TagView: View {
             .foregroundStyle(.white)
             .padding(.vertical, 5)
             .padding(.horizontal, 15)
-            .background(Color(.systemOrange))
+            .background(.orange.gradient)
             .clipShape(Capsule())
     }
 }
