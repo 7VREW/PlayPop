@@ -25,6 +25,8 @@
 		BCC0D7AA2AEF9C18009DA110 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC0D7A92AEF9C18009DA110 /* ProfileView.swift */; };
 		BCC0D7AC2AEFA6A0009DA110 /* EcranProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC0D7AB2AEFA6A0009DA110 /* EcranProfile.swift */; };
 		BCC0D7AE2AEFC0B6009DA110 /* MapInfoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC0D7AD2AEFC0B6009DA110 /* MapInfoRow.swift */; };
+		BCC0D7B22AEFE080009DA110 /* EcranSuggestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC0D7B12AEFE080009DA110 /* EcranSuggestions.swift */; };
+		BCC0D7B42AEFE095009DA110 /* EcranFiltre.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC0D7B32AEFE095009DA110 /* EcranFiltre.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +49,8 @@
 		BCC0D7A92AEF9C18009DA110 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		BCC0D7AB2AEFA6A0009DA110 /* EcranProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcranProfile.swift; sourceTree = "<group>"; };
 		BCC0D7AD2AEFC0B6009DA110 /* MapInfoRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapInfoRow.swift; sourceTree = "<group>"; };
+		BCC0D7B12AEFE080009DA110 /* EcranSuggestions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EcranSuggestions.swift; sourceTree = "<group>"; };
+		BCC0D7B32AEFE095009DA110 /* EcranFiltre.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EcranFiltre.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,8 @@
 			children = (
 				BCC0D76B2AEA92A8009DA110 /* PlayPopApp.swift */,
 				BCC0D7AB2AEFA6A0009DA110 /* EcranProfile.swift */,
+				BCC0D7B12AEFE080009DA110 /* EcranSuggestions.swift */,
+				BCC0D7B32AEFE095009DA110 /* EcranFiltre.swift */,
 				BCC0D76F2AEA92AF009DA110 /* Assets.xcassets */,
 				BCC0D7792AEA92DA009DA110 /* Composants */,
 				BCC0D77A2AEA933F009DA110 /* Definition */,
@@ -198,11 +204,13 @@
 				BCC0D7A02AEBDD6A009DA110 /* TextBox.swift in Sources */,
 				BCC0D7A82AEBE9D4009DA110 /* ProfileButton.swift in Sources */,
 				BCC0D76E2AEA92A8009DA110 /* FloatingButton.swift in Sources */,
+				BCC0D7B22AEFE080009DA110 /* EcranSuggestions.swift in Sources */,
 				BCC0D79E2AEBDA53009DA110 /* DefaultEvents.swift in Sources */,
 				BCC0D79C2AEBD8A9009DA110 /* Data.swift in Sources */,
 				BCC0D77C2AEA936C009DA110 /* Structures.swift in Sources */,
 				BCC0D7AC2AEFA6A0009DA110 /* EcranProfile.swift in Sources */,
 				BCC0D78C2AEAC987009DA110 /* EventCardComponent.swift in Sources */,
+				BCC0D7B42AEFE095009DA110 /* EcranFiltre.swift in Sources */,
 				BCC0D7862AEAB643009DA110 /* ParticipantView.swift in Sources */,
 				BCC0D7A62AEBE075009DA110 /* EventRow.swift in Sources */,
 				BCC0D76C2AEA92A8009DA110 /* PlayPopApp.swift in Sources */,
