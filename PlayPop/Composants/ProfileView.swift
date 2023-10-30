@@ -38,14 +38,18 @@ struct ProfileView: View {
             
             //Nom age
             VStack(alignment: .leading, spacing: 17) {
-                HStack {
-                    Text("Jean Dupond")
-                        .font(.headline)
-                        .lineLimit(1)
-                
-    
-                    Text("14 ans")
-                        .foregroundStyle(Color(.systemYellow))
+                VStack (alignment: .leading){
+                    HStack {
+                        Text("Jean Dupond")
+                            .font(.headline)
+                            .lineLimit(1)
+                    
+        
+                        Text("14 ans")
+                            .foregroundStyle(Color(.systemYellow))
+                    }
+                    
+                    NavigationLink("Paramètres du profil") {}
                 }
                 
                 //Game evolution section

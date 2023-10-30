@@ -17,7 +17,7 @@ struct ListRowElement: View {
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 30.0)
-                .fill(.quinary)
+                .fill(.ultraThinMaterial)
             HStack {
                 Text(label)
                     .font(.title3)
