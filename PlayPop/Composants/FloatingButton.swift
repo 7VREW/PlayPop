@@ -9,12 +9,14 @@ import SwiftUI
 
 struct FloatingButton: View {
     
+    @State private var animateGradient = true
+    
     var label: String
     
     struct CustomButtonAnimation: ButtonStyle {
         func makeBody(configuration: Configuration) -> some View {
             configuration.label
-                .scaleEffect(configuration.isPressed ? 1.1 : 1)
+                .scaleEffect(configuration.isPressed ? 1.15 : 1)
                 .animation(.bouncy(duration: 0.2, extraBounce: 0.2), value: configuration.isPressed)
         }
     }
@@ -24,11 +26,11 @@ struct FloatingButton: View {
             
         }, label: {
             ZStack {
-                RoundedRectangle(cornerRadius: 30)
+                Capsule()
                     .frame(width: 200, height: 60)
-                    .foregroundStyle(.regularMaterial)
+                    .foregroundStyle(.ultraThinMaterial)
                     .overlay(
-                        RoundedRectangle(cornerRadius: 30)
+                        Capsule()
                             .stroke(LinearGradient(colors: [Color(.systemOrange), Color(.systemYellow)], startPoint: .leading, endPoint: .trailing), lineWidth: 3)
                 )
                 Text(label)
