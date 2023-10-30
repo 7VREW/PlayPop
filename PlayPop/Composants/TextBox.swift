@@ -8,20 +8,25 @@
 import SwiftUI
 
 struct TextBox: View {
+    
     var text: String // contenu de la description
+    
     var body: some View {
-        Text(text)
-            .font(.callout)
-            .padding(.bottom)
-            .padding()
-            .frame(width: 352, alignment: .leading)
-            .background(Color(.systemGray5))
+        VStack {
+            Text(text)
+                .font(.callout)
+                .lineSpacing(4)
+                .padding(.bottom)
+                .padding()
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .background(.ultraThinMaterial)
             .clipShape(RoundedRectangle(cornerRadius: 20))
+        }
         
     }
 }
 
 #Preview {
-    TextBox(text: "Hello, World!")
+    TextBox(text: "Salut j'aime le karting je pratique du skate et la nomenclature de cette text box m'ennui. J'ai 12 ans en réalité")
 }
 
