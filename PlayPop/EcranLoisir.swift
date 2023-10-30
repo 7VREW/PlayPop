@@ -11,18 +11,19 @@
 
 import SwiftUI
 
-struct LeasureScreen: View {
+struct EcranLoisir: View {
     var leasure: Leasure
     var body: some View {
         ZStack(alignment: .bottom) {
-            VStack (spacing: 20){
-                HeadImage(imageList: leasure.lImage)
+            VStack {
                 ScrollView{
+                    HeadImage(imageList: leasure.lImage)
                     VStack(spacing: 20) {
                         HStack {
                             Text(leasure.lLabel)
-                                .font(.title2)
+                                .font(.title)
                                 .bold()
+                                .padding(.top)
                             Spacer()
                         }
                         ScrollView(.horizontal, showsIndicators: false){
@@ -53,12 +54,12 @@ struct LeasureScreen: View {
             .ignoresSafeArea()
             
             
-            FloatingButton(label: "Créer")
+            FloatingButton(label: "Créer un événement")
                 .padding()
         }
     }
 }
 
 #Preview {
-    LeasureScreen(leasure: leasureList[2])
+    EcranLoisir(leasure: leasureList[2])
 }
