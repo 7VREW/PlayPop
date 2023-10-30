@@ -44,3 +44,5 @@ var leasureList = [
     Leasure(lLabel: "Karting", lTags: [typeTagsList[0], typeTagsList[1], typeTagsList[15], accessTagsList[0], accessTagsList[4]], lDesc: "", lImage: ["karting1", "karting2", "karting3"], lEvents: [])
     
 ]
+
+var eventList = [horrorEvent1, skateEvent1, jDREvent1, lectureEvent1, theatreEvent1, eventBowling1, eventBowling2, eventGarden1, pingPong1, karting1, guitarEvent1]

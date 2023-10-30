@@ -37,7 +37,7 @@ struct EcranSuggestions: View {
                             Label(
                                 title: { Text("éditer") },
                                 icon: { Image(systemName: "tag") })
-                                .foregroundStyle(.black)
+                                .foregroundStyle(.primary)
                                 .padding(.vertical, 5)
                                 .padding(.horizontal, 15)
                                 .background(Color(.systemGray6))
