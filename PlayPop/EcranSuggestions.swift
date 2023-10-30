@@ -37,12 +37,13 @@ struct EcranSuggestions: View {
                             Label(
                                 title: { Text("éditer") },
                                 icon: { Image(systemName: "tag") })
-                                .foregroundStyle(.primary)
                                 .padding(.vertical, 5)
                                 .padding(.horizontal, 15)
                                 .background(Color(.systemGray6))
                                 .clipShape(Capsule())
                         })
+                        .foregroundStyle(.primary)
+                        
                         ForEach (selectedTags) {tag in
                             TagView(tag: tag)
                         }

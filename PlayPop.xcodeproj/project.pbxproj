@@ -92,7 +92,6 @@
 				BCC0D7B12AEFE080009DA110 /* EcranSuggestions.swift */,
 				BCC0D7B32AEFE095009DA110 /* EcranFiltre.swift */,
 				BCC0D7B52AEFE46D009DA110 /* LeasureScreen.swift */,
-				BCC0D7B72AEFE495009DA110 /* HeadImage.swift */,
 				BCC0D76F2AEA92AF009DA110 /* Assets.xcassets */,
 				BCC0D7792AEA92DA009DA110 /* Composants */,
 				BCC0D77A2AEA933F009DA110 /* Definition */,
@@ -112,6 +111,7 @@
 		BCC0D7792AEA92DA009DA110 /* Composants */ = {
 			isa = PBXGroup;
 			children = (
+				BCC0D7B72AEFE495009DA110 /* HeadImage.swift */,
 				BCC0D7832AEAB548009DA110 /* ListRowElement.swift */,
 				BCC0D7852AEAB643009DA110 /* ParticipantView.swift */,
 				BCC0D77F2AEAB1F4009DA110 /* CardComponent.swift */,
