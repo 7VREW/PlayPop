@@ -15,17 +15,17 @@ struct EcranLoisir: View {
     var leasure: Leasure
     var body: some View {
         ZStack(alignment: .bottom) {
-            VStack {
+            VStack (spacing: 20){
                 ScrollView{
-                    HeadImage(imageList: leasure.lImage)
+                HeadImage(imageList: leasure.lImage)
                     VStack(spacing: 20) {
                         HStack {
                             Text(leasure.lLabel)
                                 .font(.title)
                                 .bold()
-                                .padding(.top)
                             Spacer()
                         }
+                        .padding(.top)
                         ScrollView(.horizontal, showsIndicators: false){
                             HStack{
                                 ForEach(leasure.lTags){tag in
@@ -43,7 +43,7 @@ struct EcranLoisir: View {
                     }
                     .padding(.horizontal, 20)
                         ForEach(eventList.filter {event in
-                            event.eLeasure == leasure.lLabel
+                            (leasureList[event.eLeasure].lLabel == leasure.lLabel && !event.ePast)
                         }){event in
                             EventRow(event: event)
                         }
@@ -54,7 +54,7 @@ struct EcranLoisir: View {
             .ignoresSafeArea()
             
             
-            FloatingButton(label: "Créer un événement")
+            FloatingButton(label: "Créer un évènement")
                 .padding()
         }
     }

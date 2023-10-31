@@ -29,6 +29,8 @@
 		BCC0D7B42AEFE095009DA110 /* EcranFiltre.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC0D7B32AEFE095009DA110 /* EcranFiltre.swift */; };
 		BCC0D7B62AEFE46D009DA110 /* EcranLoisir.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC0D7B52AEFE46D009DA110 /* EcranLoisir.swift */; };
 		BCC0D7B82AEFE495009DA110 /* HeadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC0D7B72AEFE495009DA110 /* HeadImage.swift */; };
+		BCC0D7BA2AEFF3EC009DA110 /* EcranAccueil.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC0D7B92AEFF3EC009DA110 /* EcranAccueil.swift */; };
+		BCC0D7BC2AF00178009DA110 /* AgePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC0D7BB2AF00178009DA110 /* AgePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +57,8 @@
 		BCC0D7B32AEFE095009DA110 /* EcranFiltre.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EcranFiltre.swift; sourceTree = "<group>"; };
 		BCC0D7B52AEFE46D009DA110 /* EcranLoisir.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EcranLoisir.swift; sourceTree = "<group>"; };
 		BCC0D7B72AEFE495009DA110 /* HeadImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeadImage.swift; sourceTree = "<group>"; };
+		BCC0D7B92AEFF3EC009DA110 /* EcranAccueil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcranAccueil.swift; sourceTree = "<group>"; };
+		BCC0D7BB2AF00178009DA110 /* AgePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +96,7 @@
 				BCC0D7B12AEFE080009DA110 /* EcranSuggestions.swift */,
 				BCC0D7B32AEFE095009DA110 /* EcranFiltre.swift */,
 				BCC0D7B52AEFE46D009DA110 /* EcranLoisir.swift */,
+				BCC0D7B92AEFF3EC009DA110 /* EcranAccueil.swift */,
 				BCC0D76F2AEA92AF009DA110 /* Assets.xcassets */,
 				BCC0D7792AEA92DA009DA110 /* Composants */,
 				BCC0D77A2AEA933F009DA110 /* Definition */,
@@ -111,6 +116,7 @@
 		BCC0D7792AEA92DA009DA110 /* Composants */ = {
 			isa = PBXGroup;
 			children = (
+				BCC0D7BB2AF00178009DA110 /* AgePicker.swift */,
 				BCC0D7B72AEFE495009DA110 /* HeadImage.swift */,
 				BCC0D7832AEAB548009DA110 /* ListRowElement.swift */,
 				BCC0D7852AEAB643009DA110 /* ParticipantView.swift */,
@@ -212,12 +218,14 @@
 				BCC0D76E2AEA92A8009DA110 /* FloatingButton.swift in Sources */,
 				BCC0D7B22AEFE080009DA110 /* EcranSuggestions.swift in Sources */,
 				BCC0D79E2AEBDA53009DA110 /* DefaultEvents.swift in Sources */,
+				BCC0D7BC2AF00178009DA110 /* AgePicker.swift in Sources */,
 				BCC0D79C2AEBD8A9009DA110 /* Data.swift in Sources */,
 				BCC0D77C2AEA936C009DA110 /* Structures.swift in Sources */,
 				BCC0D7AC2AEFA6A0009DA110 /* EcranProfile.swift in Sources */,
 				BCC0D78C2AEAC987009DA110 /* EventCardComponent.swift in Sources */,
 				BCC0D7B42AEFE095009DA110 /* EcranFiltre.swift in Sources */,
 				BCC0D7862AEAB643009DA110 /* ParticipantView.swift in Sources */,
+				BCC0D7BA2AEFF3EC009DA110 /* EcranAccueil.swift in Sources */,
 				BCC0D7B82AEFE495009DA110 /* HeadImage.swift in Sources */,
 				BCC0D7A62AEBE075009DA110 /* EventRow.swift in Sources */,
 				BCC0D76C2AEA92A8009DA110 /* PlayPopApp.swift in Sources */,

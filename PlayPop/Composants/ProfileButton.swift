@@ -16,7 +16,7 @@ struct ProfileButton: View {
             }
             .font(.system(size: 30))
         })
-        .foregroundStyle(.primary)
+        .foregroundStyle(.background)
     }
 }
 

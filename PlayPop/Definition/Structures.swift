@@ -44,7 +44,7 @@ struct Event: Identifiable{
     var id = UUID()
     var eLabel: String
     var eDesc: String
-    var eLeasure: String
+    var eLeasure: Int
     var eImage: [String]
     var eMinU: Int
     var eMaxU: Int
