@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ProfileView: View {
+    @EnvironmentObject var data: Data
     
     var badgeColors = [LinearGradient(colors: [Color(.systemOrange), Color(.systemYellow)], startPoint: .leading, endPoint: .trailing), LinearGradient(colors: [Color(.systemIndigo), Color(.systemPurple)], startPoint: .leading, endPoint: .trailing), LinearGradient(colors: [Color(.systemBlue), Color(.systemCyan)], startPoint: .leading, endPoint: .trailing)]
     
@@ -26,7 +27,7 @@ struct ProfileView: View {
             
                 //Note étoiles
                 HStack {
-                    Text("4,6")
+                    Text(String(format: "%.1f", data.user.pNote))
                         .fontWeight(.bold)
                         .foregroundStyle(Color(.systemYellow))
                     Image(systemName: "star.fill")
@@ -40,12 +41,12 @@ struct ProfileView: View {
             VStack(alignment: .leading, spacing: 17) {
                 VStack (alignment: .leading){
                     HStack {
-                        Text("Jean Dupond")
+                        Text(data.user.pName)
                             .font(.headline)
                             .lineLimit(1)
                     
         
-                        Text("14 ans")
+                        Text(String(data.user.pAge))
                             .foregroundStyle(Color(.systemYellow))
                     }
                     
@@ -89,6 +90,6 @@ struct ProfileView: View {
     }
 }
 
-#Preview {
-    ProfileView()
-}
+//#Preview {
+//    ProfileView()
+//}

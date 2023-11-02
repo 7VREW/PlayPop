@@ -17,7 +17,6 @@ struct Profile: Identifiable{
     var pBio: String
     var pEvents: [Event]
     var pEventPast: [Event]
-    var pEventToEvaluate: [Event]
     var pAnswers: [Tag]
 }
 
@@ -54,4 +53,16 @@ struct Event: Identifiable{
     var ePast: Bool
     var eActualNumberParticipant: Int
 
+}
+
+class Data: ObservableObject{
+    @Published var user: Profile
+    @Published var leasureList: [Leasure]
+    @Published var eventList: [Event]
+    
+    init(user: Profile, leasureList: [Leasure], eventList: [Event]) {
+        self.user = user
+        self.leasureList = leasureList
+        self.eventList = eventList
+    }
 }

@@ -9,14 +9,22 @@ import SwiftUI
 
 struct ProfileButton: View {
     var body: some View {
-        Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-            VStack (spacing: 10) {
-                Image(systemName: "person.circle")
-                Image(systemName: "chevron.up")
-            }
-            .font(.system(size: 30))
-        })
-        .foregroundStyle(.background)
+        NavigationStack{
+            NavigationLink(destination: {
+                EcranProfile()
+            }, label: {
+                HStack(spacing: 6) {
+                    Image(systemName: "person.circle")
+                        .font(.title2)
+                    Image(systemName: "chevron.right")
+                        .font(.title2)
+                        .fontWeight(.bold)
+                }
+            })
+            .transition(.push(from: .bottom))
+            .foregroundStyle(.primary)
+        }
+        .tint(.primary)
     }
 }
 

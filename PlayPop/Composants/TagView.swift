@@ -15,10 +15,10 @@ struct TagView: View {
     
     var body: some View {
         Text(tag.tLabel)
-            .foregroundStyle(.white)
+            .foregroundStyle(.background)
             .padding(.vertical, 5)
             .padding(.horizontal, 15)
-            .background(.orange.gradient)
+            .background(Color(.systemOrange))
             .clipShape(Capsule())
     }
 }

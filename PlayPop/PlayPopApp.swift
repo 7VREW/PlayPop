@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct PlayPopApp: App {
+    
     var body: some Scene {
         WindowGroup {
-            FloatingButton(label: "Valider")
+            EcranAccueil1(data: data)
         }
     }
 }

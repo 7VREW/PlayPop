@@ -19,8 +19,14 @@ struct ListRowElement: View {
     
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 30.0)
-                .fill(isOn ? Color(.systemOrange) : Color(.systemGray6))
+            if isOn{
+                RoundedRectangle(cornerRadius: 30.0)
+                    .fill(Color(.systemOrange))
+            } else {
+                RoundedRectangle(cornerRadius: 30.0)
+                    .fill(.ultraThinMaterial)
+            }
+            
             HStack {
                 Text(label)
                     .font(.title3)

@@ -48,3 +48,5 @@ var karting1 = Event(eLabel: "Karting tous ensemble pour le fun", eDesc: "On a t
 
 //Guitare
 var guitarEvent1 = Event(eLabel: "Cours de guitare", eDesc: "Donne cours de guitare electrique gratuits pour jeunes rockers intéressés", eLeasure: 9, eImage: leasureList[9].lImage, eMinU: 1, eMaxU: 4, eUsersList: [], eLocation: "Lieu dit Rockez, Labastide, France", eDate: Date(), ePast: false, eActualNumberParticipant: 3)
+
+var hipHopEvent1 = Event(eLabel: "Ça percutte, ça bouge, ça vibe", eDesc: "Let's go pour une séance tour de pass-pass au centre ville", eLeasure: 6, eImage: leasureList[6].lImage, eMinU: 5, eMaxU: 15, eUsersList: [], eLocation: "Place du Capitole", eDate: Date(), ePast: false, eActualNumberParticipant: 8)

@@ -10,7 +10,7 @@ import SwiftUI
 struct CustomButtonAnimation: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .scaleEffect(configuration.isPressed ? 1.15 : 1)
+            .scaleEffect(configuration.isPressed ? 1.1 : 1)
             .animation(.bouncy(duration: 0.2, extraBounce: 0.2), value: configuration.isPressed)
     }
 }
@@ -21,10 +21,10 @@ struct FloatingButton: View {
     
     var body: some View {
 
-            ZStack {
+         ZStack {
                 RoundedRectangle(cornerRadius: 30)
                     .frame(width: 200, height: 60)
-                    .foregroundStyle(.regularMaterial)
+                    .foregroundStyle(.ultraThinMaterial)
                     .overlay(
                         RoundedRectangle(cornerRadius: 30)
                             .stroke(LinearGradient(colors: [Color(.systemOrange), Color(.systemYellow)], startPoint: .leading, endPoint: .trailing), lineWidth: 3)

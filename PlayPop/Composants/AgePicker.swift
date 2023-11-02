@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AgePicker: View {
     
-    @State var userAge: Int
+    @EnvironmentObject var data: Data
     @State var showPicker = false
     
     var body: some View {
@@ -22,24 +22,18 @@ struct AgePicker: View {
                     showPicker = true
                 }
             } label: {
-                Text("Your age")
+                Text("Selection : **\(data.user.pAge)** ans")
+                    .font(.title3)
+                
             }
-            .tint(.primary)
+            .tint(.secondary)
             
         }
             
                 ZStack {
-                    if showPicker{
-                        Color.black.opacity(0.1)
-                            .ignoresSafeArea()
-                            .onTapGesture {
-                                withAnimation {
-                                    showPicker = false
-                                }
-                            }
-                    }
+                    
                     VStack{
-                        Picker("Your age", selection: $userAge) {
+                        Picker("Your age", selection: $data.user.pAge) {
                             ForEach(12...99, id: \.self) { number in
                                 Text("\(number)")
                             }
@@ -50,7 +44,7 @@ struct AgePicker: View {
                     .background (.white.opacity(0.2))
                     .background(.ultraThinMaterial)
                     .cornerRadius(16)
-                    .offset(y: 106)
+                    .offset(y: 116)
                 }
         }
 //        }
@@ -58,6 +52,6 @@ struct AgePicker: View {
     }
 }
 
-#Preview {
-    AgePicker(userAge: 18)
-}
+//#Preview {
+//    AgePicker()
+//}

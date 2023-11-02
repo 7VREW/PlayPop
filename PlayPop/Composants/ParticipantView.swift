@@ -9,16 +9,17 @@ import SwiftUI
 
 struct ParticipantView: View {
     
-    var event: Event
+    @EnvironmentObject var data: Data
+    @State var eventIndex: Int
     
     var body: some View {
         HStack {
             Image(systemName: "person.2.fill")
             HStack(spacing: 5) {
-                Text(String(event.eUsersList.count))
+                Text(String(data.eventList[eventIndex].eActualNumberParticipant))
                     .foregroundStyle(Color(.systemOrange))
                 Text("/")
-                Text(String(event.eMaxU))
+                Text(String(data.eventList[eventIndex].eMaxU))
             }
         }
         .foregroundStyle(.primary)
@@ -29,6 +30,6 @@ struct ParticipantView: View {
     }
 }
 
-#Preview {
-    ParticipantView(event: karting1)
-}
+//#Preview {
+//    ParticipantView(event: karting1)
+//}

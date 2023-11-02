@@ -47,4 +47,6 @@ var leasureList = [
 
 var eventList = [horrorEvent1, skateEvent1, jDREvent1, lectureEvent1, theatreEvent1, eventBowling1, eventBowling2, eventGarden1, pingPong1, karting1, guitarEvent1]
 
-var jDP = Profile(pComplete: true, pName: "Jean Dupont", pAge: 14, pNote: 4.6, pBio: "Salut j'aime le karting je pratique du skate et la nomenclature de cette text box m'ennui. J'ai 12 ans en réalité", pEvents: [], pEventPast: [], pEventToEvaluate: [], pAnswers: [])
+var jDP = Profile(pComplete: true, pName: "Jean Dupont", pAge: 14, pNote: 4.6, pBio: "Salut j'aime le karting je pratique du skate et la nomenclature de cette text box m'ennui. J'ai 12 ans en réalité", pEvents: [eventBowling1, eventGarden1, guitarEvent1], pEventPast: [skateEvent1, horrorEvent1, pingPong1], pAnswers: [])
+
+var data = Data(user: jDP, leasureList: leasureList, eventList: eventList)

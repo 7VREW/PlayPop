@@ -43,7 +43,7 @@ struct EventRow: View {
                            Image(systemName: "person.2.fill")
                                .font(.title)
                            HStack {
-                               Text(String(event.eUsersList.count))
+                               Text(String(event.eActualNumberParticipant))
                                    .foregroundStyle(Color(.systemOrange))
                                Text("/")
                                Text(String(event.eMaxU))

@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct EcranProfile: View {
+    @EnvironmentObject var data: Data
     var body: some View {
+        NavigationStack{
             ScrollView (showsIndicators: false) {
                 VStack(spacing: 30) {
                     ProfileView()
-                    TextBox(text: "Salut j'aime le karting je pratique du skate et la nomenclature de cette text box m'ennui. J'ai 12 ans en réalité")
+                    TextBox(text: data.user.pBio)
                     
                     
                     VStack (alignment: .leading){
@@ -22,9 +24,17 @@ struct EcranProfile: View {
                         
                         ScrollView (.horizontal, showsIndicators: false) {
                             HStack {
-                                EventCardComponent(event: skateEvent1)
-                                EventCardComponent(event: horrorEvent1)
-                                EventCardComponent(event: karting1)
+                                ForEach(data.user.pEvents.filter {event in
+                                    event.eDate >= Date.now
+                                }){event in
+                                    NavigationLink(destination: {
+                                        if let idx = data.eventList.firstIndex(where: {$0.id == event.id}) {
+                                            EcranEvenement(eventIndex: idx)
+                                        }
+                                    }, label: {
+                                        EventCardComponent(event: event)
+                                    })
+                                }
                             }
                         }
                     }
@@ -33,7 +43,7 @@ struct EcranProfile: View {
                         HStack {
                             Text("Passé")
                                 .font(.title)
-                            .fontWeight(.bold)
+                                .fontWeight(.bold)
                             Text("Psst... gagne + de points en notant !")
                                 .font(.callout)
                                 .fontWeight(.light)
@@ -41,9 +51,17 @@ struct EcranProfile: View {
                         }
                         ScrollView (.horizontal, showsIndicators: false) {
                             HStack  {
-                                EventCardComponent(event: jDREvent1)
-                                EventCardComponent(event: lectureEvent1)
-                                EventCardComponent(event: skateEvent1)
+                                ForEach(data.user.pEvents.filter {event in
+                                    event.eDate < Date.now
+                                }){event in
+                                    NavigationLink(destination: {
+                                        if let idx = data.eventList.firstIndex(where: {$0.id == event.id}) {
+                                            EcranEvenement(eventIndex: idx)
+                                        }
+                                    }, label: {
+                                        EventCardComponent(event: event)
+                                    })
+                                }
                             }
                             .saturation(0)
                         }
@@ -54,9 +72,10 @@ struct EcranProfile: View {
                 .padding()
                 .padding(.horizontal, 5)
             }
+        }
     }
 }
 
-#Preview {
-    EcranProfile()
-}
+//#Preview {
+//    EcranProfile()
+//}

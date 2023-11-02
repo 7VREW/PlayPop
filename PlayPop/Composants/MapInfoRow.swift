@@ -10,15 +10,18 @@ import MapKit
 
 struct MapInfoRow: View {
     
+    var adress: String
+    var date: Date
     @State private var position: MapCameraPosition = .automatic
 
         var body: some View {
             HStack {
-                VStack(alignment: .leading) {
-                    Text("2 Rue Raymond Lizop, 31100 Toulouse")
+                VStack(alignment: .leading, spacing: 10) {
+                    Text(adress)
                         .font(.title3)
                         .lineLimit(2)
                         .fontWeight(.bold)
+                    Text(date.formatted(.dateTime.day().month().year().hour().minute()))
                 }
                 .padding()
                 Spacer()
@@ -35,7 +38,7 @@ struct MapInfoRow: View {
     }
 
 #Preview {
-    MapInfoRow()
+    MapInfoRow(adress: "2 Rue Raymond Lizop, 31100 Toulouse", date: Date())
 }
 
 extension CLLocationCoordinate2D {

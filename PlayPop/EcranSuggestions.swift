@@ -10,6 +10,7 @@ import Foundation
 
 struct EcranSuggestions: View {
     
+    @EnvironmentObject var data: Data
     @State var selectedTags: [Tag] = []
     @State var showingFiltres = false
     
@@ -17,10 +18,18 @@ struct EcranSuggestions: View {
     //Vérifie quels loisirs sont à afficher en fonction des tags
     func showInDisplay (leasure: Leasure)-> Bool {
         var show = true
-        for tag in selectedTags {
+        for tag in (selectedTags) {
             if (!leasure.lTags.contains { tag1 in
                 tag.id == tag1.id}) {
                     show = false
+                    return show
+                }
+        }
+        for tag in (leasure.lTags) {
+            if (!data.user.pAnswers.contains { tag1 in
+                tag.id == tag1.id} && tag.tId >= 100) {
+                    show = false
+                    return show
                 }
         }
         return show
@@ -28,8 +37,11 @@ struct EcranSuggestions: View {
     
     var body: some View {
         NavigationStack {
-            VStack (spacing: 20){
-                ScrollView (.horizontal) {
+            VStack (alignment: .leading, spacing: 20){
+                Text("Suggestions")
+                    .font(.largeTitle)
+                    .padding(.top, 50)
+                ScrollView (.horizontal, showsIndicators: false) {
                     HStack {
                         Button(action: {
                             showingFiltres.toggle()
@@ -41,17 +53,15 @@ struct EcranSuggestions: View {
                                 .padding(.horizontal, 15)
                                 .background(Color(.systemGray6))
                                 .clipShape(Capsule())
-                        })
-                        .foregroundStyle(.primary)
-                        
-                        ForEach (selectedTags) {tag in
+                        }) .foregroundStyle(.primary)
+                        ForEach (data.user.pAnswers + selectedTags) {tag in
                             TagView(tag: tag)
                         }
                     }
                 }
                 
                 ScrollView {
-                    if ((leasureList.filter {
+                    if ((data.leasureList.filter {
                         leasure in
                         showInDisplay(leasure: leasure)
                     }).count == 0) {
@@ -65,30 +75,34 @@ struct EcranSuggestions: View {
                         }
                     } else {
                     LazyVGrid(
-                        columns: [GridItem(.adaptive(minimum: 130, maximum: .infinity))],
+                        columns: [GridItem(.adaptive(minimum: 130, maximum: 360))],
                         content:
                             {
-                                ForEach(leasureList.filter {
+                                ForEach(data.leasureList.filter {
                                     leasure in
                                     showInDisplay(leasure: leasure)
-                                }) {
-                                    leasure in
-                                    CardComponent(leasure: leasure)
-                                        .padding(5)
+                                }) {leasure in
+                                    NavigationLink(destination: {
+                                        if let idx = data.leasureList.firstIndex(where: {$0.id == leasure.id}) {
+                                            EcranLoisir(leasureIndex: idx)
+                                        }
+//                                        EcranLoisir(leasure: leasure)
+                                    }, label: {
+                                        CardComponent(leasure: leasure)
+                                            .padding(5)
+                                    })
                                 }
-                            }).frame(maxWidth: .infinity)}
+                            }).frame(width: 360)}
                     
                 }
             }
-            .navigationTitle("Suggestions")
-            .padding(.horizontal, 16)
-            .sheet(isPresented: $showingFiltres) {
+                .fullScreenCover(isPresented: $showingFiltres) {
                 EcranFiltre(isPresented: $showingFiltres, fSelectedTags: $selectedTags)
-                    }
-        }
+                    }.padding()
+        }.tint(.primary)
     }
 }
 
-#Preview {
-    EcranSuggestions(selectedTags: [typeTagsList[6]])
-}
+//#Preview {
+//    EcranSuggestions(selectedTags: [typeTagsList[6]])
+//}
