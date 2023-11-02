@@ -74,11 +74,19 @@ struct EcranEvenement: View {
                     .padding(.horizontal)
                     Spacer()
                     NavigationLink(destination: EcranProfile(), isActive: $activeButton, label: {EmptyView()})
-                    if data.eventList[eventIndex].eActualNumberParticipant > (data.eventList[eventIndex].eMaxU-1) {
-                        FloatingButton(label: "Evènement complet")
-                    } else if data.user.pEvents.contains(where: {event in
+                    if data.user.pEvents.contains(where: {event in
                         data.eventList[eventIndex].id == event.id }) {
-                        FloatingButton(label: "Déjà participant")
+                        Button(action: {
+                            data.eventList[eventIndex].eUsersList.removeAll { user in
+                                user == data.user.pName}
+                            data.eventList[eventIndex].eActualNumberParticipant -= 1
+                            data.user.pEvents.removeAll {event in
+                                event.id == data.eventList[eventIndex].id}
+                        }, label: {
+                            FloatingButton(label: "Annuler participation")
+                        })
+                    } else if data.eventList[eventIndex].eActualNumberParticipant > (data.eventList[eventIndex].eMaxU-1) {
+                        FloatingButton(label: "Evènement complet")
                     } else {
                         Button(action: {
                             data.eventList[eventIndex].eUsersList.append(data.user.pName)
