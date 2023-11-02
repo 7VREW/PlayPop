@@ -15,6 +15,9 @@ struct EcranLoisir: View {
     @EnvironmentObject var data: Data
     @State var leasureIndex: Int
     
+    @State var showCreate: Bool = false
+    @State var navToProfile: Bool = false
+    
     var body: some View {
         NavigationStack{
             ZStack(alignment: .bottom) {
@@ -51,9 +54,6 @@ struct EcranLoisir: View {
                                 if let idx = data.eventList.firstIndex(where: {$0.id == event.id}) {
                                     EcranEvenement(eventIndex: idx)
                                 }
-//                                EcranEvenement(eventIndex: data.eventList.firstIndex(where: {
-//                                    $0.id == event.id
-//                                }))
                             }, label: {
                                 EventRow(event: event)
                             })
@@ -65,9 +65,18 @@ struct EcranLoisir: View {
                 }
                 .ignoresSafeArea()
                 
+                NavigationLink(destination: EcranProfile(), isActive: $navToProfile, label: {EmptyView()})
                 
-                FloatingButton(label: "Créer un évènement")
-                    .padding()
+                .fullScreenCover(isPresented: $showCreate) {
+                    EcranEvenementCreate(navToProfile: $navToProfile, showCreate: $showCreate)
+                }
+                
+                Button (action: {
+                    showCreate.toggle()
+                }, label: {
+                    FloatingButton(label: "Créer un évènement")
+                        .padding()
+                })
             }
         }
         .tint(.primary)
