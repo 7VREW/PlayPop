@@ -8,7 +8,7 @@ import SwiftUI
 
 struct EcranEvenementCreate: View {
     @Environment(\.dismiss) private var dismiss
-    @EnvironmentObject var data: Data
+    @EnvironmentObject var data: UserData
     
     @Binding var navToProfile: Bool
     @Binding var showCreate: Bool
@@ -23,7 +23,7 @@ struct EcranEvenementCreate: View {
             ZStack(alignment: .center) {
                 VStack (spacing: 20){
                     ScrollView{
-                        HeadImage(imageList: eventCreate.eImage)
+                        PhotoPicker(photoImages: $eventCreate.eImage)
                         VStack(alignment: .leading, spacing: 15) {
                             HStack {
                                 Text("Titre:")
@@ -47,7 +47,9 @@ struct EcranEvenementCreate: View {
                                             TagView(tag: tag)
                                         }
                                     }
+                                    .padding(.horizontal, 20)
                                 }
+                                .padding(.horizontal, -20)
                                 
 
                             Text("Description:")
@@ -57,25 +59,31 @@ struct EcranEvenementCreate: View {
                                     .background(.ultraThinMaterial)
                                     .clipShape(Capsule())
                             
-                            .font(.headline)
                             Text("Addresse:")
                                 .font(.title2)
                             TextField(LocalizedStringKey("Addresse de l'événement"), text: $eventCreate.eLocation).textFieldStyle(.plain)
                                 .padding()
                                 .background(.ultraThinMaterial)
                                 .clipShape(Capsule())
+                            DatePicker(
+                                "Date:",
+                                selection: $eventCreate.eDate,
+                                displayedComponents: [.date, .hourAndMinute]
+                            )
+                            .font(.title2)
                         }
                         .padding(.horizontal, 20)
+                        .padding(.bottom, 100)
                        
                     }
                     
-                }
-                .ignoresSafeArea()
+                }.keyboardType(.default)
+                    .submitLabel(.done)
                     VStack {
                         HStack {
                             Button(action: {dismiss()}, label:{
                                 Label(title:{
-                                    Text(data.leasureList[leasureIndex].lLabel).font(.title3)}, icon: {
+                                    Text("Retour").font(.title3)}, icon: {
                                         Image(systemName: "chevron.left").font(.title2)
                                     })
                                     .padding(.horizontal)
@@ -91,20 +99,24 @@ struct EcranEvenementCreate: View {
                         
                         NavigationLink(destination: EcranProfile(), isActive: $activeButton, label: {EmptyView()})
                         
-                        if !(eventCreate.eLabel == "" || eventCreate.eDesc == "" || eventCreate.eLocation == "") {
+                        if !(eventCreate.eLabel == "" || eventCreate.eDesc == "" || eventCreate.eLocation == "" || eventCreate.eDate < Date.now) {
                             Button(action: {
+                                if eventCreate.eImage.count == 0 {
+                                    eventCreate.eImage = data.leasureList[leasureIndex].lImage
+                                }
                                 eventCreate.eLeasure = leasureIndex
-                                eventCreate.eImage = data.leasureList[leasureIndex].lImage
-                                eventCreate.eUsersList.append(data.user.pName)
+                                eventCreate.eUsersList.append(data.user.id)
                                 eventCreate.eActualNumberParticipant += 1
                                 data.eventList.append(eventCreate)
-                                data.user.pEvents.append(eventCreate)
-                                data.leasureList[leasureIndex].lEvents.append(eventCreate)
                                 activeButton = true
                                 navToProfile.toggle()
                                 showCreate.toggle()
-                            }, label: {FloatingButton(label: "Valider et créer")})
+                            }, label: {FloatingButton(label: "Valider et créer")
+                            })
                             .tint(.primary)
+                        } else {
+                            EmptyView()
+                                .frame(height: 0)
                         }
                 }
             }.interactiveDismissDisabled()

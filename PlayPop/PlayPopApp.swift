@@ -12,7 +12,7 @@ struct PlayPopApp: App {
     
     var body: some Scene {
         WindowGroup {
-            EcranAccueil1(data: data)
+            EcranAterrissage(data: data)
+            }
         }
     }
-}

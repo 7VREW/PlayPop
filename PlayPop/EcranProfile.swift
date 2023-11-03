@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EcranProfile: View {
-    @EnvironmentObject var data: Data
+    @EnvironmentObject var data: UserData
     var body: some View {
         NavigationStack{
             ScrollView (showsIndicators: false) {
@@ -24,8 +24,9 @@ struct EcranProfile: View {
                         
                         ScrollView (.horizontal, showsIndicators: false) {
                             HStack {
-                                ForEach(data.user.pEvents.filter {event in
-                                    event.eDate >= Date.now
+                                ForEach(data.eventList.filter {event in
+                                    (event.eDate >= Date.now &&
+                                     event.eUsersList.contains(data.user.id))
                                 }){event in
                                     NavigationLink(destination: {
                                         if let idx = data.eventList.firstIndex(where: {$0.id == event.id}) {
@@ -51,8 +52,9 @@ struct EcranProfile: View {
                         }
                         ScrollView (.horizontal, showsIndicators: false) {
                             HStack  {
-                                ForEach(data.user.pEvents.filter {event in
-                                    event.eDate < Date.now
+                                ForEach(data.eventList.filter {event in
+                                    (event.eDate < Date.now &&
+                                     event.eUsersList.contains(data.user.id))
                                 }){event in
                                     NavigationLink(destination: {
                                         if let idx = data.eventList.firstIndex(where: {$0.id == event.id}) {
@@ -64,7 +66,9 @@ struct EcranProfile: View {
                                 }
                             }
                             .saturation(0)
+                            .padding(.horizontal, -20)
                         }
+                        .padding(.horizontal, 20)
                     }
                     
                     Spacer()

@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BC4B0FEC2AF3AB5B0067B9C7 /* EccranEvenementCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4B0FEB2AF3AB5B0067B9C7 /* EccranEvenementCreate.swift */; };
+		5F0E00AB2AF3DC1B00853FB0 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0E00AA2AF3DC1B00853FB0 /* PhotoPicker.swift */; };
+		5F0E00AD2AF3DED100853FB0 /* EccranEvenementCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0E00AC2AF3DED100853FB0 /* EccranEvenementCreate.swift */; };
+		5F0E00B12AF3E96400853FB0 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0E00B02AF3E96400853FB0 /* Data.swift */; };
+		5F0E00B32AF3EEE600853FB0 /* EcranAterrissage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0E00B22AF3EEE600853FB0 /* EcranAterrissage.swift */; };
+		5F0E00B52AF3F1F600853FB0 /* EventRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0E00B42AF3F1F600853FB0 /* EventRow.swift */; };
+		BC1B7E372AF4E9080059CC59 /* ProfilePicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1B7E362AF4E9080059CC59 /* ProfilePicture.swift */; };
 		BC4B0FEE2AF3AB920067B9C7 /* NumberPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4B0FED2AF3AB920067B9C7 /* NumberPicker.swift */; };
 		BC4B0FF02AF3AD6E0067B9C7 /* EcranEvenement.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4B0FEF2AF3AD6E0067B9C7 /* EcranEvenement.swift */; };
 		BCC0D76C2AEA92A8009DA110 /* PlayPopApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC0D76B2AEA92A8009DA110 /* PlayPopApp.swift */; };
@@ -20,10 +25,8 @@
 		BCC0D7842AEAB548009DA110 /* ListRowElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC0D7832AEAB548009DA110 /* ListRowElement.swift */; };
 		BCC0D7862AEAB643009DA110 /* ParticipantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC0D7852AEAB643009DA110 /* ParticipantView.swift */; };
 		BCC0D78C2AEAC987009DA110 /* EventCardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC0D78B2AEAC987009DA110 /* EventCardComponent.swift */; };
-		BCC0D79C2AEBD8A9009DA110 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC0D79B2AEBD8A9009DA110 /* Data.swift */; };
 		BCC0D79E2AEBDA53009DA110 /* DefaultEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC0D79D2AEBDA53009DA110 /* DefaultEvents.swift */; };
 		BCC0D7A02AEBDD6A009DA110 /* TextBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC0D79F2AEBDD6A009DA110 /* TextBox.swift */; };
-		BCC0D7A62AEBE075009DA110 /* EventRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC0D7A52AEBE075009DA110 /* EventRow.swift */; };
 		BCC0D7A82AEBE9D4009DA110 /* ProfileButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC0D7A72AEBE9D4009DA110 /* ProfileButton.swift */; };
 		BCC0D7AA2AEF9C18009DA110 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC0D7A92AEF9C18009DA110 /* ProfileView.swift */; };
 		BCC0D7AC2AEFA6A0009DA110 /* EcranProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC0D7AB2AEFA6A0009DA110 /* EcranProfile.swift */; };
@@ -42,7 +45,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BC4B0FEB2AF3AB5B0067B9C7 /* EccranEvenementCreate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EccranEvenementCreate.swift; sourceTree = "<group>"; };
+		5F0E00AA2AF3DC1B00853FB0 /* PhotoPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
+		5F0E00AC2AF3DED100853FB0 /* EccranEvenementCreate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EccranEvenementCreate.swift; sourceTree = "<group>"; };
+		5F0E00B02AF3E96400853FB0 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		5F0E00B22AF3EEE600853FB0 /* EcranAterrissage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcranAterrissage.swift; sourceTree = "<group>"; };
+		5F0E00B42AF3F1F600853FB0 /* EventRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventRow.swift; sourceTree = "<group>"; };
+		BC1B7E362AF4E9080059CC59 /* ProfilePicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePicture.swift; sourceTree = "<group>"; };
 		BC4B0FED2AF3AB920067B9C7 /* NumberPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberPicker.swift; sourceTree = "<group>"; };
 		BC4B0FEF2AF3AD6E0067B9C7 /* EcranEvenement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcranEvenement.swift; sourceTree = "<group>"; };
 		BCC0D7682AEA92A8009DA110 /* PlayPop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlayPop.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,10 +64,8 @@
 		BCC0D7832AEAB548009DA110 /* ListRowElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListRowElement.swift; sourceTree = "<group>"; };
 		BCC0D7852AEAB643009DA110 /* ParticipantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantView.swift; sourceTree = "<group>"; };
 		BCC0D78B2AEAC987009DA110 /* EventCardComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCardComponent.swift; sourceTree = "<group>"; };
-		BCC0D79B2AEBD8A9009DA110 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		BCC0D79D2AEBDA53009DA110 /* DefaultEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultEvents.swift; sourceTree = "<group>"; };
 		BCC0D79F2AEBDD6A009DA110 /* TextBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextBox.swift; sourceTree = "<group>"; };
-		BCC0D7A52AEBE075009DA110 /* EventRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventRow.swift; sourceTree = "<group>"; };
 		BCC0D7A72AEBE9D4009DA110 /* ProfileButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileButton.swift; sourceTree = "<group>"; };
 		BCC0D7A92AEF9C18009DA110 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		BCC0D7AB2AEFA6A0009DA110 /* EcranProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcranProfile.swift; sourceTree = "<group>"; };
@@ -108,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				BCC0D76B2AEA92A8009DA110 /* PlayPopApp.swift */,
+				5F0E00B22AF3EEE600853FB0 /* EcranAterrissage.swift */,
 				BCC0D7AB2AEFA6A0009DA110 /* EcranProfile.swift */,
 				BCC0D7B12AEFE080009DA110 /* EcranSuggestions.swift */,
 				BCC0D7B32AEFE095009DA110 /* EcranFiltre.swift */,
@@ -117,7 +124,7 @@
 				BCC0D7C22AF0FF68009DA110 /* EcranAccueil2.swift */,
 				BCC0D7BF2AF0FF67009DA110 /* EcranAccueil3.swift */,
 				BCC0D7C02AF0FF67009DA110 /* EcranAccueil4.swift */,
-				BC4B0FEB2AF3AB5B0067B9C7 /* EccranEvenementCreate.swift */,
+				5F0E00AC2AF3DED100853FB0 /* EccranEvenementCreate.swift */,
 				BC4B0FEF2AF3AD6E0067B9C7 /* EcranEvenement.swift */,
 				BCC0D76F2AEA92AF009DA110 /* Assets.xcassets */,
 				BCC0D7792AEA92DA009DA110 /* Composants */,
@@ -138,6 +145,9 @@
 		BCC0D7792AEA92DA009DA110 /* Composants */ = {
 			isa = PBXGroup;
 			children = (
+				BCC0D7A92AEF9C18009DA110 /* ProfileView.swift */,
+				BC1B7E362AF4E9080059CC59 /* ProfilePicture.swift */,
+				5F0E00AA2AF3DC1B00853FB0 /* PhotoPicker.swift */,
 				BCC0D7BB2AF00178009DA110 /* AgePicker.swift */,
 				BC4B0FED2AF3AB920067B9C7 /* NumberPicker.swift */,
 				BCC0D7B72AEFE495009DA110 /* HeadImage.swift */,
@@ -145,11 +155,10 @@
 				BCC0D7852AEAB643009DA110 /* ParticipantView.swift */,
 				BCC0D77F2AEAB1F4009DA110 /* CardComponent.swift */,
 				BCC0D76D2AEA92A8009DA110 /* FloatingButton.swift */,
+				5F0E00B42AF3F1F600853FB0 /* EventRow.swift */,
 				BCC0D78B2AEAC987009DA110 /* EventCardComponent.swift */,
 				BCC0D79F2AEBDD6A009DA110 /* TextBox.swift */,
 				BCC0D77D2AEAAF1D009DA110 /* TagView.swift */,
-				BCC0D7A52AEBE075009DA110 /* EventRow.swift */,
-				BCC0D7A92AEF9C18009DA110 /* ProfileView.swift */,
 				BCC0D7A72AEBE9D4009DA110 /* ProfileButton.swift */,
 				BCC0D7AD2AEFC0B6009DA110 /* MapInfoRow.swift */,
 				BCC0D7BD2AF0FCA4009DA110 /* ValidationAlert.swift */,
@@ -160,7 +169,7 @@
 		BCC0D77A2AEA933F009DA110 /* Definition */ = {
 			isa = PBXGroup;
 			children = (
-				BCC0D79B2AEBD8A9009DA110 /* Data.swift */,
+				5F0E00B02AF3E96400853FB0 /* Data.swift */,
 				BCC0D77B2AEA936C009DA110 /* Structures.swift */,
 				BCC0D79D2AEBDA53009DA110 /* DefaultEvents.swift */,
 			);
@@ -238,9 +247,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCC0D7A02AEBDD6A009DA110 /* TextBox.swift in Sources */,
-				BC4B0FEC2AF3AB5B0067B9C7 /* EccranEvenementCreate.swift in Sources */,
 				BCC0D7A82AEBE9D4009DA110 /* ProfileButton.swift in Sources */,
 				BCC0D76E2AEA92A8009DA110 /* FloatingButton.swift in Sources */,
+				5F0E00B52AF3F1F600853FB0 /* EventRow.swift in Sources */,
 				BCC0D7B22AEFE080009DA110 /* EcranSuggestions.swift in Sources */,
 				BCC0D79E2AEBDA53009DA110 /* DefaultEvents.swift in Sources */,
 				BCC0D7C32AF0FF68009DA110 /* EcranAccueil3.swift in Sources */,
@@ -248,16 +257,17 @@
 				BCC0D7BC2AF00178009DA110 /* AgePicker.swift in Sources */,
 				BCC0D7C52AF0FF68009DA110 /* EcranAccueil1.swift in Sources */,
 				BC4B0FEE2AF3AB920067B9C7 /* NumberPicker.swift in Sources */,
-				BCC0D79C2AEBD8A9009DA110 /* Data.swift in Sources */,
 				BCC0D77C2AEA936C009DA110 /* Structures.swift in Sources */,
 				BCC0D7AC2AEFA6A0009DA110 /* EcranProfile.swift in Sources */,
 				BCC0D7C62AF0FF68009DA110 /* EcranAccueil2.swift in Sources */,
+				5F0E00B12AF3E96400853FB0 /* Data.swift in Sources */,
 				BC4B0FF02AF3AD6E0067B9C7 /* EcranEvenement.swift in Sources */,
 				BCC0D78C2AEAC987009DA110 /* EventCardComponent.swift in Sources */,
 				BCC0D7B42AEFE095009DA110 /* EcranFiltre.swift in Sources */,
 				BCC0D7862AEAB643009DA110 /* ParticipantView.swift in Sources */,
+				BC1B7E372AF4E9080059CC59 /* ProfilePicture.swift in Sources */,
+				5F0E00B32AF3EEE600853FB0 /* EcranAterrissage.swift in Sources */,
 				BCC0D7B82AEFE495009DA110 /* HeadImage.swift in Sources */,
-				BCC0D7A62AEBE075009DA110 /* EventRow.swift in Sources */,
 				BCC0D76C2AEA92A8009DA110 /* PlayPopApp.swift in Sources */,
 				BCC0D7B62AEFE46D009DA110 /* EcranLoisir.swift in Sources */,
 				BCC0D7C42AF0FF68009DA110 /* EcranAccueil4.swift in Sources */,
@@ -266,6 +276,8 @@
 				BCC0D7842AEAB548009DA110 /* ListRowElement.swift in Sources */,
 				BCC0D7AE2AEFC0B6009DA110 /* MapInfoRow.swift in Sources */,
 				BCC0D7AA2AEF9C18009DA110 /* ProfileView.swift in Sources */,
+				5F0E00AD2AF3DED100853FB0 /* EccranEvenementCreate.swift in Sources */,
+				5F0E00AB2AF3DC1B00853FB0 /* PhotoPicker.swift in Sources */,
 				BCC0D77E2AEAAF1D009DA110 /* TagView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,15 +11,15 @@ import SwiftUI
 
 struct HeadImage: View {
     
-    var imageList: [String]
+    var imageList: [Image]
     
     var body: some View {
         
         ZStack {
                         TabView{
-                            ForEach(imageList, id: \.self){image in
+                            ForEach(0..<imageList.count){index in
                                 ZStack {
-                                    Image(image)
+                                    imageList[index]
                                         .resizable()
                                         .scaledToFill()
                                     LinearGradient(colors: [.white.opacity(0.75), .clear], startPoint: .top, endPoint: .center)

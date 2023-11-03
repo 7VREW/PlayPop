@@ -11,8 +11,7 @@ import SwiftUI
 
 struct EcranEvenement: View {
     @Environment(\.dismiss) private var dismiss
-    @EnvironmentObject var data: Data
-//    @StateObject var data: Data  // A Enlever quand fini
+    @EnvironmentObject var data: UserData
     @State var eventIndex: Int
     @State private var activeButton = false
     
@@ -26,9 +25,11 @@ struct EcranEvenement: View {
                         VStack(spacing: 20) {
                             HStack {
                                 Text(data.eventList[eventIndex].eLabel)
-                                    .font(.title2)
+                                    .font(.title)
                                     .bold()
+                                    .lineLimit(2)
                                 Spacer()
+                                ParticipantView(eventIndex: eventIndex)
                             }
                             HStack {
                                 ScrollView(.horizontal, showsIndicators: false){
@@ -37,9 +38,11 @@ struct EcranEvenement: View {
                                             TagView(tag: tag)
                                         }
                                     }
+                                    .padding(.horizontal, 20)
                                 }
-                                ParticipantView(eventIndex: eventIndex)
+                                .padding(.horizontal, -20)
                             }
+                            
                             TextBox(text: data.eventList[eventIndex].eDesc)
                             HStack{
                                 Text("Détail de l'évènement")
@@ -47,9 +50,10 @@ struct EcranEvenement: View {
                             }
                             .font(.headline)
                             MapInfoRow(adress: data.eventList[eventIndex].eLocation, date: data.eventList[eventIndex].eDate)
+                                .padding(.horizontal, -20)
                         }
                         .padding(.horizontal, 20)
-                       
+                        .padding(.bottom, 100)
                     }
                     
                 }
@@ -60,7 +64,7 @@ struct EcranEvenement: View {
                     HStack {
                         Button(action: {dismiss()}, label:{
                             Label(title:{
-                                Text(data.leasureList[data.eventList[eventIndex].eLeasure].lLabel).font(.title3)}, icon: {
+                                Text("Retour").font(.title3)}, icon: {
                                     Image(systemName: "chevron.left").font(.title2)
                                 })
                                 .padding(.horizontal)
@@ -74,14 +78,11 @@ struct EcranEvenement: View {
                     .padding(.horizontal)
                     Spacer()
                     NavigationLink(destination: EcranProfile(), isActive: $activeButton, label: {EmptyView()})
-                    if data.user.pEvents.contains(where: {event in
-                        data.eventList[eventIndex].id == event.id }) {
+                    if data.eventList[eventIndex].eUsersList.contains(data.user.id) {
                         Button(action: {
                             data.eventList[eventIndex].eUsersList.removeAll { user in
-                                user == data.user.pName}
+                                user == data.user.id}
                             data.eventList[eventIndex].eActualNumberParticipant -= 1
-                            data.user.pEvents.removeAll {event in
-                                event.id == data.eventList[eventIndex].id}
                         }, label: {
                             FloatingButton(label: "Annuler participation")
                         })
@@ -89,9 +90,8 @@ struct EcranEvenement: View {
                         FloatingButton(label: "Evènement complet")
                     } else {
                         Button(action: {
-                            data.eventList[eventIndex].eUsersList.append(data.user.pName)
+                            data.eventList[eventIndex].eUsersList.append(data.user.id)
                             data.eventList[eventIndex].eActualNumberParticipant += 1
-                            data.user.pEvents.append(data.eventList[eventIndex])
                             activeButton = true
                         }, label: {FloatingButton(label: "Participer")})
                         .tint(.primary)

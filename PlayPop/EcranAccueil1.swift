@@ -9,7 +9,9 @@ import SwiftUI
 
 struct EcranAccueil1: View {
     
-    @StateObject var data: Data
+    @EnvironmentObject var data: UserData
+    
+    @State var navTo4: Bool = false
     
     var body: some View {
         NavigationStack{
@@ -59,12 +61,13 @@ struct EcranAccueil1: View {
                 }
                 
             }
+
         }
         .tint(.primary)
         .environmentObject(data)
     }
 }
 
-#Preview {
-    EcranAccueil1(data: data)
-}
+//#Preview {
+//    EcranAccueil1(data: dataDev)
+//}

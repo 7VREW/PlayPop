@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProfileView: View {
-    @EnvironmentObject var data: Data
+    @EnvironmentObject var data: UserData
     
     var badgeColors = [LinearGradient(colors: [Color(.systemOrange), Color(.systemYellow)], startPoint: .leading, endPoint: .trailing), LinearGradient(colors: [Color(.systemIndigo), Color(.systemPurple)], startPoint: .leading, endPoint: .trailing), LinearGradient(colors: [Color(.systemBlue), Color(.systemCyan)], startPoint: .leading, endPoint: .trailing)]
     
@@ -17,13 +17,7 @@ struct ProfileView: View {
             
             //Image profile
             ZStack {
-                Image("karting1")
-                    .resizable()
-                    .scaledToFill()
-                    .clipShape(Circle())
-                    .frame(width: 125, height: 125)
-                    .overlay(Circle()
-                    .stroke(LinearGradient(colors: [Color(.systemOrange), Color(.systemYellow)], startPoint: .leading, endPoint: .trailing), lineWidth:5))
+                ProfilePicture()
             
                 //Note étoiles
                 HStack {

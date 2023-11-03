@@ -9,7 +9,7 @@ import SwiftUI
 
 struct EcranFiltre: View {
     @Binding var isPresented: Bool
-    @EnvironmentObject var data: Data
+    @EnvironmentObject var data: UserData
     @State var filtreTags = typeTagsList
     @Binding var fSelectedTags: [Tag]
     
@@ -93,7 +93,7 @@ struct EcranFiltre: View {
 
 struct FiltreInOut: View {
     
-    @EnvironmentObject var data: Data
+    @EnvironmentObject var data: UserData
     func buttonCheck (tag: Tag)-> Bool {
          var on = true
         if (!data.user.pAnswers.contains { tag1 in
@@ -131,7 +131,7 @@ struct FiltreInOut: View {
 
 struct FiltreBudget: View {
     
-    @EnvironmentObject var data: Data
+    @EnvironmentObject var data: UserData
     func buttonCheck (tag: Tag)-> Bool {
          var on = true
          if (!data.user.pAnswers.contains { tag1 in

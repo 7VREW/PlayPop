@@ -9,7 +9,7 @@ import SwiftUI
 
 struct EcranAccueil3: View {
     
-    @EnvironmentObject var data: Data
+    @EnvironmentObject var data: UserData
     
     func buttonCheck (tag: Tag)-> Bool {
          var on = true

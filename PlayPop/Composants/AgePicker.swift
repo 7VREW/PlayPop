@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AgePicker: View {
     
-    @EnvironmentObject var data: Data
+    @EnvironmentObject var data: UserData
     @State var showPicker = false
     
     var body: some View {

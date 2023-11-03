@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ParticipantView: View {
     
-    @EnvironmentObject var data: Data
+    @EnvironmentObject var data: UserData
     @State var eventIndex: Int
     
     var body: some View {

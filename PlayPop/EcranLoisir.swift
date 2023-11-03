@@ -12,7 +12,7 @@
 import SwiftUI
 
 struct EcranLoisir: View {
-    @EnvironmentObject var data: Data
+    @EnvironmentObject var data: UserData
     @State var leasureIndex: Int
     
     @State var showCreate: Bool = false
@@ -37,7 +37,10 @@ struct EcranLoisir: View {
                                         TagView(tag: tag)
                                     }
                                 }
+                                .padding(.horizontal, 20)
                             }
+                            .padding(.horizontal, -20)
+                            
                             TextBox(text: data.leasureList[leasureIndex].lDesc)
                             HStack{
                                 Text("Évènement à venir")
@@ -58,17 +61,17 @@ struct EcranLoisir: View {
                                 EventRow(event: event)
                             })
                             .tint(.primary)
+                            .padding(.bottom, 100)
                         }
                         
                     }
-                    
                 }
                 .ignoresSafeArea()
                 
                 NavigationLink(destination: EcranProfile(), isActive: $navToProfile, label: {EmptyView()})
                 
                 .fullScreenCover(isPresented: $showCreate) {
-                    EcranEvenementCreate(navToProfile: $navToProfile, showCreate: $showCreate)
+                    EcranEvenementCreate(navToProfile: $navToProfile, showCreate: $showCreate, leasureIndex: leasureIndex)
                 }
                 
                 Button (action: {

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct EcranAccueilProfile: View {
     
-    @EnvironmentObject var data: Data
+    @EnvironmentObject var data: UserData
     
     var body: some View {
         NavigationStack{
@@ -69,7 +69,9 @@ struct EcranAccueilProfile: View {
                         }, label: {
                             FloatingButton(label: "Valider")
                             
-                        }).padding(.bottom, 60)
+                        })
+                        .buttonStyle(CustomButtonAnimation())
+                        .padding(.bottom, 100)
                     }
                 }
             }

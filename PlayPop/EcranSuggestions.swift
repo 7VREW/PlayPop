@@ -10,7 +10,7 @@ import Foundation
 
 struct EcranSuggestions: View {
     
-    @EnvironmentObject var data: Data
+    @EnvironmentObject var data: UserData
     @State var selectedTags: [Tag] = []
     @State var showingFiltres = false
     
@@ -58,43 +58,47 @@ struct EcranSuggestions: View {
                             TagView(tag: tag)
                         }
                     }
+                    .padding(.horizontal, 20)
                 }
+                .padding(.horizontal, -20)
                 
                 ScrollView {
-                    if ((data.leasureList.filter {
-                        leasure in
-                        showInDisplay(leasure: leasure)
-                    }).count == 0) {
-                        HStack {
-                            Spacer()
-                            Text("Aucun loisir ne correspond à ces tags")
-                                .font(.headline)
-                                .foregroundStyle(.tertiary)
-                            .multilineTextAlignment(.center)
-                            Spacer()
-                        }
-                    } else {
-                    LazyVGrid(
-                        columns: [GridItem(.adaptive(minimum: 130, maximum: 360))],
-                        content:
-                            {
-                                ForEach(data.leasureList.filter {
-                                    leasure in
-                                    showInDisplay(leasure: leasure)
-                                }) {leasure in
-                                    NavigationLink(destination: {
-                                        if let idx = data.leasureList.firstIndex(where: {$0.id == leasure.id}) {
-                                            EcranLoisir(leasureIndex: idx)
+                    VStack{
+                        if ((data.leasureList.filter {
+                            leasure in
+                            showInDisplay(leasure: leasure)
+                        }).count == 0) {
+                            HStack {
+                                Spacer()
+                                Text("Aucun loisir ne correspond à ces tags")
+                                    .font(.headline)
+                                    .foregroundStyle(.tertiary)
+                                    .multilineTextAlignment(.center)
+                                Spacer()
+                            }
+                        } else {
+                            LazyVGrid(
+                                columns: [GridItem(.adaptive(minimum: 130, maximum: 360))],
+                                content:
+                                    {
+                                        ForEach(data.leasureList.filter {
+                                            leasure in
+                                            showInDisplay(leasure: leasure)
+                                        }) {leasure in
+                                            NavigationLink(destination: {
+                                                if let idx = data.leasureList.firstIndex(where: {$0.id == leasure.id}) {
+                                                    EcranLoisir(leasureIndex: idx)
+                                                }
+                                                //                                        EcranLoisir(leasure: leasure)
+                                            }, label: {
+                                                CardComponent(leasure: leasure)
+                                                    .padding(5)
+                                            })
                                         }
-//                                        EcranLoisir(leasure: leasure)
-                                    }, label: {
-                                        CardComponent(leasure: leasure)
-                                            .padding(5)
-                                    })
-                                }
-                            }).frame(width: 360)}
-                    
-                }
+                                    }).frame(width: 360)
+                        }
+                    } .padding(.bottom, 100)
+                } .ignoresSafeArea()
             }
                 .fullScreenCover(isPresented: $showingFiltres) {
                 EcranFiltre(isPresented: $showingFiltres, fSelectedTags: $selectedTags)

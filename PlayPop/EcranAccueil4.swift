@@ -9,7 +9,7 @@ import SwiftUI
 
 struct EcranAccueil4: View {
     
-    @EnvironmentObject var data: Data
+    @EnvironmentObject var data: UserData
     
     var body: some View {
         NavigationStack{

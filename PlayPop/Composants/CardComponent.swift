@@ -16,7 +16,7 @@ struct CardComponent: View {
         ZStack (alignment: .bottomLeading) {
             
             ZStack {
-                Image(leasure.lImage[2])
+                leasure.lImage[2]
                     .resizable()
                     .scaledToFill()
                     .frame(width: 175, height: 250, alignment: .center)

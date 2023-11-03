@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 //User profile
 struct Profile: Identifiable{
@@ -15,8 +16,6 @@ struct Profile: Identifiable{
     var pAge: Int
     var pNote: Double
     var pBio: String
-    var pEvents: [Event]
-    var pEventPast: [Event]
     var pAnswers: [Tag]
 }
 
@@ -34,8 +33,7 @@ struct Leasure: Identifiable{
     var lLabel: String
     var lTags: [Tag]
     var lDesc: String
-    var lImage: [String]
-    var lEvents: [Event]
+    var lImage: [Image]
 }
 
 //Detail évènement
@@ -44,10 +42,10 @@ struct Event: Identifiable{
     var eLabel: String
     var eDesc: String
     var eLeasure: Int
-    var eImage: [String]
+    var eImage: [Image]
     var eMinU: Int
     var eMaxU: Int
-    var eUsersList: [String]
+    var eUsersList: [UUID]
     var eLocation: String
     var eDate: Date
     var ePast: Bool
@@ -55,7 +53,7 @@ struct Event: Identifiable{
 
 }
 
-class Data: ObservableObject{
+class UserData: ObservableObject{
     @Published var user: Profile
     @Published var leasureList: [Leasure]
     @Published var eventList: [Event]
