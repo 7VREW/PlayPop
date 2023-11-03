@@ -44,7 +44,9 @@ struct ProfileView: View {
                             .foregroundStyle(Color(.systemYellow))
                     }
                     
-                    NavigationLink("Paramètres du profil") {}
+                    NavigationLink("Editer le profil") {
+                        EcranEditerProfile()
+                    }
                 }
                 
                 //Game evolution section
@@ -83,7 +85,3 @@ struct ProfileView: View {
         
     }
 }
-
-//#Preview {
-//    ProfileView()
-//}
