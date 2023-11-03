@@ -9,6 +9,8 @@ import SwiftUI
 
 struct EcranProfile: View {
     @EnvironmentObject var data: UserData
+    @State var notationSheet: Bool = false
+    
     var body: some View {
         NavigationStack{
             ScrollView (showsIndicators: false) {
@@ -17,6 +19,7 @@ struct EcranProfile: View {
                     TextBox(text: data.user.pBio)
                     
                     
+                    //A venir
                     VStack (alignment: .leading){
                         Text("À venir")
                             .font(.title)
@@ -40,6 +43,8 @@ struct EcranProfile: View {
                         }
                     }
                     
+                    
+                    //Passés
                     VStack (alignment: .leading){
                         HStack {
                             Text("Passé")
@@ -61,7 +66,11 @@ struct EcranProfile: View {
                                             EcranEvenement(eventIndex: idx)
                                         }
                                     }, label: {
-                                        EventCardComponent(event: event)
+                                        Button {
+                                            notationSheet.toggle()
+                                        } label: {
+                                            EventCardComponent(event: event)
+                                        }
                                     })
                                 }
                             }
