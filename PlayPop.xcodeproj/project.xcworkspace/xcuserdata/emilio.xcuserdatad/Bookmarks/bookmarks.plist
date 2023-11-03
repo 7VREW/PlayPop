@@ -48,6 +48,20 @@
 					</dict>
 				</dict>
 			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string></string>
+				<key>leading</key>
+				<string>                .ignoresSafeArea()
+                
+                </string>
+				<key>trailing</key>
+				<string>NavigationLink(destination: EcranProfile(), isActive: $navToProfile, label: {EmptyView()})
+                
+                .fullScreenCover(isPresented: $showCreate) {
+</string>
+			</dict>
 			<key>title</key>
 			<string>Warning: 'init(destination:isActive:label:)' was deprecated in iOS 16.0: use NavigationLink(value:label:), or navigationDestination(isPresented:destination:), inside a NavigationStack or NavigationSplitView</string>
 			<key>type</key>

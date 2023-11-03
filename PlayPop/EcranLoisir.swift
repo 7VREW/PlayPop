@@ -96,6 +96,7 @@ struct EcranLoisir: View {
     }
 }
 
-//#Preview {
-//    EcranLoisir(leasure: leasureList[2])
-//}
+#Preview {
+    EcranLoisir(leasureIndex: 7)
+        .environmentObject(dataDev)
+}

@@ -85,3 +85,8 @@ struct ProfileView: View {
         
     }
 }
+
+#Preview {
+    ProfileView()
+        .environmentObject(dataDev)
+}

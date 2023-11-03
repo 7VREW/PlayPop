@@ -68,6 +68,7 @@ struct EcranAccueil1: View {
     }
 }
 
-//#Preview {
-//    EcranAccueil1(data: dataDev)
-//}
+#Preview {
+    EcranAccueil1()
+        .environmentObject(dataDev)
+}

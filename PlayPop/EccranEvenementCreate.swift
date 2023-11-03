@@ -146,6 +146,7 @@ struct EcranEvenementCreate: View {
     }
 }
 
-//#Preview {
-//    EcranEvenementCreate(data: data, eventIndex: 2, eventCreate: eventList[0])
-//}
+#Preview {
+    EcranEvenementCreate(navToProfile: .constant(false), showCreate: .constant(false))
+        .environmentObject(dataDev)
+}

@@ -127,6 +127,7 @@ struct EcranEvenement: View {
     }
 }
 
-//#Preview {
-//    EcranEvenement(data: data, eventIndex: 2)
-//}
+#Preview {
+    EcranEvenement(eventIndex: 1)
+        .environmentObject(dataDev)
+}

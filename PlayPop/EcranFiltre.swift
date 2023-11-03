@@ -165,6 +165,7 @@ struct FiltreBudget: View {
     }
 }
 
-//#Preview {
-//    EcranFiltre(fSelectedTags: [])
-//}
+#Preview {
+    EcranFiltre(isPresented: .constant(true), fSelectedTags: .constant([]))
+        .environmentObject(dataDev)
+}

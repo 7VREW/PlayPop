@@ -48,6 +48,6 @@ struct RatingStars: View {
     
 }
 
-//#Preview {
-//    RatingStars(rating: )
-//}
+#Preview {
+    RatingStars(rating: .constant(5), label: "Test")
+}

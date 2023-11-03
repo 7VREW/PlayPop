@@ -107,6 +107,7 @@ struct EcranSuggestions: View {
     }
 }
 
-//#Preview {
-//    EcranSuggestions(selectedTags: [typeTagsList[6]])
-//}
+#Preview {
+    EcranSuggestions()
+        .environmentObject(dataDev)
+}

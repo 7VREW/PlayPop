@@ -97,6 +97,7 @@ struct EcranAccueil3: View {
     }
 }
 
-//#Preview {
-//    EcranAccueil3()
-//}
+#Preview {
+    EcranAccueil3()
+        .environmentObject(dataDev)
+}

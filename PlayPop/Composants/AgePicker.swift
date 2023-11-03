@@ -52,6 +52,7 @@ struct AgePicker: View {
     }
 }
 
-//#Preview {
-//    AgePicker()
-//}
+#Preview {
+    AgePicker()
+        .environmentObject(dataDev)
+}

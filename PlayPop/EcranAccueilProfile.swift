@@ -79,6 +79,7 @@ struct EcranAccueilProfile: View {
     }
 }
 
-//#Preview {
-//    EcranAccueilProfile()
-//}
+#Preview {
+    EcranAccueilProfile()
+        .environmentObject(dataDev)
+}

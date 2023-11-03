@@ -30,6 +30,7 @@ struct ParticipantView: View {
     }
 }
 
-//#Preview {
-//    ParticipantView(event: karting1)
-//}
+#Preview {
+    ParticipantView(eventIndex: 1)
+        .environmentObject(dataDev)
+}

@@ -111,6 +111,6 @@ struct NumberPicker: View {
     }
 }
 
-//#Preview {
-//    NumberPicker(pMin: 18, pMax: 20, showPicker: true)
-//}
+#Preview {
+    NumberPicker(pMin: .constant(2), pMax: .constant(5))
+}

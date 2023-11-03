@@ -99,6 +99,7 @@ struct EcranAccueil2: View {
     }
 }
 
-//#Preview {
-//    EcranAccueil2()
-//}
+#Preview {
+    EcranAccueil2()
+        .environmentObject(dataDev)
+}

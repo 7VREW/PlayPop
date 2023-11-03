@@ -61,6 +61,7 @@ class UserData: ObservableObject{
     @Published var user: Profile
     @Published var leasureList: [Leasure]
     @Published var eventList: [Event]
+    @Published var userImage: Image?
     
     init(user: Profile, leasureList: [Leasure], eventList: [Event]) {
         self.user = user

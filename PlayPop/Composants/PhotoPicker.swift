@@ -61,6 +61,6 @@ struct PhotoPicker: View {
 }
 
 
-//#Preview {
-//    PhotoPicker()
-//}
+#Preview {
+    PhotoPicker(photoImages: .constant([]))
+}

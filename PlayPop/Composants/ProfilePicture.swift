@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ProfilePicture: View {
     @State private var avatarItem: PhotosPickerItem?
-    @State private var avatarImage: Image?
+    @EnvironmentObject var data: UserData
     
     var body: some View {
         VStack {
@@ -24,21 +24,21 @@ struct ProfilePicture: View {
                         .font(.system(size: 36))
                         .foregroundStyle(Color(.systemGray3))
                     
-                    if let avatarImage {
-                        avatarImage
+
+                        data.user.pAvatar
                             .resizable()
                             .scaledToFill()
                             .frame(width: 125, height: 125)
                             .clipShape(Circle())
-                    }
+
                 }
             })
         }
         .onChange(of: avatarItem) { _ in
             Task {
-                if let data = try? await avatarItem?.loadTransferable(type: Data.self) {
-                    if let uiImage = UIImage(data: data) {
-                        avatarImage = Image(uiImage: uiImage)
+                if let datum = try? await avatarItem?.loadTransferable(type: Data.self) {
+                    if let uiImage = UIImage(data: datum) {
+                        data.user.pAvatar = Image(uiImage: uiImage)
                         return
                     }
                 }
@@ -49,4 +49,5 @@ struct ProfilePicture: View {
 
 #Preview {
     ProfilePicture()
+        .environmentObject(dataDev)
 }

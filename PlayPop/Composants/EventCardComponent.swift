@@ -40,5 +40,3 @@ struct EventCardComponent: View {
 #Preview {
     EventCardComponent(event: karting1)
 }
-
-//guitarEvent1
