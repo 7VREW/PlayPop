@@ -14,9 +14,12 @@ struct Profile: Identifiable{
     var pComplete: Bool
     var pName: String
     var pAge: Int
-    var pNote: Double
+    var pNotes: [Double]
     var pBio: String
     var pAnswers: [Tag]
+    var pAvatar: Image
+    var pXP: Double
+    var pBadges: [String]
 }
 
 
@@ -34,6 +37,7 @@ struct Leasure: Identifiable{
     var lTags: [Tag]
     var lDesc: String
     var lImage: [Image]
+    var lNotes: [Double]
 }
 
 //Detail évènement

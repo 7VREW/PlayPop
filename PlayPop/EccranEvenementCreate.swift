@@ -14,7 +14,9 @@ struct EcranEvenementCreate: View {
     @Binding var showCreate: Bool
     
     @State private var activeButton = false
-    @State var eventCreate: Event = Event(eLabel: "", eDesc: "", eLeasure: 0, eImage: [], eMinU: 2, eMaxU: 2, eUsersList: [], eLocation: "", eDate: Date(), ePast: false, eActualNumberParticipant: 0)
+    @State var eventCreate: Event = Event(eLabel: "", eDesc: "", eLeasure: 0, eImage: [], eMinU: 2, eMaxU: 5, eUsersList: [], eLocation: "", eDate: Date(), ePast: false, eActualNumberParticipant: 0)
+    
+    @State private var isPresentingConfirm: Bool = false
     
     var leasureIndex: Int = 0
     
@@ -33,7 +35,7 @@ struct EcranEvenementCreate: View {
                             }
                             .zIndex(1)
                                 .overlay(alignment: .trailing) {
-                                    NumberPicker(pMin: eventCreate.eMinU, pMax: eventCreate.eMaxU)
+                                    NumberPicker(pMin: $eventCreate.eMinU, pMax: $eventCreate.eMaxU)
                                 }
                             TextField(LocalizedStringKey("Titre de l'événement"), text: $eventCreate.eLabel).textFieldStyle(.plain)
                                     .padding()
@@ -101,17 +103,36 @@ struct EcranEvenementCreate: View {
                         
                         if !(eventCreate.eLabel == "" || eventCreate.eDesc == "" || eventCreate.eLocation == "" || eventCreate.eDate < Date.now) {
                             Button(action: {
-                                if eventCreate.eImage.count == 0 {
-                                    eventCreate.eImage = data.leasureList[leasureIndex].lImage
-                                }
-                                eventCreate.eLeasure = leasureIndex
-                                eventCreate.eUsersList.append(data.user.id)
-                                eventCreate.eActualNumberParticipant += 1
-                                data.eventList.append(eventCreate)
-                                activeButton = true
-                                navToProfile.toggle()
-                                showCreate.toggle()
-                            }, label: {FloatingButton(label: "Valider et créer")
+                                isPresentingConfirm = true
+//                                if eventCreate.eImage.count == 0 {
+//                                    eventCreate.eImage = data.leasureList[leasureIndex].lImage
+//                                }
+//                                eventCreate.eLeasure = leasureIndex
+//                                eventCreate.eUsersList.append(data.user.id)
+//                                eventCreate.eActualNumberParticipant += 1
+//                                data.eventList.append(eventCreate)
+//                                activeButton = true
+//                                navToProfile.toggle()
+//                                showCreate.toggle()
+                            }, label: {
+                                FloatingButton(label: "Valider et créer")
+                                    .confirmationDialog("Validation",
+                                      isPresented: $isPresentingConfirm) {
+                                        Button("Je suis sûr", role: .destructive){
+                                            if eventCreate.eImage.count == 0 {
+                                                eventCreate.eImage = data.leasureList[leasureIndex].lImage
+                                            }
+                                            eventCreate.eLeasure = leasureIndex
+                                            eventCreate.eUsersList.append(data.user.id)
+                                            eventCreate.eActualNumberParticipant += 1
+                                            data.eventList.append(eventCreate)
+                                            activeButton = true
+                                            navToProfile.toggle()
+                                            showCreate.toggle()
+                                        }
+                                    } message: {
+                                      Text("En créant un évènement, tu t'engages à y être présent et à l'animer")
+                                    }
                             })
                             .tint(.primary)
                         } else {

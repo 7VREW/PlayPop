@@ -15,7 +15,7 @@ struct EventCardComponent: View {
             ZStack (alignment: .bottomLeading) {
                 
                 ZStack {
-                    event.eImage[2]
+                    event.eImage[0]
                         .resizable()
                         .scaledToFill()
                         .frame(width: 175, height: 250, alignment: .center)

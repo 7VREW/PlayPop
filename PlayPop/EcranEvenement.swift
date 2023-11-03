@@ -14,6 +14,7 @@ struct EcranEvenement: View {
     @EnvironmentObject var data: UserData
     @State var eventIndex: Int
     @State private var activeButton = false
+    @State private var isPresentingConfirm: Bool = false
     
     
     var body: some View {
@@ -85,15 +86,36 @@ struct EcranEvenement: View {
                             data.eventList[eventIndex].eActualNumberParticipant -= 1
                         }, label: {
                             FloatingButton(label: "Annuler participation")
+                                .confirmationDialog("Annuler ?",
+                                  isPresented: $isPresentingConfirm) {
+                                    Button("J'annule ma participation", role: .destructive){
+                                        data.eventList[eventIndex].eUsersList.append(data.user.id)
+                                        data.eventList[eventIndex].eActualNumberParticipant += 1
+                                        activeButton = true
+                                    }
+                                } message: {
+                                  Text("Peut-être une prochaine fois ?")
+                                }
                         })
                     } else if data.eventList[eventIndex].eActualNumberParticipant > (data.eventList[eventIndex].eMaxU-1) {
                         FloatingButton(label: "Evènement complet")
                     } else {
                         Button(action: {
-                            data.eventList[eventIndex].eUsersList.append(data.user.id)
-                            data.eventList[eventIndex].eActualNumberParticipant += 1
-                            activeButton = true
-                        }, label: {FloatingButton(label: "Participer")})
+                            isPresentingConfirm = true
+                        }, label: {
+                            FloatingButton(label: "Participer")
+                                
+                        })
+                        .confirmationDialog("Êtes-vous sûr ?",
+                          isPresented: $isPresentingConfirm) {
+                            Button("Je participe"){
+                                data.eventList[eventIndex].eUsersList.append(data.user.id)
+                                data.eventList[eventIndex].eActualNumberParticipant += 1
+                                activeButton = true
+                            }
+                        } message: {
+                          Text("En cliquant sur \"Participer\" vous vous engagez à être présent lors de l'évènement")
+                        }
                         .tint(.primary)
                     }
                 }

@@ -17,22 +17,22 @@ struct EcranSuggestions: View {
     
     //Vérifie quels loisirs sont à afficher en fonction des tags
     func showInDisplay (leasure: Leasure)-> Bool {
-        var show = true
+        var show = false
         for tag in (selectedTags) {
             if (!leasure.lTags.contains { tag1 in
                 tag.id == tag1.id}) {
-                    show = false
                     return show
                 }
         }
-        for tag in (leasure.lTags) {
-            if (!data.user.pAnswers.contains { tag1 in
-                tag.id == tag1.id} && tag.tId >= 100) {
-                    show = false
+        for tag in (data.user.pAnswers) {
+                if (leasure.lTags.contains { tag1 in
+                    tag.id == tag1.id} && tag.tId >= 100 && tag.tId <= 101) || (data.user.pAnswers.contains { tag1 in
+                        tag.id == tag1.id} && tag.tId > 101) {
+                    show = true
                     return show
                 }
         }
-        return show
+        return true
     }
     
     var body: some View {

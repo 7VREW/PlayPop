@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct EcranNotation: View {
+    @State var oRating = 0
+    @State var lRating = 0
+    @Environment (\.dismiss) var dismiss
     var body: some View {
-        ZStack {
+        ZStack(alignment: .bottom) {
             
             //Background gradient
             Image("bgGradient")
@@ -17,32 +20,36 @@ struct EcranNotation: View {
                 .scaledToFill()
                 .ignoresSafeArea()
             
-            VStack {
-                    ZStack(alignment: .top) {
+//            ScrollView(showsIndicators: false){
+                ZStack {
+                    
+                    //Dégradé blanc
+                    LinearGradient(colors: [.customBW, .clear], startPoint: .center, endPoint: .top)
+                    VStack(spacing: 20) {
                         
-                        //Dégradé blanc
-                        LinearGradient(colors: [.customBW, .clear], startPoint: .center, endPoint: .top)
-//                        ZStack {
-                            VStack(spacing: 20) {
-                                                                
-                                //Question
-                                Text("✅")
-                                    .font(.system(size: 63))
-                                Text("Ça s'est bien passé ?")
-                                    .font(.title)
-                                Text("Tu viens de participer à un évènement, dévérouille ta récompense en le notant !")
-                                    .font(.footnote)
-                                    .multilineTextAlignment(.center)
-                                    .foregroundStyle(.secondary)
-                            }
+                        //Question
+                        Text("✅")
+                            .font(.system(size: 63))
+                        Text("Ça s'est bien passé ?")
+                            .font(.title)
+                        Text("Tu viens de participer à un évènement, dévérouille ta récompense en le notant !")
+                            .font(.footnote)
+                            .multilineTextAlignment(.center)
+                            .foregroundStyle(.secondary)
+                        
+                        RatingStars(rating: $oRating, label: "L'organisateur ?")
+                        RatingStars(rating: $lRating, label: "Le loisir ?")
+                        
+                        Button(action: {
+                            dismiss()
+                        }, label: {
+                            FloatingButton(label: "Valider")
+                        })
+                        .buttonStyle(CustomButtonAnimation())
+                        .padding(.top, 30)
                     }
-                
-                FloatingButton(label: "Valider")
-                .buttonStyle(CustomButtonAnimation())
-                .padding(.bottom, 80)
-                
-            }
-            
+                }
+//            }
         }
     }
 }

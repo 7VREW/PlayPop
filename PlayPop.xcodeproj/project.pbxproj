@@ -15,6 +15,7 @@
 		BC1B7E372AF4E9080059CC59 /* ProfilePicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1B7E362AF4E9080059CC59 /* ProfilePicture.swift */; };
 		BC1B7E392AF4F1A00059CC59 /* EcranNotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1B7E382AF4F1A00059CC59 /* EcranNotation.swift */; };
 		BC1B7E3B2AF4F42F0059CC59 /* EcranEditerProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1B7E3A2AF4F42F0059CC59 /* EcranEditerProfile.swift */; };
+		BC1B7E3D2AF4FA890059CC59 /* RatingStars.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1B7E3C2AF4FA890059CC59 /* RatingStars.swift */; };
 		BC4B0FEE2AF3AB920067B9C7 /* NumberPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4B0FED2AF3AB920067B9C7 /* NumberPicker.swift */; };
 		BC4B0FF02AF3AD6E0067B9C7 /* EcranEvenement.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4B0FEF2AF3AD6E0067B9C7 /* EcranEvenement.swift */; };
 		BCC0D76C2AEA92A8009DA110 /* PlayPopApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC0D76B2AEA92A8009DA110 /* PlayPopApp.swift */; };
@@ -55,6 +56,7 @@
 		BC1B7E362AF4E9080059CC59 /* ProfilePicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePicture.swift; sourceTree = "<group>"; };
 		BC1B7E382AF4F1A00059CC59 /* EcranNotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcranNotation.swift; sourceTree = "<group>"; };
 		BC1B7E3A2AF4F42F0059CC59 /* EcranEditerProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EcranEditerProfile.swift; sourceTree = "<group>"; };
+		BC1B7E3C2AF4FA890059CC59 /* RatingStars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingStars.swift; sourceTree = "<group>"; };
 		BC4B0FED2AF3AB920067B9C7 /* NumberPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberPicker.swift; sourceTree = "<group>"; };
 		BC4B0FEF2AF3AD6E0067B9C7 /* EcranEvenement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcranEvenement.swift; sourceTree = "<group>"; };
 		BCC0D7682AEA92A8009DA110 /* PlayPop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlayPop.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				BCC0D7A92AEF9C18009DA110 /* ProfileView.swift */,
+				BC1B7E3C2AF4FA890059CC59 /* RatingStars.swift */,
 				BC1B7E362AF4E9080059CC59 /* ProfilePicture.swift */,
 				5F0E00AA2AF3DC1B00853FB0 /* PhotoPicker.swift */,
 				BCC0D7BB2AF00178009DA110 /* AgePicker.swift */,
@@ -286,6 +289,7 @@
 				BCC0D7AA2AEF9C18009DA110 /* ProfileView.swift in Sources */,
 				5F0E00AD2AF3DED100853FB0 /* EccranEvenementCreate.swift in Sources */,
 				5F0E00AB2AF3DC1B00853FB0 /* PhotoPicker.swift in Sources */,
+				BC1B7E3D2AF4FA890059CC59 /* RatingStars.swift in Sources */,
 				BCC0D77E2AEAAF1D009DA110 /* TagView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

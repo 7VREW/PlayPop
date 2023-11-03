@@ -21,7 +21,7 @@ struct ProfileView: View {
             
                 //Note étoiles
                 HStack {
-                    Text(String(format: "%.1f", data.user.pNote))
+                    Text(String(format: "%.1f", data.user.pNotes))
                         .fontWeight(.bold)
                         .foregroundStyle(Color(.systemYellow))
                     Image(systemName: "star.fill")

@@ -9,8 +9,8 @@ import SwiftUI
 
 struct NumberPicker: View {
     
-    @State var pMin: Int
-    @State var pMax: Int
+    @Binding var pMin: Int
+    @Binding var pMax: Int
     @State var showPicker = false
     
     var body: some View {
@@ -47,6 +47,23 @@ struct NumberPicker: View {
                 
                 VStack(spacing: 25){
                     
+                    //Selection du max
+                    Stepper("Max",
+                            onIncrement: {if pMax <= 100 {
+                                pMax += 1
+                            } else {
+                                pMax = 100
+                            }
+                    },
+                            onDecrement: {if pMax <= pMin {
+                                pMax = pMin
+                            } else {
+                            pMax -= 1
+                            }
+                    }
+                    )
+                    
+                    
                     //Selection du min
                     Stepper("Min",
                             onIncrement: {
@@ -60,22 +77,6 @@ struct NumberPicker: View {
                                 pMin = 2
                             } else {
                                 pMin -= 1
-                            }
-                    }
-                    )
-                    
-                    //Selection du max
-                    Stepper("Max",
-                            onIncrement: {if pMax <= 100 {
-                                pMax += 1
-                            } else {
-                                pMax = 100
-                            }
-                    },
-                            onDecrement: {if pMax <= pMin {
-                                pMax = pMin
-                            } else {
-                            pMax -= 1
                             }
                     }
                     )
@@ -110,6 +111,6 @@ struct NumberPicker: View {
     }
 }
 
-#Preview {
-    NumberPicker(pMin: 18, pMax: 20, showPicker: true)
-}
+//#Preview {
+//    NumberPicker(pMin: 18, pMax: 20, showPicker: true)
+//}

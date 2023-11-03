@@ -40,7 +40,9 @@ struct EcranProfile: View {
                                     })
                                 }
                             }
+                            .padding(.horizontal, 20)
                         }
+                        .padding(.horizontal, -20)
                     }
                     
                     
@@ -61,23 +63,21 @@ struct EcranProfile: View {
                                     (event.eDate < Date.now &&
                                      event.eUsersList.contains(data.user.id))
                                 }){event in
-                                    NavigationLink(destination: {
-                                        if let idx = data.eventList.firstIndex(where: {$0.id == event.id}) {
-                                            EcranEvenement(eventIndex: idx)
-                                        }
-                                    }, label: {
-                                        Button {
+                                
+                                    Button (action: {
                                             notationSheet.toggle()
-                                        } label: {
+                                        }, label: {
                                             EventCardComponent(event: event)
-                                        }
-                                    })
+                                        })
+                                    .sheet(isPresented: $notationSheet) {
+                                        EcranNotation()
+                                    }
                                 }
                             }
                             .saturation(0)
-                            .padding(.horizontal, -20)
+                            .padding(.horizontal, 20)
                         }
-                        .padding(.horizontal, 20)
+                        .padding(.horizontal, -20)
                     }
                     
                     Spacer()

@@ -30,7 +30,17 @@ struct EcranLoisir: View {
                                     .font(.title2)
                                     .bold()
                                 Spacer()
+                                
+                                //A remplacer par la variable note
+                                Text("4.2")
+                                    .font(.body)
+                                    .fontWeight(.bold)
+                                    .foregroundStyle(Color(.systemOrange))
+                                Text(" /5")
+                                    .font(.body)
+                                
                             }
+                            .padding(.top)
                             ScrollView(.horizontal, showsIndicators: false){
                                 HStack{
                                     ForEach(data.leasureList[leasureIndex].lTags){tag in
@@ -61,7 +71,7 @@ struct EcranLoisir: View {
                                 EventRow(event: event)
                             })
                             .tint(.primary)
-                            .padding(.bottom, 100)
+                            .padding(.bottom, 150)
                         }
                         
                     }
