@@ -97,11 +97,12 @@ struct NumberPicker: View {
                     
                 }
                 .padding()
-                .frame(width: 180, height: showPicker ? 180 : 0)
+                .frame(width: 180, height: 180)
                 .background (.white.opacity(0.2))
                 .background(.ultraThinMaterial)
                 .cornerRadius(16)
                 .offset(y: 116)
+                .scaleEffect(showPicker ? 1 : 0)
             }
         }
 

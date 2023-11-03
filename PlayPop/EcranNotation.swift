@@ -41,6 +41,7 @@ struct EcranNotation: View {
                         RatingStars(rating: $lRating, label: "Le loisir ?")
                         
                         Button(action: {
+                            data.user.pXP += 0.15
                             dismiss()
                         }, label: {
                             FloatingButton(label: "Valider")

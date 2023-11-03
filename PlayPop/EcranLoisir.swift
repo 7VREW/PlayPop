@@ -18,6 +18,17 @@ struct EcranLoisir: View {
     @State var showCreate: Bool = false
     @State var navToProfile: Bool = false
     
+    func rating ()-> Double {
+        var stars: Double = 0
+
+        
+        for rate in data.leasureList[leasureIndex].lNotes {
+            stars += rate
+        }
+        
+        return stars/Double(data.leasureList[leasureIndex].lNotes.count)
+    }
+    
     var body: some View {
         NavigationStack{
             ZStack(alignment: .bottom) {
@@ -32,12 +43,19 @@ struct EcranLoisir: View {
                                 Spacer()
                                 
                                 //A remplacer par la variable note
-                                Text("4.2")
-                                    .font(.body)
-                                    .fontWeight(.bold)
-                                    .foregroundStyle(Color(.systemOrange))
-                                Text(" /5")
-                                    .font(.body)
+                                HStack {
+                                    if data.leasureList[leasureIndex].lNotes.count > 0 {
+                                        Text(String(format: "%.1f", rating()))
+                                            .fontWeight(.bold)
+                                            .foregroundStyle(Color(.systemYellow))
+                                    } else {
+                                        Text("N/A")
+                                            .fontWeight(.bold)
+                                            .foregroundStyle(Color(.systemYellow))
+                                    }
+                                    Image(systemName: "star.fill")
+                                        .foregroundStyle(Color(.systemYellow))
+                                }
                                 
                             }
                             .padding(.top)

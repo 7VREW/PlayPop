@@ -12,6 +12,17 @@ struct ProfileView: View {
     
     var badgeColors = [LinearGradient(colors: [Color(.systemOrange), Color(.systemYellow)], startPoint: .leading, endPoint: .trailing), LinearGradient(colors: [Color(.systemIndigo), Color(.systemPurple)], startPoint: .leading, endPoint: .trailing), LinearGradient(colors: [Color(.systemBlue), Color(.systemCyan)], startPoint: .leading, endPoint: .trailing)]
     
+    func rating ()-> Double {
+        var stars: Double = 0
+
+        
+        for rate in data.user.pNotes {
+            stars += rate
+        }
+        
+        return stars/Double(data.user.pNotes.count)
+    }
+    
     var body: some View {
         HStack(spacing: 25) {
             
@@ -21,9 +32,15 @@ struct ProfileView: View {
             
                 //Note étoiles
                 HStack {
-                    Text(String(format: "%.1f", data.user.pNotes))
-                        .fontWeight(.bold)
-                        .foregroundStyle(Color(.systemYellow))
+                    if data.user.pNotes.count > 0 {
+                        Text(String(format: "%.1f", rating()))
+                            .fontWeight(.bold)
+                            .foregroundStyle(Color(.systemYellow))
+                    } else {
+                        Text("N/A")
+                            .fontWeight(.bold)
+                            .foregroundStyle(Color(.systemYellow))
+                    }
                     Image(systemName: "star.fill")
                         .foregroundStyle(badgeColors[0])
                 }
@@ -52,14 +69,14 @@ struct ProfileView: View {
                 //Game evolution section
                 VStack (alignment: .leading) {
                     //Barre de progression
-                    ProgressView(value: 0.75) {
+                    ProgressView(value: data.user.pXP-(Double(Int(data.user.pXP)))) {
                         HStack {
-                            Text("Niveau 48")
+                            Text("Niveau : \(Int(data.user.pXP))")
                                 .font(.body)
                         
                             Spacer()
                             
-                            Text("769 EXP")
+                            Text("\(Int((data.user.pXP*1000))%1000) EXP")
                                 .font(.footnote)
                                 .foregroundStyle(.secondary)
                                 .lineLimit(1)

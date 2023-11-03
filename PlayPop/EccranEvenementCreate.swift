@@ -3,7 +3,6 @@
 
  */
 
-
 import SwiftUI
 
 struct EcranEvenementCreate: View {
@@ -14,9 +13,11 @@ struct EcranEvenementCreate: View {
     @Binding var showCreate: Bool
     
     @State private var activeButton = false
-    @State var eventCreate: Event = Event(eLabel: "", eDesc: "", eLeasure: 0, eImage: [], eMinU: 2, eMaxU: 5, eUsersList: [], eLocation: "", eDate: Date(), ePast: false, eActualNumberParticipant: 0)
+    @State var eventCreate: Event = Event(eLabel: "", eDesc: "", eLeasure: 0, eImage: [], eMinU: 2, eMaxU: 5, eUsersList: [], eLocation: "", eDate: Date().addingTimeInterval(84600), ePast: false, eActualNumberParticipant: 0)
     
     @State private var isPresentingConfirm: Bool = false
+    
+    @State var pickerID: Int = 0
     
     var leasureIndex: Int = 0
     
@@ -67,72 +68,50 @@ struct EcranEvenementCreate: View {
                                 .padding()
                                 .background(.ultraThinMaterial)
                                 .clipShape(Capsule())
-                            DatePicker(
-                                "Date:",
-                                selection: $eventCreate.eDate,
-                                displayedComponents: [.date, .hourAndMinute]
-                            )
-                            .font(.title2)
-                        }
+//                            if !isPresentingConfirm {
+                                DatePicker(
+                                    "Date:",
+                                    selection: $eventCreate.eDate,
+                                    displayedComponents: [.date, .hourAndMinute]
+                                )
+                                .id(pickerID)
+                                .font(.title2)
+//                            }
+                        } .toolbar{ToolbarItem(placement: .topBarLeading, content: {
+                            Button(action: {dismiss()}, label:{
+                                HStack{
+                                    Image(systemName: "chevron.left").font(.title2)
+                                    Text("Back")
+                                        .font(.title3)
+                                    }
+                                .padding(.horizontal)
+                                .padding(.vertical, 6)
+                                .background(.ultraThinMaterial)
+                                .clipShape(Capsule())
+                            })
+                            .tint(.primary)
+                        })}
                         .padding(.horizontal, 20)
                         .padding(.bottom, 100)
                        
-                    }
+                    }.ignoresSafeArea()
                     
                 }.keyboardType(.default)
                     .submitLabel(.done)
-                    VStack {
-                        HStack {
-                            Button(action: {dismiss()}, label:{
-                                Label(title:{
-                                    Text("Retour").font(.title3)}, icon: {
-                                        Image(systemName: "chevron.left").font(.title2)
-                                    })
-                                    .padding(.horizontal)
-                                    .padding(.vertical, 6)
-                                    .background(.ultraThinMaterial)
-                                    .clipShape(Capsule())
-                            })
-                            .tint(.primary)
-                            Spacer()
-                        }
-                        .padding(.horizontal)
+                VStack {
                         Spacer()
                         
                         NavigationLink(destination: EcranProfile(), isActive: $activeButton, label: {EmptyView()})
                         
                         if !(eventCreate.eLabel == "" || eventCreate.eDesc == "" || eventCreate.eLocation == "" || eventCreate.eDate < Date.now) {
                             Button(action: {
-                                isPresentingConfirm = true
-//                                if eventCreate.eImage.count == 0 {
-//                                    eventCreate.eImage = data.leasureList[leasureIndex].lImage
-//                                }
-//                                eventCreate.eLeasure = leasureIndex
-//                                eventCreate.eUsersList.append(data.user.id)
-//                                eventCreate.eActualNumberParticipant += 1
-//                                data.eventList.append(eventCreate)
-//                                activeButton = true
-//                                navToProfile.toggle()
-//                                showCreate.toggle()
+                                pickerID += 1
+                                DispatchQueue.main.async {
+                                    isPresentingConfirm = true
+                                }
                             }, label: {
                                 FloatingButton(label: "Valider et créer")
-                                    .confirmationDialog("Validation",
-                                      isPresented: $isPresentingConfirm) {
-                                        Button("Je suis sûr", role: .destructive){
-                                            if eventCreate.eImage.count == 0 {
-                                                eventCreate.eImage = data.leasureList[leasureIndex].lImage
-                                            }
-                                            eventCreate.eLeasure = leasureIndex
-                                            eventCreate.eUsersList.append(data.user.id)
-                                            eventCreate.eActualNumberParticipant += 1
-                                            data.eventList.append(eventCreate)
-                                            activeButton = true
-                                            navToProfile.toggle()
-                                            showCreate.toggle()
-                                        }
-                                    } message: {
-                                      Text("En créant un évènement, tu t'engages à y être présent et à l'animer")
-                                    }
+                                    
                             })
                             .tint(.primary)
                         } else {
@@ -140,8 +119,44 @@ struct EcranEvenementCreate: View {
                                 .frame(height: 0)
                         }
                 }
-            }.interactiveDismissDisabled()
-            .toolbar(.hidden, for: .navigationBar)
+            }
+            .interactiveDismissDisabled()
+            .toolbarBackground(.hidden, for: .navigationBar)
+            .actionSheet(isPresented: $isPresentingConfirm, content: {
+                ActionSheet(title: Text("Je m'engages à être présent et à animer l'évènement."), buttons: [
+                    .default(Text("Oui"), action: {
+                        if eventCreate.eImage.isEmpty {
+                            eventCreate.eImage = data.leasureList[leasureIndex].lImage
+                        }
+                        eventCreate.eLeasure = leasureIndex
+                        eventCreate.eUsersList.append(data.user.id)
+                        eventCreate.eActualNumberParticipant += 1
+                        data.eventList.append(eventCreate)
+                        activeButton = true
+                        navToProfile.toggle()
+                        showCreate.toggle()
+                    }),
+                    .cancel()
+                ])
+
+            })
+//            .confirmationDialog("Validation",
+//              isPresented: $isPresentingConfirm) {
+//                Button("Je suis sûr", role: .destructive){
+//                    if eventCreate.eImage.isEmpty {
+//                        eventCreate.eImage = data.leasureList[leasureIndex].lImage
+//                    }
+//                    eventCreate.eLeasure = leasureIndex
+//                    eventCreate.eUsersList.append(data.user.id)
+//                    eventCreate.eActualNumberParticipant += 1
+//                    data.eventList.append(eventCreate)
+//                    activeButton = true
+//                    navToProfile.toggle()
+//                    showCreate.toggle()
+//                }
+//            } message: {
+//                Text("En créant un évènement, tu t'engages à y être présent et à l'animer")
+//            }
         }
     }
 }
