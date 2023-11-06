@@ -18,8 +18,9 @@ struct EcranEditerProfile: View {
                     Spacer()
                     
                     Group {
+                        
                         //Question 1
-                        Text("Prenom, Nom :")
+                        Text("Prenom :")
                             .font(.title)
                         
                         TextField (LocalizedStringKey(""), text: $data.user.pName)

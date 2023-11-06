@@ -5,7 +5,7 @@
 //  Created by apprenant50 on 02/11/2023.
 //
 //Affiche l'écran d'aterrissage aproprié en fonction de si oui ou non le profil est déja rempli
-//Pas vraiment fonctionel parce que on ne stock pas de données d'une session a une autre
+//Pas vraiment fonctionel parce que on ne stock pas de données d'une session à une autre
 
 import SwiftUI
 

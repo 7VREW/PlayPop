@@ -12,9 +12,7 @@ struct MapInfoRow: View {
     
     var adress: Location
     var date: Date
-
-    @State private var position: MapCameraPosition = .automatic
-
+    
     var body: some View {
         HStack {
             
@@ -28,14 +26,16 @@ struct MapInfoRow: View {
             }
                 .padding()
             Spacer()
-            
             // Affichage de la carte
-            Map {
+            Map(initialPosition: .region(
+                MKCoordinateRegion(center: adress.coordinate,
+                                   span: MKCoordinateSpan(latitudeDelta: 0.002, longitudeDelta: 0.002)
+                                  ))){
                 Marker(adress.name, coordinate: adress.coordinate)
-                    .tint(.orange)
+                    .tint(Color(.systemOrange))
             }
-            .mapStyle(.hybrid(elevation: .realistic))
             .frame(width: 140, height: 150)
+            .mapStyle(.standard(elevation: .realistic))
         }
         
         .frame(maxWidth: .infinity)
@@ -44,7 +44,7 @@ struct MapInfoRow: View {
 }
 
 #Preview {
-    MapInfoRow(adress: Location(name: "London", coordinate: CLLocationCoordinate2D(latitude: 51.50, longitude: -0.1275)), date: Date())
+    MapInfoRow(adress: Location(name: "Simplon", coordinate: CLLocationCoordinate2D(latitude: 43.566543, longitude: 1.397947)), date: Date())
 }
 
 extension CLLocationCoordinate2D {

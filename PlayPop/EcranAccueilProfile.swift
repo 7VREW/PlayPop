@@ -26,8 +26,8 @@ struct EcranAccueilProfile: View {
                             
                             //Dégradé blanc
                             LinearGradient(colors: [.customBW, .clear], startPoint: .center, endPoint: .top)
+                            
                             VStack(alignment: .leading, spacing: 20) {
-                                
                                 Spacer()
                                 
                                 //Question 1
@@ -62,6 +62,7 @@ struct EcranAccueilProfile: View {
                                 .submitLabel(.done)
                             .padding(.horizontal)
                             }
+                    
                     // Affiche le bouton valider seulement si tous les champs sont remplis
                     if (data.user.pName != "" && data.user.pBio != ""){
                         NavigationLink (destination: {

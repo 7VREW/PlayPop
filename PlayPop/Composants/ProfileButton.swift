@@ -20,9 +20,7 @@ struct ProfileButton: View {
                     .font(.title2)
                 Image(systemName: "chevron.right")
                     .font(.title2)
-                    .fontWeight(.bold)
             }
-            
             .padding(.horizontal)
             .padding(.vertical, 6)
             .background(.ultraThinMaterial)

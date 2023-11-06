@@ -14,7 +14,7 @@ struct Address: Codable {
 
 struct Datum: Codable {
     let latitude, longitude: Double
-    let name: String?
+    let label: String?
 }
 
 struct Location: Identifiable {
@@ -32,13 +32,11 @@ class MapAPI: ObservableObject {
     @Published var locations: [Location] = []
     
     init() {
-        self.region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.50, longitude: -0.1275), //loc de base
-                                         span: MKCoordinateSpan(latitudeDelta: 5, longitudeDelta: 5)) //zoom sur la carte
-        
-        self.locations.insert(Location(name: "Pin", coordinate: CLLocationCoordinate2D(latitude: 51.50, longitude: -0.1275)), at: 0) //Pin
+        self.region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 43.566543, longitude: 1.397947), //loc de base
+                                         span: MKCoordinateSpan(latitudeDelta: 43.566543, longitudeDelta: 5)) //zoom sur la carte
     }
     
-    func getLocation(adress: String, delta: Double) {
+    func getLocation(adress: String, delta: Double) async throws {
         let pAddress = adress.replacingOccurrences(of: "", with: "%20")
         let url_string = "\(BASE_URL)?access_key=\(API_KEY)&query=\(pAddress)"
         
@@ -46,25 +44,20 @@ class MapAPI: ObservableObject {
             print("Invalid URL")
             return
         }
-        
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-            guard let data = data else {
-                print(error!.localizedDescription)
-                return
-            }
+        do {
+        let (data, _) = try await URLSession.shared.data(from: url)
             
             guard let newCoordinates = try? JSONDecoder().decode(Address.self, from: data) else { return }
             
             if newCoordinates.data.isEmpty {
-                print("Could not find the adress...")
-                return
+                throw "Could not find the adress..."
             }
             
             DispatchQueue.main.async {
                 let details = newCoordinates.data[0]
                 let lat = details.latitude
                 let lon = details.longitude
-                let name = details.name
+                let name = details.label
                 
                 self.coordinates = [lat, lon]
                 self.region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: lat, longitude: lon), //loc de base
@@ -76,8 +69,13 @@ class MapAPI: ObservableObject {
                 
                 print("Succesfully loaded the location!")
             }
+        } catch (let error) {
+            print(error.localizedDescription)
+            throw error
         }
-        .resume()
     }
 }
 
+extension String: LocalizedError {
+    public var errorDescription: String? {return self}
+}

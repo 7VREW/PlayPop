@@ -12,25 +12,24 @@
 		5F0E00B32AF3EEE600853FB0 /* EcranAterrissage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0E00B22AF3EEE600853FB0 /* EcranAterrissage.swift */; };
 		5F4FC4472AF90DB40056B39E /* MapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4FC4462AF90DB40056B39E /* MapModel.swift */; };
 		5F4FC4492AF90DBD0056B39E /* EcranAddressFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4FC4482AF90DBD0056B39E /* EcranAddressFinder.swift */; };
-		5F4FC4852AF91B2D0056B39E /* RatingStars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4FC4722AF91B2D0056B39E /* RatingStars.swift */; };
-		5F4FC4862AF91B2D0056B39E /* EventRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4FC4732AF91B2D0056B39E /* EventRow.swift */; };
-		5F4FC4872AF91B2D0056B39E /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4FC4742AF91B2D0056B39E /* Test.swift */; };
-		5F4FC4882AF91B2D0056B39E /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4FC4752AF91B2D0056B39E /* ProfileView.swift */; };
-		5F4FC4892AF91B2D0056B39E /* ProfileButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4FC4762AF91B2D0056B39E /* ProfileButton.swift */; };
-		5F4FC48A2AF91B2D0056B39E /* TextBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4FC4772AF91B2D0056B39E /* TextBox.swift */; };
-		5F4FC48B2AF91B2D0056B39E /* AgePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4FC4782AF91B2D0056B39E /* AgePicker.swift */; };
-		5F4FC48C2AF91B2D0056B39E /* HeadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4FC4792AF91B2D0056B39E /* HeadImage.swift */; };
-		5F4FC48D2AF91B2D0056B39E /* ParticipantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4FC47A2AF91B2D0056B39E /* ParticipantView.swift */; };
-		5F4FC48E2AF91B2D0056B39E /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4FC47B2AF91B2D0056B39E /* TagView.swift */; };
-		5F4FC48F2AF91B2D0056B39E /* ProfilePicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4FC47C2AF91B2D0056B39E /* ProfilePicture.swift */; };
-		5F4FC4902AF91B2D0056B39E /* MapInfoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4FC47D2AF91B2D0056B39E /* MapInfoRow.swift */; };
-		5F4FC4912AF91B2D0056B39E /* NumberPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4FC47E2AF91B2D0056B39E /* NumberPicker.swift */; };
-		5F4FC4922AF91B2D0056B39E /* EventCardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4FC47F2AF91B2D0056B39E /* EventCardComponent.swift */; };
-		5F4FC4932AF91B2D0056B39E /* ValidationAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4FC4802AF91B2D0056B39E /* ValidationAlert.swift */; };
-		5F4FC4942AF91B2D0056B39E /* CardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4FC4812AF91B2D0056B39E /* CardComponent.swift */; };
-		5F4FC4952AF91B2D0056B39E /* FloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4FC4822AF91B2D0056B39E /* FloatingButton.swift */; };
-		5F4FC4962AF91B2D0056B39E /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4FC4832AF91B2D0056B39E /* PhotoPicker.swift */; };
-		5F4FC4972AF91B2D0056B39E /* ListRowElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4FC4842AF91B2D0056B39E /* ListRowElement.swift */; };
+		5F4FC4AA2AF9368E0056B39E /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4FC4982AF9368D0056B39E /* ProfileView.swift */; };
+		5F4FC4AB2AF9368E0056B39E /* ParticipantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4FC4992AF9368D0056B39E /* ParticipantView.swift */; };
+		5F4FC4AC2AF9368E0056B39E /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4FC49A2AF9368D0056B39E /* PhotoPicker.swift */; };
+		5F4FC4AD2AF9368E0056B39E /* NumberPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4FC49B2AF9368D0056B39E /* NumberPicker.swift */; };
+		5F4FC4AE2AF9368E0056B39E /* ListRowElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4FC49C2AF9368D0056B39E /* ListRowElement.swift */; };
+		5F4FC4AF2AF9368E0056B39E /* CardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4FC49D2AF9368D0056B39E /* CardComponent.swift */; };
+		5F4FC4B02AF9368E0056B39E /* FloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4FC49E2AF9368D0056B39E /* FloatingButton.swift */; };
+		5F4FC4B12AF9368E0056B39E /* MapInfoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4FC49F2AF9368D0056B39E /* MapInfoRow.swift */; };
+		5F4FC4B22AF9368E0056B39E /* EventCardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4FC4A02AF9368D0056B39E /* EventCardComponent.swift */; };
+		5F4FC4B32AF9368E0056B39E /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4FC4A12AF9368E0056B39E /* TagView.swift */; };
+		5F4FC4B42AF9368E0056B39E /* TextBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4FC4A22AF9368E0056B39E /* TextBox.swift */; };
+		5F4FC4B52AF9368E0056B39E /* HeadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4FC4A32AF9368E0056B39E /* HeadImage.swift */; };
+		5F4FC4B62AF9368E0056B39E /* ValidationAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4FC4A42AF9368E0056B39E /* ValidationAlert.swift */; };
+		5F4FC4B72AF9368E0056B39E /* ProfilePicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4FC4A52AF9368E0056B39E /* ProfilePicture.swift */; };
+		5F4FC4B82AF9368E0056B39E /* ProfileButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4FC4A62AF9368E0056B39E /* ProfileButton.swift */; };
+		5F4FC4B92AF9368E0056B39E /* EventRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4FC4A72AF9368E0056B39E /* EventRow.swift */; };
+		5F4FC4BA2AF9368E0056B39E /* AgePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4FC4A82AF9368E0056B39E /* AgePicker.swift */; };
+		5F4FC4BB2AF9368E0056B39E /* RatingStars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4FC4A92AF9368E0056B39E /* RatingStars.swift */; };
 		BC1B7E392AF4F1A00059CC59 /* EcranNotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1B7E382AF4F1A00059CC59 /* EcranNotation.swift */; };
 		BC1B7E3B2AF4F42F0059CC59 /* EcranEditerProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1B7E3A2AF4F42F0059CC59 /* EcranEditerProfile.swift */; };
 		BC4B0FF02AF3AD6E0067B9C7 /* EcranEvenement.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4B0FEF2AF3AD6E0067B9C7 /* EcranEvenement.swift */; };
@@ -57,25 +56,24 @@
 		5F0E00B22AF3EEE600853FB0 /* EcranAterrissage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcranAterrissage.swift; sourceTree = "<group>"; };
 		5F4FC4462AF90DB40056B39E /* MapModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapModel.swift; sourceTree = "<group>"; };
 		5F4FC4482AF90DBD0056B39E /* EcranAddressFinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EcranAddressFinder.swift; sourceTree = "<group>"; };
-		5F4FC4722AF91B2D0056B39E /* RatingStars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingStars.swift; sourceTree = "<group>"; };
-		5F4FC4732AF91B2D0056B39E /* EventRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventRow.swift; sourceTree = "<group>"; };
-		5F4FC4742AF91B2D0056B39E /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
-		5F4FC4752AF91B2D0056B39E /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
-		5F4FC4762AF91B2D0056B39E /* ProfileButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileButton.swift; sourceTree = "<group>"; };
-		5F4FC4772AF91B2D0056B39E /* TextBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextBox.swift; sourceTree = "<group>"; };
-		5F4FC4782AF91B2D0056B39E /* AgePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgePicker.swift; sourceTree = "<group>"; };
-		5F4FC4792AF91B2D0056B39E /* HeadImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeadImage.swift; sourceTree = "<group>"; };
-		5F4FC47A2AF91B2D0056B39E /* ParticipantView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticipantView.swift; sourceTree = "<group>"; };
-		5F4FC47B2AF91B2D0056B39E /* TagView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
-		5F4FC47C2AF91B2D0056B39E /* ProfilePicture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePicture.swift; sourceTree = "<group>"; };
-		5F4FC47D2AF91B2D0056B39E /* MapInfoRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapInfoRow.swift; sourceTree = "<group>"; };
-		5F4FC47E2AF91B2D0056B39E /* NumberPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberPicker.swift; sourceTree = "<group>"; };
-		5F4FC47F2AF91B2D0056B39E /* EventCardComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCardComponent.swift; sourceTree = "<group>"; };
-		5F4FC4802AF91B2D0056B39E /* ValidationAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationAlert.swift; sourceTree = "<group>"; };
-		5F4FC4812AF91B2D0056B39E /* CardComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardComponent.swift; sourceTree = "<group>"; };
-		5F4FC4822AF91B2D0056B39E /* FloatingButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingButton.swift; sourceTree = "<group>"; };
-		5F4FC4832AF91B2D0056B39E /* PhotoPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
-		5F4FC4842AF91B2D0056B39E /* ListRowElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListRowElement.swift; sourceTree = "<group>"; };
+		5F4FC4982AF9368D0056B39E /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		5F4FC4992AF9368D0056B39E /* ParticipantView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticipantView.swift; sourceTree = "<group>"; };
+		5F4FC49A2AF9368D0056B39E /* PhotoPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
+		5F4FC49B2AF9368D0056B39E /* NumberPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberPicker.swift; sourceTree = "<group>"; };
+		5F4FC49C2AF9368D0056B39E /* ListRowElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListRowElement.swift; sourceTree = "<group>"; };
+		5F4FC49D2AF9368D0056B39E /* CardComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardComponent.swift; sourceTree = "<group>"; };
+		5F4FC49E2AF9368D0056B39E /* FloatingButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingButton.swift; sourceTree = "<group>"; };
+		5F4FC49F2AF9368D0056B39E /* MapInfoRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapInfoRow.swift; sourceTree = "<group>"; };
+		5F4FC4A02AF9368D0056B39E /* EventCardComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCardComponent.swift; sourceTree = "<group>"; };
+		5F4FC4A12AF9368E0056B39E /* TagView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
+		5F4FC4A22AF9368E0056B39E /* TextBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextBox.swift; sourceTree = "<group>"; };
+		5F4FC4A32AF9368E0056B39E /* HeadImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeadImage.swift; sourceTree = "<group>"; };
+		5F4FC4A42AF9368E0056B39E /* ValidationAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationAlert.swift; sourceTree = "<group>"; };
+		5F4FC4A52AF9368E0056B39E /* ProfilePicture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePicture.swift; sourceTree = "<group>"; };
+		5F4FC4A62AF9368E0056B39E /* ProfileButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileButton.swift; sourceTree = "<group>"; };
+		5F4FC4A72AF9368E0056B39E /* EventRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventRow.swift; sourceTree = "<group>"; };
+		5F4FC4A82AF9368E0056B39E /* AgePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgePicker.swift; sourceTree = "<group>"; };
+		5F4FC4A92AF9368E0056B39E /* RatingStars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingStars.swift; sourceTree = "<group>"; };
 		BC1B7E382AF4F1A00059CC59 /* EcranNotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcranNotation.swift; sourceTree = "<group>"; };
 		BC1B7E3A2AF4F42F0059CC59 /* EcranEditerProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EcranEditerProfile.swift; sourceTree = "<group>"; };
 		BC4B0FEF2AF3AD6E0067B9C7 /* EcranEvenement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcranEvenement.swift; sourceTree = "<group>"; };
@@ -112,25 +110,24 @@
 		5F4FC4712AF91B2D0056B39E /* Composants */ = {
 			isa = PBXGroup;
 			children = (
-				5F4FC4722AF91B2D0056B39E /* RatingStars.swift */,
-				5F4FC4732AF91B2D0056B39E /* EventRow.swift */,
-				5F4FC4742AF91B2D0056B39E /* Test.swift */,
-				5F4FC4752AF91B2D0056B39E /* ProfileView.swift */,
-				5F4FC4762AF91B2D0056B39E /* ProfileButton.swift */,
-				5F4FC4772AF91B2D0056B39E /* TextBox.swift */,
-				5F4FC4782AF91B2D0056B39E /* AgePicker.swift */,
-				5F4FC4792AF91B2D0056B39E /* HeadImage.swift */,
-				5F4FC47A2AF91B2D0056B39E /* ParticipantView.swift */,
-				5F4FC47B2AF91B2D0056B39E /* TagView.swift */,
-				5F4FC47C2AF91B2D0056B39E /* ProfilePicture.swift */,
-				5F4FC47D2AF91B2D0056B39E /* MapInfoRow.swift */,
-				5F4FC47E2AF91B2D0056B39E /* NumberPicker.swift */,
-				5F4FC47F2AF91B2D0056B39E /* EventCardComponent.swift */,
-				5F4FC4802AF91B2D0056B39E /* ValidationAlert.swift */,
-				5F4FC4812AF91B2D0056B39E /* CardComponent.swift */,
-				5F4FC4822AF91B2D0056B39E /* FloatingButton.swift */,
-				5F4FC4832AF91B2D0056B39E /* PhotoPicker.swift */,
-				5F4FC4842AF91B2D0056B39E /* ListRowElement.swift */,
+				5F4FC4A82AF9368E0056B39E /* AgePicker.swift */,
+				5F4FC49D2AF9368D0056B39E /* CardComponent.swift */,
+				5F4FC4A02AF9368D0056B39E /* EventCardComponent.swift */,
+				5F4FC4A72AF9368E0056B39E /* EventRow.swift */,
+				5F4FC49E2AF9368D0056B39E /* FloatingButton.swift */,
+				5F4FC4A32AF9368E0056B39E /* HeadImage.swift */,
+				5F4FC49C2AF9368D0056B39E /* ListRowElement.swift */,
+				5F4FC49F2AF9368D0056B39E /* MapInfoRow.swift */,
+				5F4FC49B2AF9368D0056B39E /* NumberPicker.swift */,
+				5F4FC4992AF9368D0056B39E /* ParticipantView.swift */,
+				5F4FC49A2AF9368D0056B39E /* PhotoPicker.swift */,
+				5F4FC4A62AF9368E0056B39E /* ProfileButton.swift */,
+				5F4FC4A52AF9368E0056B39E /* ProfilePicture.swift */,
+				5F4FC4982AF9368D0056B39E /* ProfileView.swift */,
+				5F4FC4A92AF9368E0056B39E /* RatingStars.swift */,
+				5F4FC4A12AF9368E0056B39E /* TagView.swift */,
+				5F4FC4A22AF9368E0056B39E /* TextBox.swift */,
+				5F4FC4A42AF9368E0056B39E /* ValidationAlert.swift */,
 			);
 			path = Composants;
 			sourceTree = "<group>";
@@ -269,45 +266,44 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F4FC4AD2AF9368E0056B39E /* NumberPicker.swift in Sources */,
 				BC1B7E3B2AF4F42F0059CC59 /* EcranEditerProfile.swift in Sources */,
-				5F4FC4892AF91B2D0056B39E /* ProfileButton.swift in Sources */,
 				BCC0D7B22AEFE080009DA110 /* EcranSuggestions.swift in Sources */,
-				5F4FC48E2AF91B2D0056B39E /* TagView.swift in Sources */,
+				5F4FC4B82AF9368E0056B39E /* ProfileButton.swift in Sources */,
+				5F4FC4BB2AF9368E0056B39E /* RatingStars.swift in Sources */,
+				5F4FC4B32AF9368E0056B39E /* TagView.swift in Sources */,
+				5F4FC4B92AF9368E0056B39E /* EventRow.swift in Sources */,
 				5F4FC4472AF90DB40056B39E /* MapModel.swift in Sources */,
 				BCC0D79E2AEBDA53009DA110 /* DefaultEvents.swift in Sources */,
+				5F4FC4AB2AF9368E0056B39E /* ParticipantView.swift in Sources */,
 				BCC0D7C32AF0FF68009DA110 /* EcranAccueil3.swift in Sources */,
-				5F4FC4872AF91B2D0056B39E /* Test.swift in Sources */,
-				5F4FC4862AF91B2D0056B39E /* EventRow.swift in Sources */,
-				5F4FC4882AF91B2D0056B39E /* ProfileView.swift in Sources */,
 				BCC0D7C82AF112C7009DA110 /* EcranAccueilProfile.swift in Sources */,
-				5F4FC48A2AF91B2D0056B39E /* TextBox.swift in Sources */,
-				5F4FC4942AF91B2D0056B39E /* CardComponent.swift in Sources */,
-				5F4FC4972AF91B2D0056B39E /* ListRowElement.swift in Sources */,
 				5F4FC4492AF90DBD0056B39E /* EcranAddressFinder.swift in Sources */,
 				BCC0D7C52AF0FF68009DA110 /* EcranAccueil1.swift in Sources */,
-				5F4FC4912AF91B2D0056B39E /* NumberPicker.swift in Sources */,
-				5F4FC4932AF91B2D0056B39E /* ValidationAlert.swift in Sources */,
-				5F4FC48B2AF91B2D0056B39E /* AgePicker.swift in Sources */,
 				BCC0D77C2AEA936C009DA110 /* Structures.swift in Sources */,
 				BCC0D7AC2AEFA6A0009DA110 /* EcranProfile.swift in Sources */,
 				BCC0D7C62AF0FF68009DA110 /* EcranAccueil2.swift in Sources */,
 				5F0E00B12AF3E96400853FB0 /* Data.swift in Sources */,
 				BC4B0FF02AF3AD6E0067B9C7 /* EcranEvenement.swift in Sources */,
-				5F4FC4962AF91B2D0056B39E /* PhotoPicker.swift in Sources */,
-				5F4FC4952AF91B2D0056B39E /* FloatingButton.swift in Sources */,
 				BCC0D7B42AEFE095009DA110 /* EcranFiltre.swift in Sources */,
 				5F0E00B32AF3EEE600853FB0 /* EcranAterrissage.swift in Sources */,
+				5F4FC4B12AF9368E0056B39E /* MapInfoRow.swift in Sources */,
+				5F4FC4BA2AF9368E0056B39E /* AgePicker.swift in Sources */,
 				BCC0D76C2AEA92A8009DA110 /* PlayPopApp.swift in Sources */,
-				5F4FC4852AF91B2D0056B39E /* RatingStars.swift in Sources */,
 				BC691F002AF8E1B900B1CF96 /* SplashScreen.swift in Sources */,
-				5F4FC48D2AF91B2D0056B39E /* ParticipantView.swift in Sources */,
-				5F4FC4902AF91B2D0056B39E /* MapInfoRow.swift in Sources */,
-				5F4FC48C2AF91B2D0056B39E /* HeadImage.swift in Sources */,
 				BCC0D7B62AEFE46D009DA110 /* EcranLoisir.swift in Sources */,
-				5F4FC48F2AF91B2D0056B39E /* ProfilePicture.swift in Sources */,
-				5F4FC4922AF91B2D0056B39E /* EventCardComponent.swift in Sources */,
+				5F4FC4B42AF9368E0056B39E /* TextBox.swift in Sources */,
 				BCC0D7C42AF0FF68009DA110 /* EcranAccueil4.swift in Sources */,
+				5F4FC4AC2AF9368E0056B39E /* PhotoPicker.swift in Sources */,
 				BC1B7E392AF4F1A00059CC59 /* EcranNotation.swift in Sources */,
+				5F4FC4B02AF9368E0056B39E /* FloatingButton.swift in Sources */,
+				5F4FC4B72AF9368E0056B39E /* ProfilePicture.swift in Sources */,
+				5F4FC4AE2AF9368E0056B39E /* ListRowElement.swift in Sources */,
+				5F4FC4B52AF9368E0056B39E /* HeadImage.swift in Sources */,
+				5F4FC4B22AF9368E0056B39E /* EventCardComponent.swift in Sources */,
+				5F4FC4AF2AF9368E0056B39E /* CardComponent.swift in Sources */,
+				5F4FC4B62AF9368E0056B39E /* ValidationAlert.swift in Sources */,
+				5F4FC4AA2AF9368E0056B39E /* ProfileView.swift in Sources */,
 				5F0E00AD2AF3DED100853FB0 /* EccranEvenementCreate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -442,7 +438,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PlayPop/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = XRMLZ3LLFV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PlayPop/Info.plist;
@@ -471,7 +467,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PlayPop/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = XRMLZ3LLFV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PlayPop/Info.plist;

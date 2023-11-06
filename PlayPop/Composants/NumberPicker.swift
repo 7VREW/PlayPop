@@ -66,7 +66,7 @@ struct NumberPicker: View {
                         
                         //Selection du max
                         Stepper("Max",
-                                onIncrement: {if pMax <= 100 {
+                                onIncrement: {if pMax < 100 {
                                     pMax += 1
                                 } else {
                                     pMax = 100

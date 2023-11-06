@@ -96,10 +96,11 @@ struct EcranFiltre: View {
 }
 
 
-// Affiche les boutons pour les tags interieur/exterieur
+// Affiche les boutons pour les tags de local
 struct FiltreInOut: View {
     
     @EnvironmentObject var data: UserData
+    
     func buttonCheck (tag: Tag)-> Bool {
          var on = true
         if (!data.user.pAnswers.contains { tag1 in
@@ -139,6 +140,7 @@ struct FiltreInOut: View {
 struct FiltreBudget: View {
     
     @EnvironmentObject var data: UserData
+    
     func buttonCheck (tag: Tag)-> Bool {
          var on = true
          if (!data.user.pAnswers.contains { tag1 in

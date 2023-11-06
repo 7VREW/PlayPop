@@ -34,6 +34,17 @@ struct EcranEvenementCreate: View {
                         
                         
                         VStack(alignment: .leading, spacing: 15) {
+                            // Rappel les tags du loisir
+                            ScrollView(.horizontal, showsIndicators: false){
+                                HStack{
+                                    ForEach(data.leasureList[leasureIndex].lTags){tag in
+                                        TagView(tag: tag)
+                                    }
+                                }
+                                .padding(.horizontal, 20)
+                            }
+                            .padding(.horizontal, -20)
+                            
                             HStack {
                                 Text("Titre:")
                                     .font(.title2)
@@ -51,16 +62,6 @@ struct EcranEvenementCreate: View {
                                 .background(.ultraThinMaterial)
                                 .clipShape(Capsule())
                             
-                            // Rappel les tags du loisir
-                            ScrollView(.horizontal, showsIndicators: false){
-                                HStack{
-                                    ForEach(data.leasureList[leasureIndex].lTags){tag in
-                                        TagView(tag: tag)
-                                    }
-                                }
-                                .padding(.horizontal, 20)
-                            }
-                            .padding(.horizontal, -20)
                             
                             
                             Text("Description:")
@@ -72,23 +73,33 @@ struct EcranEvenementCreate: View {
                             
                             Text("Addresse:")
                                 .font(.title2)
-                            Button(action: {
-                                showMapPicker.toggle()
-                            }, label: {
-                                HStack {
-                                    Text("Selectionner une adresse")
-                                        .foregroundStyle(.secondary)
-                                    Spacer()
-                                }.padding()
-                                .background(.ultraThinMaterial)
-                                .clipShape(Capsule())
-                                
-                            }).tint(.primary)
-//                            TextField(LocalizedStringKey("Addresse de l'événement"), text: $eventCreate.eLocation).textFieldStyle(.plain)
-//                                .padding()
-//                                .background(.ultraThinMaterial)
-//                                .clipShape(Capsule())
-                           
+                            if eventCreate.eLocation.name == "" {
+                                Button(action: {
+                                    showMapPicker.toggle()
+                                }, label: {
+                                    HStack {
+                                        Text("Selectionner une adresse")
+                                            .foregroundStyle(.secondary)
+                                        Spacer()
+                                    }.padding()
+                                        .background(.ultraThinMaterial)
+                                        .clipShape(Capsule())
+                                    
+                                }).tint(.primary)
+                            } else {
+                                Button(action: {
+                                    showMapPicker.toggle()
+                                }, label: {
+                                    HStack {
+                                        Text(eventCreate.eLocation.name)
+                                            .foregroundStyle(.primary)
+                                        Spacer()
+                                    }.padding()
+                                        .background(.ultraThinMaterial)
+                                        .clipShape(Capsule())
+                                    
+                                }).tint(.primary)
+                            }
                             
                             DatePicker(
                                 "Date:",
@@ -170,7 +181,7 @@ struct EcranEvenementCreate: View {
                 })
                 .sheet(isPresented: $showMapPicker, 
                        content: {
-                    EcranAddressFinder()
+                    EcranAddressFinder(newLoc: $eventCreate.eLocation)
                 })
         }
     }

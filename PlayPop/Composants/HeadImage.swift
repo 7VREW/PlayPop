@@ -24,7 +24,7 @@ struct HeadImage: View {
                         imageList[index]
                             .resizable()
                             .scaledToFill()
-                        LinearGradient(colors: [.white.opacity(0.75), .clear], startPoint: .top, endPoint: .center)
+                        LinearGradient(colors: [.customBW.opacity(0.75), .clear], startPoint: .top, endPoint: .center)
                     }
                 }
             }

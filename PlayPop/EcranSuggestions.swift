@@ -19,12 +19,14 @@ struct EcranSuggestions: View {
     //Vérifie quels loisirs sont à afficher en fonction des tags
     func showInDisplay (leasure: Leasure)-> Bool {
         var show = false
+        // Vérifie que le loisir corresponde a tous les tags de type séléctionnés
         for tag in (selectedTags) {
             if (!leasure.lTags.contains { tag1 in
                 tag.id == tag1.id}) {
                     return show
                 }
         }
+        // Vérifie aue le loisir corresponde a au moins un des tags d'accés selectionnés pour le budget et le local
         for tag in (data.user.pAnswers) {
                 if (leasure.lTags.contains { tag1 in
                     tag.id == tag1.id} && tag.tId >= 100 && tag.tId <= 101) || (data.user.pAnswers.contains { tag1 in
@@ -63,7 +65,7 @@ struct EcranSuggestions: View {
                 }
                 .padding(.horizontal, -20)
                 
-//              Affiche les loisirs qui ont les tags selectionnés
+//              Affiche les loisirs qui ont tous les tags selectionnés
                 ScrollView (showsIndicators: false){
                     VStack{
                         if ((data.leasureList.filter {
