@@ -12,7 +12,6 @@ struct EcranEditerProfile: View {
     @EnvironmentObject var data: UserData
     
     var body: some View {
-        NavigationStack{
             ZStack (alignment: .bottom) {
                 VStack{
                     Spacer()
@@ -56,7 +55,6 @@ struct EcranEditerProfile: View {
                     .padding(.bottom, 100)
                 }
             }.padding(.horizontal)
-        }.tint(.primary)
     }
 }
 

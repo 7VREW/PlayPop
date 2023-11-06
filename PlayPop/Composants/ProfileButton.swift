@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ProfileButton: View {
     var body: some View {
-        NavigationStack{
             NavigationLink(destination: {
                 EcranProfile()
             }, label: {
@@ -23,8 +22,6 @@ struct ProfileButton: View {
             })
             .transition(.push(from: .bottom))
             .foregroundStyle(.primary)
-        }
-        .tint(.primary)
     }
 }
 

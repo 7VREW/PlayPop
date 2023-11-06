@@ -30,7 +30,6 @@ struct EcranAccueil2: View {
     }
     
     var body: some View {
-        NavigationStack{
             ZStack (alignment: .bottom){
                 
                 //Background gradient
@@ -93,8 +92,7 @@ struct EcranAccueil2: View {
                     .padding(.bottom, 80)
                 }
                 }
-            }
-//        }
+            //        }
         .tint(.primary)
     }
 }

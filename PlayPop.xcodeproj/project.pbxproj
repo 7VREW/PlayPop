@@ -121,19 +121,19 @@
 			children = (
 				BCC0D76B2AEA92A8009DA110 /* PlayPopApp.swift */,
 				5F0E00B22AF3EEE600853FB0 /* EcranAterrissage.swift */,
-				BCC0D7AB2AEFA6A0009DA110 /* EcranProfile.swift */,
-				BC1B7E3A2AF4F42F0059CC59 /* EcranEditerProfile.swift */,
-				BC1B7E382AF4F1A00059CC59 /* EcranNotation.swift */,
-				BCC0D7B12AEFE080009DA110 /* EcranSuggestions.swift */,
-				BCC0D7B32AEFE095009DA110 /* EcranFiltre.swift */,
-				BCC0D7B52AEFE46D009DA110 /* EcranLoisir.swift */,
 				BCC0D7C12AF0FF68009DA110 /* EcranAccueil1.swift */,
 				BCC0D7C72AF112C6009DA110 /* EcranAccueilProfile.swift */,
 				BCC0D7C22AF0FF68009DA110 /* EcranAccueil2.swift */,
 				BCC0D7BF2AF0FF67009DA110 /* EcranAccueil3.swift */,
 				BCC0D7C02AF0FF67009DA110 /* EcranAccueil4.swift */,
+				BCC0D7AB2AEFA6A0009DA110 /* EcranProfile.swift */,
+				BC1B7E3A2AF4F42F0059CC59 /* EcranEditerProfile.swift */,
+				BCC0D7B12AEFE080009DA110 /* EcranSuggestions.swift */,
+				BCC0D7B32AEFE095009DA110 /* EcranFiltre.swift */,
+				BCC0D7B52AEFE46D009DA110 /* EcranLoisir.swift */,
 				5F0E00AC2AF3DED100853FB0 /* EccranEvenementCreate.swift */,
 				BC4B0FEF2AF3AD6E0067B9C7 /* EcranEvenement.swift */,
+				BC1B7E382AF4F1A00059CC59 /* EcranNotation.swift */,
 				BCC0D76F2AEA92AF009DA110 /* Assets.xcassets */,
 				BCC0D7792AEA92DA009DA110 /* Composants */,
 				BCC0D77A2AEA933F009DA110 /* Definition */,
@@ -430,8 +430,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -459,8 +459,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

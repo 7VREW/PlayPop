@@ -12,7 +12,6 @@ struct EcranProfile: View {
     @State var notationSheet: Bool = false
     
     var body: some View {
-        NavigationStack{
             ScrollView (showsIndicators: false) {
                 VStack(spacing: 30) {
                     ProfileView()
@@ -85,7 +84,6 @@ struct EcranProfile: View {
                 .padding()
                 .padding(.horizontal, 5)
             }
-        }
     }
 }
 

@@ -12,7 +12,7 @@ struct EcranAterrissage: View {
     @StateObject var data: UserData
     
     var body: some View {
-        NavigationStack {
+        VStack{
             if data.user.pComplete {
                 EcranAccueil4()
             } else {
@@ -25,5 +25,5 @@ struct EcranAterrissage: View {
 }
 
 #Preview {
-    EcranAterrissage(data: dataDev)
+    EcranAterrissage(data: data)
 }

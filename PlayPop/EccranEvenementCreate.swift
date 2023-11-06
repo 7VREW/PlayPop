@@ -22,10 +22,9 @@ struct EcranEvenementCreate: View {
     var leasureIndex: Int = 0
     
     var body: some View {
-        NavigationStack{
             ZStack(alignment: .center) {
+                ScrollView{
                 VStack (spacing: 20){
-                    ScrollView{
                         PhotoPicker(photoImages: $eventCreate.eImage)
                         VStack(alignment: .leading, spacing: 15) {
                             HStack {
@@ -80,8 +79,8 @@ struct EcranEvenementCreate: View {
                         } .toolbar{ToolbarItem(placement: .topBarLeading, content: {
                             Button(action: {dismiss()}, label:{
                                 HStack{
-                                    Image(systemName: "chevron.left").font(.title2)
-                                    Text("Back")
+                                    Image(systemName: "xmark").font(.title2)
+                                    Text("Annuler")
                                         .font(.title3)
                                     }
                                 .padding(.horizontal)
@@ -94,9 +93,10 @@ struct EcranEvenementCreate: View {
                         .padding(.horizontal, 20)
                         .padding(.bottom, 100)
                        
-                    }.ignoresSafeArea()
+                }.padding(.bottom, 20)
                     
-                }.keyboardType(.default)
+                }.ignoresSafeArea(edges: .top)
+                .keyboardType(.default)
                     .submitLabel(.done)
                 VStack {
                         Spacer()
@@ -114,17 +114,18 @@ struct EcranEvenementCreate: View {
                                     
                             })
                             .tint(.primary)
+                            .padding(.bottom, 80)
                         } else {
                             EmptyView()
                                 .frame(height: 0)
                         }
-                }
+                }.ignoresSafeArea()
             }
             .interactiveDismissDisabled()
             .toolbarBackground(.hidden, for: .navigationBar)
             .actionSheet(isPresented: $isPresentingConfirm, content: {
                 ActionSheet(title: Text("Je m'engages à être présent et à animer l'évènement."), buttons: [
-                    .default(Text("Oui"), action: {
+                    .default(Text("Confirmer"), action: {
                         if eventCreate.eImage.isEmpty {
                             eventCreate.eImage = data.leasureList[leasureIndex].lImage
                         }
@@ -140,24 +141,7 @@ struct EcranEvenementCreate: View {
                 ])
 
             })
-//            .confirmationDialog("Validation",
-//              isPresented: $isPresentingConfirm) {
-//                Button("Je suis sûr", role: .destructive){
-//                    if eventCreate.eImage.isEmpty {
-//                        eventCreate.eImage = data.leasureList[leasureIndex].lImage
-//                    }
-//                    eventCreate.eLeasure = leasureIndex
-//                    eventCreate.eUsersList.append(data.user.id)
-//                    eventCreate.eActualNumberParticipant += 1
-//                    data.eventList.append(eventCreate)
-//                    activeButton = true
-//                    navToProfile.toggle()
-//                    showCreate.toggle()
-//                }
-//            } message: {
-//                Text("En créant un évènement, tu t'engages à y être présent et à l'animer")
-//            }
-        }
+
     }
 }
 

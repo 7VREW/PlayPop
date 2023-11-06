@@ -30,7 +30,6 @@ struct EcranAccueil3: View {
     }
     
     var body: some View {
-        NavigationStack{
             ZStack {
                 
                 //Background gradient
@@ -93,7 +92,6 @@ struct EcranAccueil3: View {
                     }
                 }
             }
-        }.tint(.primary)
     }
 }
 

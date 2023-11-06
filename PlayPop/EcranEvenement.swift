@@ -18,7 +18,6 @@ struct EcranEvenement: View {
     
     
     var body: some View {
-        NavigationStack{
             ZStack(alignment: .center) {
                 VStack (spacing: 20){
                     ScrollView{
@@ -121,7 +120,6 @@ struct EcranEvenement: View {
                 }
             }
             .toolbar(.hidden, for: .navigationBar)
-        }
         
 //        .environmentObject(data)  // A enlever quand fini
     }

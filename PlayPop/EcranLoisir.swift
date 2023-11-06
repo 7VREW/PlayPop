@@ -29,9 +29,7 @@ struct EcranLoisir: View {
         return stars/Double(data.leasureList[leasureIndex].lNotes.count)
     }
     
-    var body: some View {
-        NavigationStack{
-            ZStack(alignment: .bottom) {
+    var body: some View {            ZStack(alignment: .bottom) {
                 VStack (spacing: 20){
                     ScrollView{
                         HeadImage(imageList: data.leasureList[leasureIndex].lImage)
@@ -109,8 +107,6 @@ struct EcranLoisir: View {
                         .padding()
                 })
             }
-        }
-        .tint(.primary)
     }
 }
 

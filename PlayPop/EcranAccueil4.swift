@@ -51,7 +51,7 @@ struct EcranAccueil4: View {
                                 NavigationLink(destination: {
                                     EcranSuggestions(selectedTags: [tag])
                                 }, label: {
-                                    ListRowElement(label: tag.tLabel, icon: "chevron.right")
+                                    ListRowElement(label: tag.tLabel, icon: "plus")
                                 })
                                 .buttonStyle(CustomButtonAnimation())
                                 .tint(.primary)
@@ -64,7 +64,8 @@ struct EcranAccueil4: View {
                 }
                 
             }
-        }.tint(.primary)
+        }.navigationBarBackButtonHidden()
+        .tint(.primary)
     }
 }
 

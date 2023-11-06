@@ -12,7 +12,6 @@ struct EcranAccueilProfile: View {
     @EnvironmentObject var data: UserData
     
     var body: some View {
-        NavigationStack{
             ZStack {
                 
                 //Background gradient
@@ -36,19 +35,20 @@ struct EcranAccueilProfile: View {
                                     Text("👋 Salut")
                                         .font(.title)
                                 
-                                    TextField (LocalizedStringKey("Prénom, Nom"), text: $data.user.pName)
+                                    TextField (LocalizedStringKey("Prénom"), text: $data.user.pName)
                                     .textFieldStyle(.plain)
                                     .padding()
                                     .background(.ultraThinMaterial)
                                     .clipShape(Capsule())
-                                }
+                                }.textInputAutocapitalization(.words)
+                                    .autocorrectionDisabled()
 
                                 //Question 2
                                 HStack {
-                                    Text("Qui est-tu ?")
+                                    Text("Qui es-tu ?")
                                         .font(.title)
                                 
-                                    TextField (LocalizedStringKey("Looping Studio, Car videographer, Apple Developer"), text: $data.user.pBio)
+                                    TextField (LocalizedStringKey("Description"), text: $data.user.pBio)
                                     .textFieldStyle(.plain)
                                     .padding()
                                     .background(.ultraThinMaterial)
@@ -75,7 +75,6 @@ struct EcranAccueilProfile: View {
                     }
                 }
             }
-        }.tint(.primary)
     }
 }
 

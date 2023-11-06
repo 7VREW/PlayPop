@@ -36,11 +36,7 @@ struct EcranSuggestions: View {
     }
     
     var body: some View {
-        NavigationStack {
             VStack (alignment: .leading, spacing: 20){
-                Text("Suggestions")
-                    .font(.largeTitle)
-                    .padding(.top, 50)
                 ScrollView (.horizontal, showsIndicators: false) {
                     HStack {
                         Button(action: {
@@ -62,7 +58,7 @@ struct EcranSuggestions: View {
                 }
                 .padding(.horizontal, -20)
                 
-                ScrollView {
+                ScrollView (showsIndicators: false){
                     VStack{
                         if ((data.leasureList.filter {
                             leasure in
@@ -103,7 +99,8 @@ struct EcranSuggestions: View {
                 .fullScreenCover(isPresented: $showingFiltres) {
                 EcranFiltre(isPresented: $showingFiltres, fSelectedTags: $selectedTags)
                     }.padding()
-        }.tint(.primary)
+                .tint(.primary)
+                .navigationTitle("Suggestions")
     }
 }
 
