@@ -4,13 +4,18 @@
 //
 //  Created by Émilio Williame on 03/11/2023.
 //
+// Permet a l'utilisateur de noter un loisir et l'organisateur d'un evenement apres y avoir participé
 
 import SwiftUI
 
 struct EcranNotation: View {
     @State var oRating = 0
     @State var lRating = 0
+    @EnvironmentObject var data: UserData
+    @State var leasureIndex: Int
     @Environment (\.dismiss) var dismiss
+    
+    
     var body: some View {
         ZStack(alignment: .bottom) {
             
@@ -20,7 +25,7 @@ struct EcranNotation: View {
                 .scaledToFill()
                 .ignoresSafeArea()
             
-//            ScrollView(showsIndicators: false){
+
                 ZStack {
                     
                     //Dégradé blanc
@@ -42,6 +47,7 @@ struct EcranNotation: View {
                         
                         Button(action: {
                             data.user.pXP += 0.15
+                            data.leasureList[leasureIndex].lNotes.append(Double(lRating))
                             dismiss()
                         }, label: {
                             FloatingButton(label: "Valider")
@@ -50,11 +56,12 @@ struct EcranNotation: View {
                         .padding(.top, 30)
                     }
                 }
-//            }
+
         }
     }
 }
 
 #Preview {
-    EcranNotation()
+    EcranNotation(leasureIndex: 0)
+        .environmentObject(dataDev)
 }

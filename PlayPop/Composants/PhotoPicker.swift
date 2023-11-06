@@ -9,54 +9,63 @@ import SwiftUI
 import PhotosUI
 
 struct PhotoPicker: View {
+    
     @State private var photoItems = [PhotosPickerItem]()
+    
     @Binding var photoImages: [Image]
 
     var body: some View {
         TabView {
-                    ForEach(0..<photoImages.count, id: \.self) { i in
-                        photoImages[i]
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 393, height: 360)
-                    }
+            
+            // Affichage des images
+            ForEach(0..<photoImages.count, id: \.self) { i in
+                photoImages[i]
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 393, height: 360)
+            }
 
-                        PhotosPicker(selection: $photoItems, matching: .images, label: {
-                            ZStack {
-                                RoundedRectangle(cornerRadius: 30)
-                                    .fill(.quinary)
-                                    .frame(width: 393, height: 360)
-                                VStack{
-                                    Text("Ajouter des images")
-                                        .font(.headline)
-                                    Image(systemName: "plus")
-                                        .padding(7)
-                                        .font(.title2)
-                                        .background(.quaternary)
-                                        .clipShape(Capsule())
-                                }
-                            }
-                        })
-                        
+            // Selection d'images
+            PhotosPicker(selection: $photoItems, matching: .images, label: {
+                ZStack {
+                    RoundedRectangle(cornerRadius: 30)
+                        .fill(.quinary)
+                        .frame(width: 393, height: 360)
+                    
+                    VStack{
+                        Text("Ajouter des images")
+                            .font(.headline)
+                        Image(systemName: "plus")
+                            .padding(7)
+                            .font(.title2)
+                            .background(.quaternary)
+                            .clipShape(Capsule())
+                    }
+                }
+            })
         }
+        
+        // Encadrement de la selection
         .frame(height: 360)
             .tabViewStyle(.page(indexDisplayMode: .never))
             .tint(.primary)
             .clipShape(RoundedRectangle(cornerRadius: 30))
-            .onChange(of: photoItems) { _ in
-                Task {
-                    photoImages.removeAll()
+        
+        // Sauvegarde des images
+        .onChange(of: photoItems) { _ in
+            Task {
+                photoImages.removeAll()
                     
-                    for item in photoItems {
-                        if let data = try? await item.loadTransferable(type: Data.self) {
-                            if let uiImage = UIImage(data: data) {
-                                let image = Image(uiImage: uiImage)
-                                photoImages.append(image)
-                            }
+                for item in photoItems {
+                    if let data = try? await item.loadTransferable(type: Data.self) {
+                        if let uiImage = UIImage(data: data) {
+                            let image = Image(uiImage: uiImage)
+                            photoImages.append(image)
                         }
                     }
                 }
             }
+        }
     }
 }
 

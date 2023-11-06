@@ -12,6 +12,8 @@ struct ValidationAlert: View {
     @State private var validationAlert = false
     
     var body: some View {
+        
+        
         Button("Participer") {
             validationAlert = true
         }

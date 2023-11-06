@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct RatingStars: View {
+    
     @Binding var rating: Int
-
     @State var label: String
 
     var maxRating = 5
@@ -20,24 +20,7 @@ struct RatingStars: View {
     var offColor = Color(.systemGray5)
     var onColor = Color(.systemOrange)
     
-    var body: some View {
-        VStack(spacing: 20) {
-            Text(label)
-                .font(.headline)
-                HStack{
-                    ForEach(1..<maxRating + 1, id:\.self){number in
-                        image(for: number)
-                            .font(.title)
-                            .foregroundColor(number>rating ? offColor : onColor)
-                            .onTapGesture {
-                                rating = number
-                                }
-                            }
-                    }
-                }
-        .padding(.top, 25)
-    }
-    
+    // Remplissage de l'étoile
     func image(for number: Int) -> Image {
         if number > rating {
             return offImage ?? onImage
@@ -46,6 +29,27 @@ struct RatingStars: View {
         }
     }
     
+    var body: some View {
+        VStack(spacing: 20) {
+            
+            Text(label)
+                .font(.headline)
+            
+            // Note en étoiles
+            HStack{
+                ForEach(1..<maxRating + 1, id:\.self){number in
+                    image(for: number)
+                        .font(.title)
+                        .foregroundColor(number>rating ? offColor : onColor)
+                        .onTapGesture {
+                            rating = number
+                        }
+                }
+            }
+        }
+        
+        .padding(.top, 25)
+    }
 }
 
 #Preview {

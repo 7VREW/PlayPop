@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-var tag1: [Tag] = [Tag(tId: 0, tLabel: "Exemple")]
-
 struct TagView: View {
     
     var tag: Tag
     
     var body: some View {
+        
+        // Affichage du tag
         Text(tag.tLabel)
             .foregroundStyle(.background)
             .padding(.vertical, 5)
@@ -22,6 +22,9 @@ struct TagView: View {
             .clipShape(Capsule())
     }
 }
+
+
+var tag1: [Tag] = [Tag(tId: 0, tLabel: "Exemple")]
 
 #Preview {
     TagView(tag: tag1[0])

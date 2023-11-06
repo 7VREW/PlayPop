@@ -12,9 +12,9 @@ struct CardComponent: View {
     var leasure: Leasure
     
     var body: some View {
-        
         ZStack (alignment: .bottomLeading) {
             
+            // Affichage de l'image
             ZStack {
                 leasure.lImage[0]
                     .resizable()
@@ -23,7 +23,7 @@ struct CardComponent: View {
                 LinearGradient(colors: [.black.opacity(0.75), .clear], startPoint: .bottom, endPoint: .center)
             }
 
-            
+            // Affichage du label
             VStack(alignment: .leading) {
                 Text(leasure.lLabel)
                     .fontWeight(.bold)
@@ -32,8 +32,9 @@ struct CardComponent: View {
             .foregroundStyle(.white)
             .padding()
         }
+        
         .clipShape(RoundedRectangle(cornerRadius: 30))
-            .frame(width: 175, height: 250)
+        .frame(width: 175, height: 250)
     }
 }
 

@@ -4,6 +4,7 @@
 //
 //  Created by Kessem Quarks on 30/10/2023.
 //
+// Permet a l'utilisateur de filtrer en fonction de son budget
 
 import SwiftUI
 

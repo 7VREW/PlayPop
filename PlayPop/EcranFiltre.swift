@@ -4,6 +4,7 @@
 //
 //  Created by apprenant50 on 30/10/2023.
 //
+// Permet a l'utilisateur de modifier ses filtres
 
 import SwiftUI
 
@@ -13,7 +14,7 @@ struct EcranFiltre: View {
     @State var filtreTags = typeTagsList
     @Binding var fSelectedTags: [Tag]
     
-    //Vérifie si le tag est séléctionné
+    //Vérifie si un tag est séléctionné
    func buttonCheck (tag: Tag)-> Bool {
         var on = true
        if (!(fSelectedTags).contains { tag1 in
@@ -22,7 +23,8 @@ struct EcranFiltre: View {
         }
         return on
     }
-    
+
+    // verifie qu'au moins un tag soit selectionné pour chaque categorie
     func ButtonCheckAll () -> Bool {
         var test = false
         for tag in accessTagsList[0...1]{
@@ -42,7 +44,7 @@ struct EcranFiltre: View {
         return false
     }
     
-    //séléctionne ou désélectionne le tag
+    //séléctionne ou désélectionne le tag cliqué
    func buttonSwitch (tag: Tag) {
         if (!fSelectedTags.contains { tag1 in
             tag.id == tag1.id}) {
@@ -56,8 +58,10 @@ struct EcranFiltre: View {
     var body: some View {
         ZStack (alignment: .bottom) {
             ScrollView {
+                
                 FiltreInOut()
                     .padding(.bottom, 20)
+                
                 FiltreBudget()
                     .padding(.bottom, 20)
                 
@@ -91,6 +95,8 @@ struct EcranFiltre: View {
     }
 }
 
+
+// Affiche les boutons pour les tags interieur/exterieur
 struct FiltreInOut: View {
     
     @EnvironmentObject var data: UserData
@@ -129,6 +135,7 @@ struct FiltreInOut: View {
     }
 }
 
+// Affiche les boutons pour les tags de budget
 struct FiltreBudget: View {
     
     @EnvironmentObject var data: UserData

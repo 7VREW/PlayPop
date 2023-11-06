@@ -13,15 +13,16 @@ struct TextBox: View {
     
     var body: some View {
         VStack {
+            
+            // Afichage de la description
             Text(text)
                 .font(.callout)
                 .lineSpacing(4)
                 .padding(25)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .background(.ultraThinMaterial)
-            .clipShape(RoundedRectangle(cornerRadius: 25))
+                .clipShape(RoundedRectangle(cornerRadius: 25))
         }
-        
     }
 }
 

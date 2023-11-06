@@ -42,6 +42,7 @@ struct Leasure: Identifiable{
 
 //Detail évènement
 struct Event: Identifiable{
+    @StateObject private var mapAPI = MapAPI()
     var id = UUID()
     var eLabel: String
     var eDesc: String
@@ -50,7 +51,7 @@ struct Event: Identifiable{
     var eMinU: Int
     var eMaxU: Int
     var eUsersList: [UUID]
-    var eLocation: String
+    var eLocation: Location
     var eDate: Date
     var ePast: Bool
     var eActualNumberParticipant: Int

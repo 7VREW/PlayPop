@@ -4,6 +4,7 @@
 //
 //  Created by apprenant50 on 31/10/2023.
 //
+// Permet a l'utilisateur de modifier son profil
 
 import SwiftUI
 
@@ -18,7 +19,7 @@ struct EcranEditerProfile: View {
                     
                     Group {
                         //Question 1
-                        Text("Prénom, Nom :")
+                        Text("Prenom, Nom :")
                             .font(.title)
                         
                         TextField (LocalizedStringKey(""), text: $data.user.pName)
@@ -55,10 +56,27 @@ struct EcranEditerProfile: View {
                     .padding(.bottom, 100)
                 }
             }.padding(.horizontal)
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button(action: {dismiss()}, label:{
+                        HStack{
+                            Image(systemName: "chevron.backward")
+                                .font(.title2)
+                            Text("Retour")
+                                .font(.title3)
+                        }
+                        .padding(.horizontal)
+                        .padding(.vertical, 6)
+                        .background(.ultraThinMaterial)
+                        .clipShape(Capsule())
+                    })
+                }
+            }
+            .navigationBarBackButtonHidden()
     }
 }
 
 #Preview {
-    EcranAccueilProfile()
+    EcranEditerProfile()
         .environmentObject(dataDev)
 }

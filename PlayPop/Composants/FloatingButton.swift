@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// Animation du bouton
 struct CustomButtonAnimation: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
@@ -20,17 +21,21 @@ struct FloatingButton: View {
     var label: String
     
     var body: some View {
-
          ZStack {
-                RoundedRectangle(cornerRadius: 30)
-                    .frame(width: 200, height: 60)
-                    .foregroundStyle(.ultraThinMaterial)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 30)
-                            .stroke(LinearGradient(colors: [Color(.systemOrange), Color(.systemYellow)], startPoint: .leading, endPoint: .trailing), lineWidth: 3)
+             
+             // Intérieur du bouton
+            RoundedRectangle(cornerRadius: 30)
+                .frame(width: 200, height: 60)
+                .foregroundStyle(.ultraThinMaterial)
+             
+                // Contour du bouton
+                .overlay(
+                    RoundedRectangle(cornerRadius: 30)
+                        .stroke(LinearGradient(colors: [Color(.systemOrange), Color(.systemYellow)], startPoint: .leading, endPoint: .trailing), lineWidth: 3)
                 )
-                Text(label)
-            }
+             
+            Text(label)
+        }
     }
 }
 

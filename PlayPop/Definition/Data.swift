@@ -1,5 +1,6 @@
 import Foundation
 import SwiftUI
+import MapKit
 
 var typeTagsList = [
     Tag(tId: 0, tLabel: "bouger"),

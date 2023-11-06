@@ -16,20 +16,24 @@ struct HeadImage: View {
     var body: some View {
         
         ZStack {
-                        TabView{
-                            ForEach(0..<imageList.count){index in
-                                ZStack {
-                                    imageList[index]
-                                        .resizable()
-                                        .scaledToFill()
-                                    LinearGradient(colors: [.white.opacity(0.75), .clear], startPoint: .top, endPoint: .center)
-                                }
-                            }
-                        }
-                        .tabViewStyle(PageTabViewStyle())
-                        .frame(width: 393, height: 360)
-                        .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+            TabView{
+                
+                // Affichage des images
+                ForEach(0..<imageList.count){index in
+                    ZStack {
+                        imageList[index]
+                            .resizable()
+                            .scaledToFill()
+                        LinearGradient(colors: [.white.opacity(0.75), .clear], startPoint: .top, endPoint: .center)
+                    }
+                }
             }
+            .tabViewStyle(PageTabViewStyle())
+            .frame(width: 393, height: 360)
+            .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+        }
+        
+        // Format de l'encaadrement
         .frame(width: 393, height: 300, alignment: .bottom)
         .clipShape(RoundedRectangle(cornerRadius: 30))
         .shadow(radius: 5)

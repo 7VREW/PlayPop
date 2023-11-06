@@ -15,100 +15,96 @@ struct NumberPicker: View {
     
     var body: some View {
         
-//        Menu("Age") {
+
         ZStack{
-        VStack {
-            Button {
-                withAnimation(.spring(duration: 0.18)) {
-                    showPicker.toggle()
-                }
-            } label: {
-                HStack {
-                    Image(systemName: "person.2.fill")
-                    HStack(spacing: 5) {
-                        Text("Min \(pMin)")
-                            .foregroundStyle(Color(.systemOrange))
-                        Text("/")
-                        Text("Max \(pMax)")
+            VStack {
+                
+                // Bouton de selection
+                Button {
+                    withAnimation(.spring(duration: 0.18)) {
+                        showPicker.toggle()
                     }
-                }
-                .foregroundStyle(.primary)
-                        .padding(.vertical, 5)
-                        .padding(.horizontal, 15)
-                        .background(.ultraThinMaterial)
+                } label: {
+                    HStack {
+                        Image(systemName: "person.2.fill")
+                        HStack(spacing: 5) {
+                            Text("Min \(pMin)")
+                                .foregroundStyle(Color(.systemOrange))
+                            Text("/")
+                            Text("Max \(pMax)")
+                        }
+                    }
+                    .foregroundStyle(.primary)
+                    .padding(.vertical, 5)
+                    .padding(.horizontal, 15)
+                    .background(.ultraThinMaterial)
                     .clipShape(Capsule())
-                
-            }
-            .tint(.secondary)
-            
-        }
-        .overlay {
-            ZStack {
-                
-                VStack(spacing: 25){
-                    
-                    //Selection du max
-                    Stepper("Max",
-                            onIncrement: {if pMax <= 100 {
-                                pMax += 1
-                            } else {
-                                pMax = 100
-                            }
-                    },
-                            onDecrement: {if pMax <= pMin {
-                                pMax = pMin
-                            } else {
-                            pMax -= 1
-                            }
-                    }
-                    )
-                    
-                    
-                    //Selection du min
-                    Stepper("Min",
-                            onIncrement: {
-                        if pMin >= pMax {
-                            pMin = pMax
-                        } else {
-                            pMin += 1
-                        }
-                    },
-                            onDecrement: {if pMin <= 2 {
-                                pMin = 2
-                            } else {
-                                pMin -= 1
-                            }
-                    }
-                    )
-                    
-                    //Valider bouton
-                    Button {
-                        withAnimation(.spring(duration: 0.18)) {
-                            showPicker = false
-                        }
-                    } label: {
-                        Text("Valider")
-                            .tint(.primary)
-                            .padding(.horizontal, 45)
-                            .padding(.vertical, 4)
-                            .background(Color(.systemGray5))
-                            .clipShape(Capsule())
-                    }
-                    
                 }
-                .padding()
-                .frame(width: 180, height: 180)
-                .background (.white.opacity(0.2))
-                .background(.ultraThinMaterial)
-                .cornerRadius(16)
-                .offset(y: 116)
-                .scaleEffect(showPicker ? 1 : 0)
+                .tint(.secondary)
+            }
+            
+            .overlay {
+                ZStack {
+                    VStack(spacing: 25){
+                        
+                        //Selection du min
+                        Stepper("Min",
+                                onIncrement: {
+                            if pMin >= pMax {
+                                pMin = pMax
+                            } else {
+                                pMin += 1
+                            }
+                        },
+                                onDecrement: {if pMin <= 2 {
+                                    pMin = 2
+                                } else {
+                                    pMin -= 1
+                                }
+                        }
+                        )
+                        
+                        //Selection du max
+                        Stepper("Max",
+                                onIncrement: {if pMax <= 100 {
+                                    pMax += 1
+                                } else {
+                                    pMax = 100
+                                }
+                        },
+                                onDecrement: {if pMax <= pMin {
+                                    pMax = pMin
+                                } else {
+                                pMax -= 1
+                                }
+                        }
+                        )
+                        
+                        //Valider bouton
+                        Button {
+                            withAnimation(.spring(duration: 0.18)) {
+                                showPicker = false
+                            }
+                        } label: {
+                            Text("Valider")
+                                .tint(.primary)
+                                .padding(.horizontal, 45)
+                                .padding(.vertical, 4)
+                                .background(Color(.systemGray5))
+                                .clipShape(Capsule())
+                        }
+                    }
+                    
+                    .padding()
+                    .frame(width: 180, height: 180)
+                    .background (.white.opacity(0.2))
+                    .background(.ultraThinMaterial)
+                    .cornerRadius(16)
+                    .offset(y: 116)
+                    .scaleEffect(showPicker ? 1 : 0)
+                }
             }
         }
-
-        }
-//        }
-
     }
 }
 

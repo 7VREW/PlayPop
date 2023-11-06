@@ -8,20 +8,28 @@
 import SwiftUI
 
 struct ProfileButton: View {
+    
     var body: some View {
-            NavigationLink(destination: {
-                EcranProfile()
-            }, label: {
-                HStack(spacing: 6) {
-                    Image(systemName: "person.circle")
-                        .font(.title2)
-                    Image(systemName: "chevron.right")
-                        .font(.title2)
-                        .fontWeight(.bold)
-                }
-            })
-            .transition(.push(from: .bottom))
-            .foregroundStyle(.primary)
+        
+        // Lien vers le profilte
+        NavigationLink(destination: {
+            EcranProfile()
+        }, label: {
+            HStack(spacing: 6) {
+                Image(systemName: "person.circle")
+                    .font(.title2)
+                Image(systemName: "chevron.right")
+                    .font(.title2)
+                    .fontWeight(.bold)
+            }
+            
+            .padding(.horizontal)
+            .padding(.vertical, 6)
+            .background(.ultraThinMaterial)
+            .clipShape(Capsule())
+        })
+        .transition(.push(from: .bottom))
+        .foregroundStyle(.primary)
     }
 }
 

@@ -4,6 +4,7 @@
 //
 //  Created by Émilio Williame on 30/10/2023.
 //
+// Permet a l'utilisateur de filtrer en fonction de catégories
 
 import SwiftUI
 
@@ -29,15 +30,6 @@ struct EcranAccueil4: View {
                             .frame(minHeight: 900)
                         VStack(spacing: 20) {
                             
-                            //Le bouton en haut accès profile
-                            HStack {
-                                Spacer()
-                                ProfileButton()
-                                    .buttonStyle(CustomButtonAnimation())
-                                    .padding(.bottom, 230)
-                                .padding(.top, 50)
-                            }
-                            .padding(.horizontal, 25)
                             
                             //Question
                             Text("👋")
@@ -61,11 +53,19 @@ struct EcranAccueil4: View {
                         
                     }
                     .padding(.bottom, 150)
+                    .padding(.top, 80)
                 }
                 
             }
         }.navigationBarBackButtonHidden()
         .tint(.primary)
+        .toolbar {
+            ToolbarItem (placement: .navigationBarTrailing) {
+                ProfileButton()
+                    .buttonStyle(CustomButtonAnimation())
+            }
+        }.toolbar(.visible, for: .navigationBar)
+
     }
 }
 

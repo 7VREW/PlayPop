@@ -9,13 +9,19 @@ import PhotosUI
 import SwiftUI
 
 struct ProfilePicture: View {
+    
     @State private var avatarItem: PhotosPickerItem?
+    
     @EnvironmentObject var data: UserData
     
     var body: some View {
         VStack {
+            
+            // Selection de l'image
             PhotosPicker(selection: $avatarItem, matching: .images, label: {
                 ZStack {
+                    
+                    // Affichage de l'image
                     Circle()
                         .frame(width: 125)
                         .foregroundStyle(.ultraThinMaterial)
@@ -24,16 +30,16 @@ struct ProfilePicture: View {
                         .font(.system(size: 36))
                         .foregroundStyle(Color(.systemGray3))
                     
-
-                        data.user.pAvatar
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 125, height: 125)
-                            .clipShape(Circle())
-
+                    data.user.pAvatar
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 125, height: 125)
+                        .clipShape(Circle())
                 }
             })
         }
+        
+        // Sauvegarde de l'image
         .onChange(of: avatarItem) { _ in
             Task {
                 if let datum = try? await avatarItem?.loadTransferable(type: Data.self) {

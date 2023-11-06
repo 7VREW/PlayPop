@@ -3,15 +3,12 @@
  
  Prends un loisir en argument
  
- Non fonctionnel, reste à faire:
-  - lien sur l'écran de l'évènement
-  - lien sur l'écran de création d'évènement
-  - tri des évènements
  */
 
 import SwiftUI
 
 struct EcranLoisir: View {
+    @Environment (\.dismiss) var dismiss
     @EnvironmentObject var data: UserData
     @State var leasureIndex: Int
     
@@ -29,18 +26,22 @@ struct EcranLoisir: View {
         return stars/Double(data.leasureList[leasureIndex].lNotes.count)
     }
     
-    var body: some View {            ZStack(alignment: .bottom) {
+    var body: some View {            
+        ZStack(alignment: .bottom) {
                 VStack (spacing: 20){
                     ScrollView{
+                        
+                        // Affiche les images du loisir
                         HeadImage(imageList: data.leasureList[leasureIndex].lImage)
                         VStack(spacing: 20) {
+                            
+                            // Le nom et la note du loisir
                             HStack {
                                 Text(data.leasureList[leasureIndex].lLabel)
                                     .font(.title2)
                                     .bold()
                                 Spacer()
                                 
-                                //A remplacer par la variable note
                                 HStack {
                                     if data.leasureList[leasureIndex].lNotes.count > 0 {
                                         Text(String(format: "%.1f", rating()))
@@ -57,6 +58,8 @@ struct EcranLoisir: View {
                                 
                             }
                             .padding(.top)
+                            
+                            // Les tags du loisir
                             ScrollView(.horizontal, showsIndicators: false){
                                 HStack{
                                     ForEach(data.leasureList[leasureIndex].lTags){tag in
@@ -67,6 +70,7 @@ struct EcranLoisir: View {
                             }
                             .padding(.horizontal, -20)
                             
+                            // La description du loisir
                             TextBox(text: data.leasureList[leasureIndex].lDesc)
                             HStack{
                                 Text("Évènement à venir")
@@ -76,8 +80,10 @@ struct EcranLoisir: View {
                             .font(.headline)
                         }
                         .padding(.horizontal, 20)
+                        
+                        // La liste des événements programmés pour le loisir
                         ForEach(data.eventList.filter {event in
-                            (event.eLeasure == leasureIndex && !event.ePast)
+                            (event.eLeasure == leasureIndex && (event.eDate > Date()))
                         }){event in
                             NavigationLink(destination: {
                                 if let idx = data.eventList.firstIndex(where: {$0.id == event.id}) {
@@ -87,8 +93,8 @@ struct EcranLoisir: View {
                                 EventRow(event: event)
                             })
                             .tint(.primary)
-                            .padding(.bottom, 150)
-                        }
+
+                        }.padding(.bottom, 150)
                         
                     }
                 }
@@ -105,12 +111,33 @@ struct EcranLoisir: View {
                 }, label: {
                     FloatingButton(label: "Créer un évènement")
                         .padding()
-                })
+                }).tint(.primary)
+                .toolbar {
+                    ToolbarItem (placement: .navigationBarTrailing) {
+                        ProfileButton()
+                            .buttonStyle(CustomButtonAnimation())
+                    }
+                    ToolbarItem(placement: .topBarLeading) {
+                        Button(action: {dismiss()}, label:{
+                            HStack{
+                                Image(systemName: "chevron.backward")
+                                    .font(.title2)
+                                Text("Retour")
+                                    .font(.title3)
+                            }
+                            .padding(.horizontal)
+                            .padding(.vertical, 6)
+                            .background(.ultraThinMaterial)
+                            .clipShape(Capsule())
+                        })
+                    }
+                } .navigationBarBackButtonHidden()
+            .toolbarBackground(.hidden, for: .navigationBar)
             }
     }
 }
 
 #Preview {
-    EcranLoisir(leasureIndex: 7)
+    EcranLoisir(leasureIndex: 5)
         .environmentObject(dataDev)
 }

@@ -10,11 +10,12 @@ import SwiftUI
 struct SplashScreen: View {
     @State var isActive: Bool = false
     @State var iconAction: Bool = false
+    @StateObject var data: UserData
     
     var body: some View {
         ZStack {
             if self.isActive {
-                EcranAterrissage(data: data)
+                EcranAterrissage()
             } else {
                 ZStack {
                     Image("LaunchImage")
@@ -41,10 +42,12 @@ struct SplashScreen: View {
                         }
                     }
                 }
+        .environmentObject(data)
             }
         }
 
 
 #Preview {
-    SplashScreen()
+    SplashScreen(data: dataDev)
+        .environmentObject(dataDev)
 }

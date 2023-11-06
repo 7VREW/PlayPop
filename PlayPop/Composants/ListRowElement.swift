@@ -19,6 +19,8 @@ struct ListRowElement: View {
     
     var body: some View {
         ZStack {
+            
+            // Couleur du bouton
             if isOn{
                 RoundedRectangle(cornerRadius: 30.0)
                     .fill(Color(.systemOrange))
@@ -27,6 +29,7 @@ struct ListRowElement: View {
                     .fill(.ultraThinMaterial)
             }
             
+            // Contenu du bouton
             HStack {
                 Text(label)
                     .font(.title3)
@@ -34,7 +37,9 @@ struct ListRowElement: View {
                 Image(systemName: icon)
             } .padding(.horizontal, 20)
                 .foregroundStyle(isOn ? Color.white : Color.primary)
-        } .frame(width: 350, height: 60)
+        } 
+        
+        .frame(width: 350, height: 60)
     }
 }
 

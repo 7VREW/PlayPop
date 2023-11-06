@@ -4,12 +4,13 @@
 //
 //  Created by apprenant50 on 30/10/2023.
 //
+// Affiche des suggestions de loisirs en fonction des filtres de l'utilisateur
 
 import SwiftUI
 import Foundation
 
 struct EcranSuggestions: View {
-    
+    @Environment (\.dismiss) var dismiss
     @EnvironmentObject var data: UserData
     @State var selectedTags: [Tag] = []
     @State var showingFiltres = false
@@ -37,8 +38,11 @@ struct EcranSuggestions: View {
     
     var body: some View {
             VStack (alignment: .leading, spacing: 20){
+                
+                // Affiche les tags actuellement selectionnés et le bouton pour les modifier
                 ScrollView (.horizontal, showsIndicators: false) {
                     HStack {
+                        
                         Button(action: {
                             showingFiltres.toggle()
                         }, label: {
@@ -50,6 +54,7 @@ struct EcranSuggestions: View {
                                 .background(Color(.systemGray6))
                                 .clipShape(Capsule())
                         }) .foregroundStyle(.primary)
+                        
                         ForEach (data.user.pAnswers + selectedTags) {tag in
                             TagView(tag: tag)
                         }
@@ -58,6 +63,7 @@ struct EcranSuggestions: View {
                 }
                 .padding(.horizontal, -20)
                 
+//              Affiche les loisirs qui ont les tags selectionnés
                 ScrollView (showsIndicators: false){
                     VStack{
                         if ((data.leasureList.filter {
@@ -101,6 +107,27 @@ struct EcranSuggestions: View {
                     }.padding()
                 .tint(.primary)
                 .navigationTitle("Suggestions")
+                .toolbar {
+                    ToolbarItem (placement: .navigationBarTrailing) {
+                        ProfileButton()
+                            .buttonStyle(CustomButtonAnimation())
+                    }
+                    ToolbarItem(placement: .topBarLeading) {
+                        Button(action: {dismiss()}, label:{
+                            HStack{
+                                Image(systemName: "chevron.backward")
+                                    .font(.title2)
+                                Text("Retour")
+                                    .font(.title3)
+                            }
+                            .padding(.horizontal)
+                            .padding(.vertical, 6)
+                            .background(.ultraThinMaterial)
+                            .clipShape(Capsule())
+                        })
+                    }
+                }
+                .navigationBarBackButtonHidden()
     }
 }
 

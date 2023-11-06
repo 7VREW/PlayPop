@@ -4,6 +4,7 @@
 //
 //  Created by Kessem Quarks on 30/10/2023.
 //
+// Permet a l'utilisateur de filtrer en fonction de l'environnement
 
 import SwiftUI
 
@@ -39,7 +40,6 @@ struct EcranAccueil3: View {
                     .ignoresSafeArea()
                 
                 ZStack (alignment: .bottom) {
-                    //                    ScrollView(showsIndicators: false){
                     ZStack(alignment: .center) {
                         
                         //Dégradé blanc
@@ -79,7 +79,6 @@ struct EcranAccueil3: View {
                         }
                         
                     }
-                    //                    }
                     if ButtonCheckAll(){
                         NavigationLink (destination: {
                             EcranAccueil4()

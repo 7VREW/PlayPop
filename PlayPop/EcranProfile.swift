@@ -4,10 +4,12 @@
 //
 //  Created by Émilio Williame on 30/10/2023.
 //
+// le Profile de l'utilisateur
 
 import SwiftUI
 
 struct EcranProfile: View {
+    @Environment (\.dismiss) var dismiss
     @EnvironmentObject var data: UserData
     @State var notationSheet: Bool = false
     
@@ -17,8 +19,7 @@ struct EcranProfile: View {
                     ProfileView()
                     TextBox(text: data.user.pBio)
                     
-                    
-                    //A venir
+//                  Affiche les evenements futurs
                     VStack (alignment: .leading){
                         Text("À venir")
                             .font(.title)
@@ -45,7 +46,7 @@ struct EcranProfile: View {
                     }
                     
                     
-                    //Passés
+                    // Affiche les evenements passés
                     VStack (alignment: .leading){
                         HStack {
                             Text("Passé")
@@ -69,7 +70,7 @@ struct EcranProfile: View {
                                             EventCardComponent(event: event)
                                         })
                                     .sheet(isPresented: $notationSheet) {
-                                        EcranNotation()
+                                        EcranNotation(leasureIndex: event.eLeasure)
                                     }
                                 }
                             }
@@ -83,7 +84,23 @@ struct EcranProfile: View {
                 }
                 .padding()
                 .padding(.horizontal, 5)
+            }.toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button(action: {dismiss()}, label:{
+                        HStack{
+                            Image(systemName: "chevron.backward")
+                                .font(.title2)
+                            Text("Retour")
+                                .font(.title3)
+                        }
+                        .padding(.horizontal)
+                        .padding(.vertical, 6)
+                        .background(.ultraThinMaterial)
+                        .clipShape(Capsule())
+                    })
+                }
             }
+            .navigationBarBackButtonHidden()
     }
 }
 

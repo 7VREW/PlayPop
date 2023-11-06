@@ -8,18 +8,16 @@
 import SwiftUI
 
 struct ProfileView: View {
+    
     @EnvironmentObject var data: UserData
     
     var badgeColors = [LinearGradient(colors: [Color(.systemOrange), Color(.systemYellow)], startPoint: .leading, endPoint: .trailing), LinearGradient(colors: [Color(.systemIndigo), Color(.systemPurple)], startPoint: .leading, endPoint: .trailing), LinearGradient(colors: [Color(.systemBlue), Color(.systemCyan)], startPoint: .leading, endPoint: .trailing)]
     
     func rating ()-> Double {
         var stars: Double = 0
-
-        
         for rate in data.user.pNotes {
             stars += rate
         }
-        
         return stars/Double(data.user.pNotes.count)
     }
     
@@ -47,7 +45,6 @@ struct ProfileView: View {
                 .offset(y: 85)
             }
             
-            
             //Nom age
             VStack(alignment: .leading, spacing: 17) {
                 VStack (alignment: .leading){
@@ -55,7 +52,6 @@ struct ProfileView: View {
                         Text(data.user.pName)
                             .font(.headline)
                             .lineLimit(1)
-                    
         
                         Text(String(data.user.pAge))
                             .foregroundStyle(Color(.systemYellow))
@@ -68,23 +64,22 @@ struct ProfileView: View {
                 
                 //Game evolution section
                 VStack (alignment: .leading) {
+                    
                     //Barre de progression
                     ProgressView(value: data.user.pXP-(Double(Int(data.user.pXP)))) {
+                        
+                        //Niveau et expérience
                         HStack {
                             Text("Niveau : \(Int(data.user.pXP))")
                                 .font(.body)
-                        
                             Spacer()
-                            
                             Text("\(Int((data.user.pXP*1000))%1000) EXP")
                                 .font(.footnote)
                                 .foregroundStyle(.secondary)
                                 .lineLimit(1)
                         }
-                        
                     }
                     .tint(Color(.systemOrange))
-                    
                     
                     //Badges obtenus
                     HStack {
@@ -98,8 +93,8 @@ struct ProfileView: View {
                 }
             }
         }
-        .padding(.bottom, 35)
         
+        .padding(.bottom, 35)
     }
 }
 

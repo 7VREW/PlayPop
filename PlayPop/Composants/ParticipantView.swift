@@ -15,6 +15,8 @@ struct ParticipantView: View {
     var body: some View {
         HStack {
             Image(systemName: "person.2.fill")
+            
+            // Affichage du nombre de participants
             HStack(spacing: 5) {
                 Text(String(data.eventList[eventIndex].eActualNumberParticipant))
                     .foregroundStyle(Color(.systemOrange))
@@ -22,11 +24,12 @@ struct ParticipantView: View {
                 Text(String(data.eventList[eventIndex].eMaxU))
             }
         }
+        
         .foregroundStyle(.primary)
-                .padding(.vertical, 5)
-                .padding(.horizontal, 15)
-                .background(.ultraThinMaterial)
-            .clipShape(Capsule())
+        .padding(.vertical, 5)
+        .padding(.horizontal, 15)
+        .background(.ultraThinMaterial)
+        .clipShape(Capsule())
     }
 }
 
