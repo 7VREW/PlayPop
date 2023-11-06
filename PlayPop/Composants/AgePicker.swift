@@ -18,12 +18,20 @@ struct AgePicker: View {
         ZStack{
         VStack {
             Button {
-                withAnimation {
-                    showPicker = true
+                withAnimation(.spring(duration: 0.18)) {
+                    showPicker.toggle()
                 }
             } label: {
                 Text("Selection : **\(data.user.pAge)** ans")
                     .font(.title3)
+                    .padding(8)
+                    .padding(.horizontal, 8)
+                    .background(.ultraThinMaterial)
+                    .clipShape(Capsule())
+                    .overlay(
+                        Capsule()
+                            .stroke(.tertiary, lineWidth: 0.5)
+                )
                 
             }
             .tint(.secondary)
@@ -40,11 +48,12 @@ struct AgePicker: View {
                         }
                         .pickerStyle(.wheel)
                     }
-                    .frame(width: 200, height: showPicker ? 180 : 0)
+                    .frame(width: 200, height: 180)
                     .background (.white.opacity(0.2))
                     .background(.ultraThinMaterial)
                     .cornerRadius(16)
-                    .offset(y: 116)
+                    .offset(y: 122)
+                    .scaleEffect(showPicker ? 1 : 0)
                 }
         }
 //        }

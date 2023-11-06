@@ -18,6 +18,7 @@
 		BC1B7E3D2AF4FA890059CC59 /* RatingStars.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1B7E3C2AF4FA890059CC59 /* RatingStars.swift */; };
 		BC4B0FEE2AF3AB920067B9C7 /* NumberPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4B0FED2AF3AB920067B9C7 /* NumberPicker.swift */; };
 		BC4B0FF02AF3AD6E0067B9C7 /* EcranEvenement.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4B0FEF2AF3AD6E0067B9C7 /* EcranEvenement.swift */; };
+		BC691F002AF8E1B900B1CF96 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC691EFF2AF8E1B900B1CF96 /* SplashScreen.swift */; };
 		BCC0D76C2AEA92A8009DA110 /* PlayPopApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC0D76B2AEA92A8009DA110 /* PlayPopApp.swift */; };
 		BCC0D76E2AEA92A8009DA110 /* FloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC0D76D2AEA92A8009DA110 /* FloatingButton.swift */; };
 		BCC0D7702AEA92AF009DA110 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCC0D76F2AEA92AF009DA110 /* Assets.xcassets */; };
@@ -59,6 +60,8 @@
 		BC1B7E3C2AF4FA890059CC59 /* RatingStars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingStars.swift; sourceTree = "<group>"; };
 		BC4B0FED2AF3AB920067B9C7 /* NumberPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberPicker.swift; sourceTree = "<group>"; };
 		BC4B0FEF2AF3AD6E0067B9C7 /* EcranEvenement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcranEvenement.swift; sourceTree = "<group>"; };
+		BC691EFA2AF8D86600B1CF96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		BC691EFF2AF8E1B900B1CF96 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		BCC0D7682AEA92A8009DA110 /* PlayPop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlayPop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCC0D76B2AEA92A8009DA110 /* PlayPopApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayPopApp.swift; sourceTree = "<group>"; };
 		BCC0D76D2AEA92A8009DA110 /* FloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingButton.swift; sourceTree = "<group>"; };
@@ -119,6 +122,7 @@
 		BCC0D76A2AEA92A8009DA110 /* PlayPop */ = {
 			isa = PBXGroup;
 			children = (
+				BC691EFA2AF8D86600B1CF96 /* Info.plist */,
 				BCC0D76B2AEA92A8009DA110 /* PlayPopApp.swift */,
 				5F0E00B22AF3EEE600853FB0 /* EcranAterrissage.swift */,
 				BCC0D7C12AF0FF68009DA110 /* EcranAccueil1.swift */,
@@ -135,6 +139,7 @@
 				BC4B0FEF2AF3AD6E0067B9C7 /* EcranEvenement.swift */,
 				BC1B7E382AF4F1A00059CC59 /* EcranNotation.swift */,
 				BCC0D76F2AEA92AF009DA110 /* Assets.xcassets */,
+				BC691EFF2AF8E1B900B1CF96 /* SplashScreen.swift */,
 				BCC0D7792AEA92DA009DA110 /* Composants */,
 				BCC0D77A2AEA933F009DA110 /* Definition */,
 				BCC0D7712AEA92AF009DA110 /* Preview Content */,
@@ -279,6 +284,7 @@
 				5F0E00B32AF3EEE600853FB0 /* EcranAterrissage.swift in Sources */,
 				BCC0D7B82AEFE495009DA110 /* HeadImage.swift in Sources */,
 				BCC0D76C2AEA92A8009DA110 /* PlayPopApp.swift in Sources */,
+				BC691F002AF8E1B900B1CF96 /* SplashScreen.swift in Sources */,
 				BCC0D7B62AEFE46D009DA110 /* EcranLoisir.swift in Sources */,
 				BCC0D7C42AF0FF68009DA110 /* EcranAccueil4.swift in Sources */,
 				BCC0D7BE2AF0FCA4009DA110 /* ValidationAlert.swift in Sources */,
@@ -427,9 +433,9 @@
 				DEVELOPMENT_TEAM = XRMLZ3LLFV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PlayPop/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -456,9 +462,9 @@
 				DEVELOPMENT_TEAM = XRMLZ3LLFV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PlayPop/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (

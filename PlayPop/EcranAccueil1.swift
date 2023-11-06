@@ -43,7 +43,7 @@ struct EcranAccueil1: View {
                                 }
                                 //Réponse
                                 AgePicker()
-                                    .offset(y: 100)
+                                    .offset(y: 110)
                             }
                         }
                     
