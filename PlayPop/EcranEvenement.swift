@@ -62,7 +62,7 @@ struct EcranEvenement: View {
                                 .padding(.horizontal, -20)
                         }
                         .padding(.horizontal, 20)
-                        .padding(.bottom, 100)
+                        .padding(.bottom, 150)
                     }
                     
                 }

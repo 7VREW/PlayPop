@@ -35,9 +35,9 @@
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>138</string>
+					<string>137</string>
 					<key>Timestamp</key>
-					<string>720957866.5829819</string>
+					<string>720977712.979972</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -53,13 +53,17 @@
 			<key>text-context</key>
 			<dict>
 				<key>focused</key>
-				<string></string>
+				<string>
+</string>
 				<key>leading</key>
-				<string>        .environmentObject(dataDev)
+				<string>    }
 }
 </string>
 				<key>trailing</key>
-				<string></string>
+				<string>#Preview {
+    EcranLoisir(leasureIndex: 5)
+        .environmentObject(dataDev)
+</string>
 			</dict>
 			<key>title</key>
 			<string>Warning: 'init(destination:isActive:label:)' was deprecated in iOS 16.0: use NavigationLink(value:label:), or navigationDestination(isPresented:destination:), inside a NavigationStack or NavigationSplitView</string>

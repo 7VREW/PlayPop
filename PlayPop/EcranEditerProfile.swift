@@ -45,16 +45,17 @@ struct EcranEditerProfile: View {
                     Spacer()
                     Spacer()
                 }
-                
-                if (data.user.pName != "" && data.user.pBio != ""){
-                    Button(action: {
-                        dismiss()
-                    }, label: {
-                        FloatingButton(label: "Valider")
-                        
-                    })
-                    .buttonStyle(CustomButtonAnimation())
-                    .padding(.bottom, 100)
+                ZStack {
+                    if (data.user.pName != "" && data.user.pBio != ""){
+                        Button(action: {
+                            dismiss()
+                        }, label: {
+                            FloatingButton(label: "Valider")
+                            
+                        })
+                        .buttonStyle(CustomButtonAnimation())
+                        .padding(.bottom, 100)
+                    }
                 }
             }.padding(.horizontal)
             .toolbar {
@@ -72,7 +73,7 @@ struct EcranEditerProfile: View {
                         .clipShape(Capsule())
                     })
                 }
-            }
+            } .ignoresSafeArea(.keyboard)
             .navigationBarBackButtonHidden()
     }
 }

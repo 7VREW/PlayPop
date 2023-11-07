@@ -29,14 +29,14 @@ struct SplashScreen: View {
                         .animation(.bouncy(extraBounce: 0.3), value: iconAction)
                 }
                 .onAppear {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
                         self.iconAction.toggle()
                     }
                 }
             }
         }
         .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                 withAnimation(.easeInOut) {
                     self.isActive = true
                         }

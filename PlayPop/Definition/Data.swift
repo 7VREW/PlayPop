@@ -31,7 +31,7 @@ var accessTagsList = [
     Tag(tId: 105, tLabel: "plus de 20 €")
 ]
 
-var jDP = Profile(pComplete: false, pName: "", pAge: 12, pNotes: [], pBio: "", pAnswers: [], pAvatar: Image(""), pXP: 0, pBadges: [])
+var jDP = Profile(pComplete: false, pName: "", pAge: 16, pNotes: [], pBio: "", pAnswers: [], pAvatar: Image(""), pXP: 0, pBadges: [])
 
 var jDPDev = Profile(id: UUID(), pComplete: true, pName: "Jean Dupont", pAge: 14, pNotes: [4.6], pBio: "Salut j'aime le karting je pratique du skate et la nomenclature de cette text box m'ennui. J'ai 12 ans en réalité", pAnswers: accessTagsList, pAvatar: Image("karting1"), pXP: 48.795, pBadges: [])
 

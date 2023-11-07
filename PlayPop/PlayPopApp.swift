@@ -12,6 +12,7 @@ struct PlayPopApp: App {
     
     var body: some Scene {
         WindowGroup {
+            //"data" : version vide, "dataDev" : version dev
             SplashScreen(data: data)
             }
         }

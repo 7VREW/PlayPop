@@ -35,9 +35,11 @@ struct ListRowElement: View {
                     .font(.title3)
                 Spacer()
                 Image(systemName: icon)
-            } .padding(.horizontal, 20)
+            } 
+            .padding(.horizontal, 20)
                 .foregroundStyle(isOn ? Color.white : Color.primary)
-        } 
+               
+        }
         
         .frame(width: 350, height: 60)
     }

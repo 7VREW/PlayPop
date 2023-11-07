@@ -9,10 +9,8 @@
 	</dict>
 	<key>UILaunchScreen</key>
 	<dict>
-		<key>UIImageName</key>
-		<string>LaunchScreen</string>
-		<key>UIImageRespectsSafeAreaInsets</key>
-		<false/>
+		<key>UIColorName</key>
+		<string>LaunchScreenBackgroundColor</string>
 	</dict>
 </dict>
 </plist>

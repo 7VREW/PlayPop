@@ -18,6 +18,8 @@ struct EcranAddressFinder: View {
     
     @Binding var newLoc: Location
     
+    @FocusState private var nameIsFocused: Bool
+    
     var body: some View {
         
         ZStack (alignment: .bottom) {
@@ -25,12 +27,14 @@ struct EcranAddressFinder: View {
                 TextField("Entrer une adresse", text: $text)
                     .textFieldStyle(.roundedBorder)
                     .padding(.horizontal)
+                    .focused($nameIsFocused)
                     .keyboardType(.default)
                         .submitLabel(.done)
                 
                 
                 Button("Chercher") {
                     Task {
+                        nameIsFocused = false
                         do {
                             try await mapAPI.getLocation(adress: text, delta: 0.004)
                         } catch (let error) {

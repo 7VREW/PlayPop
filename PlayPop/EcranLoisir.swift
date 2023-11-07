@@ -93,9 +93,8 @@ struct EcranLoisir: View {
                                 EventRow(event: event)
                             })
                             .tint(.primary)
-
-                        }.padding(.bottom, 150)
-                        
+                            .padding(.bottom, 150)
+                        }
                     }
                 }
                 .ignoresSafeArea()

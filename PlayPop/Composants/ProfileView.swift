@@ -81,15 +81,15 @@ struct ProfileView: View {
                     }
                     .tint(Color(.systemOrange))
                     
-                    //Badges obtenus
-                    HStack {
-                        Image(systemName: "skateboard.fill")
-                            .foregroundStyle(badgeColors[0])
-                        Image(systemName: "staroflife.shield.fill")
-                            .foregroundStyle(badgeColors[1])
-                        Image(systemName: "rainbow")
-                            .foregroundStyle(badgeColors[2])
-                    }
+//                    //Badges obtenus
+//                    HStack {
+//                        Image(systemName: "skateboard.fill")
+//                            .foregroundStyle(badgeColors[0])
+//                        Image(systemName: "staroflife.shield.fill")
+//                            .foregroundStyle(badgeColors[1])
+//                        Image(systemName: "rainbow")
+//                            .foregroundStyle(badgeColors[2])
+//                    }
                 }
             }
         }

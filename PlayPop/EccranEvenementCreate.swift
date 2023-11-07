@@ -34,6 +34,7 @@ struct EcranEvenementCreate: View {
                         
                         
                         VStack(alignment: .leading, spacing: 15) {
+                            
                             // Rappel les tags du loisir
                             ScrollView(.horizontal, showsIndicators: false){
                                 HStack{
@@ -110,9 +111,9 @@ struct EcranEvenementCreate: View {
                             .font(.title2)
                         }
                         .padding(.horizontal, 20)
-                        .padding(.bottom, 100)
                         
-                    }.padding(.bottom, 20)
+                        
+                    }.padding(.bottom, 150)
                     
                 }.ignoresSafeArea(edges: .top)
                     .keyboardType(.default)
@@ -122,23 +123,29 @@ struct EcranEvenementCreate: View {
                 
                 
                 // Affiche le bouton valider uniquement si tous les champs sont remplis
-                if !(eventCreate.eLabel == "" || eventCreate.eDesc == "" || (eventCreate.eLocation.coordinate.latitude == 0 && eventCreate.eLocation.coordinate.longitude == 0) || eventCreate.eDate < Date.now) {
-                    Button(action: {
-                        pickerID += 1
-                        DispatchQueue.main.async {
-                            isPresentingConfirm = true
-                        }
-                    }, label: {
-                        FloatingButton(label: "Valider et créer")
-                    })
-                    .tint(.primary)
-                    .padding(.bottom, 80)
-                } else {
-                    EmptyView()
-                        .frame(height: 0)
-                }
                 
-            }.ignoresSafeArea()
+                    .overlay {
+                        if !(eventCreate.eLabel == "" || eventCreate.eDesc == "" || (eventCreate.eLocation.coordinate.latitude == 0 && eventCreate.eLocation.coordinate.longitude == 0) || eventCreate.eDate < Date.now) {
+                            Button(action: {
+                                pickerID += 1
+                                DispatchQueue.main.async {
+                                    isPresentingConfirm = true
+                                }
+                            }, label: {
+                                FloatingButton(label: "Valider et créer")
+                            })
+                            .ignoresSafeArea(.keyboard)
+                            .tint(.primary)
+                            .padding(.bottom, 80)
+                        } else {
+                            EmptyView()
+                                .frame(height: 0)
+                        }
+                    }
+                    .ignoresSafeArea(.keyboard)
+                
+                
+            }
                 .toolbar {
                     ToolbarItem (placement: .navigationBarTrailing) {
                         ProfileButton()
@@ -179,7 +186,7 @@ struct EcranEvenementCreate: View {
                     ])
                     
                 })
-                .sheet(isPresented: $showMapPicker, 
+                .sheet(isPresented: $showMapPicker,
                        content: {
                     EcranAddressFinder(newLoc: $eventCreate.eLocation)
                 })
